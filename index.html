@@ -1296,6 +1296,117 @@
                 transform: none;
             }
         }
+
+
+        /* =====================================================
+           TEMA — NOIR VERMELHO / CINEMATOGRÁFICO
+        ===================================================== */
+        :root {
+            --black: #000000;
+            --bg: #050303;
+            --surface: #0c0808;
+            --surface-2: #130909;
+            --surface-3: #1b0b0b;
+            --white: #f2eeee;
+            --white-soft: #ddd6d6;
+            --text: #c9c0c0;
+            --muted: #857777;
+            --muted-dark: #554545;
+            --border: rgba(185, 20, 30, .18);
+            --border-strong: rgba(220, 25, 35, .42);
+            --red: #b3131d;
+            --red-bright: #e01b2d;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at 85% 10%, rgba(150, 8, 18, .13), transparent 28%),
+                radial-gradient(circle at 12% 75%, rgba(90, 5, 12, .08), transparent 30%),
+                #050303;
+        }
+
+        body::selection { background: var(--red-bright); color: #fff; }
+
+        .background-grid {
+            background-image:
+                linear-gradient(rgba(180, 18, 28, .035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(180, 18, 28, .035) 1px, transparent 1px);
+        }
+        .background-glow {
+            background: rgba(180, 10, 22, .14);
+            filter: blur(120px);
+        }
+        header {
+            background: rgba(4, 2, 2, .84);
+            border-bottom-color: rgba(190, 22, 32, .22);
+        }
+        .logo::after { color: var(--red-bright); }
+        nav a::after { background: var(--red-bright); }
+        .eyebrow { color: #aa9696; }
+        .eyebrow::before {
+            background: var(--red-bright);
+            box-shadow: 0 0 0 5px rgba(224, 27, 45, .10), 0 0 18px rgba(224, 27, 45, .35);
+        }
+        .hero h1 span, .contact-title span {
+            -webkit-text-stroke-color: var(--red-bright);
+            text-stroke-color: var(--red-bright);
+        }
+        .button.primary {
+            color: #fff;
+            background: linear-gradient(135deg, #8f0d16, var(--red-bright));
+            box-shadow: 0 10px 35px rgba(190, 12, 28, .20);
+        }
+        .button.primary:hover { background: linear-gradient(135deg, #b3131d, #f02a3a); }
+        .button.secondary { border-color: rgba(210, 30, 40, .38); }
+        .button.secondary:hover { border-color: var(--red-bright); background: rgba(190, 15, 28, .10); }
+
+        .profile-card, .objective {
+            border-color: rgba(200, 25, 35, .32);
+            background: linear-gradient(145deg, rgba(110, 8, 15, .18), rgba(255,255,255,.008));
+            box-shadow: 0 40px 100px rgba(0,0,0,.72), inset 0 1px 0 rgba(220, 35, 45, .12);
+        }
+        .profile-card::before {
+            background: linear-gradient(90deg, transparent, var(--red-bright), transparent);
+            opacity: .7;
+        }
+        .profile-card::after { border-color: rgba(210, 25, 35, .16); }
+        .section-number, .education-status, .project-number, .contact-label { color: #a92a32; }
+        .content { border-top-color: rgba(190, 20, 30, .16); }
+        .highlight {
+            border-color: rgba(205, 25, 35, .28);
+            background: linear-gradient(90deg, rgba(150, 10, 18, .12), rgba(255,255,255,.012));
+        }
+        .highlight::before { background: var(--red-bright); box-shadow: 0 0 18px rgba(224, 27, 45, .45); }
+        .education-item, .skill {
+            border-color: rgba(190, 20, 30, .16);
+            background: rgba(255,255,255,.01);
+        }
+        .education-item:hover, .skill:hover {
+            border-color: rgba(224, 27, 45, .55);
+            background: rgba(150, 8, 18, .10);
+        }
+        .project {
+            border-color: rgba(190, 20, 30, .18);
+            background: linear-gradient(145deg, #170707, #050303 72%);
+            box-shadow: inset 0 1px 0 rgba(220, 30, 40, .05);
+        }
+        .project::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(120deg, transparent 55%, rgba(170, 8, 18, .08));
+        }
+        .project::after { border-color: rgba(210, 25, 35, .14); }
+        .project:hover {
+            border-color: rgba(224, 27, 45, .65);
+            box-shadow: 0 18px 45px rgba(0,0,0,.42), 0 0 35px rgba(160, 8, 18, .08);
+        }
+        .objective { background: linear-gradient(135deg, rgba(120, 8, 16, .18), rgba(255,255,255,.008)); }
+        footer { border-top-color: rgba(190, 20, 30, .18); }
+        ::-webkit-scrollbar-thumb { background: #4b1015; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
     </style>
 </head>
 
