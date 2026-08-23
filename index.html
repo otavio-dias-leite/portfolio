@@ -3,58 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Portfólio de Otávio Leite — Ciência da Computação, Engenharia Elétrica, Eletrotécnica e Segurança da Informação."
-    >
-
+    <meta name="description" content="Portfólio de Otávio Leite — Ciência da Computação, Engenharia Elétrica, Eletrotécnica e Segurança da Informação.">
     <title>Otávio Leite — Portfólio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* =====================================================
            RESET
         ===================================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            background: #030712;
-            color: #c7d7eb;
-            font-family: "Inter", sans-serif;
-            line-height: 1.6;
+            background: #030712; color: #c7d7eb;
+            font-family: "Inter", sans-serif; line-height: 1.6;
             overflow-x: hidden;
         }
-
-        body::selection {
-            background: #eaf4ff;
-            color: #020617;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font: inherit;
-        }
+        body::selection { background: #eaf4ff; color: #020617; }
+        a { color: inherit; text-decoration: none; }
+        button { font: inherit; }
 
         :root {
             --black: #020617;
@@ -62,1243 +32,376 @@
             --surface: #07101f;
             --surface-2: #0a1426;
             --surface-3: #0e1a30;
-
             --white: #eaf4ff;
             --white-soft: #dcecff;
-
             --text: #bfd0e5;
-            --muted: #7188a3888;
-            --muted-dark: #3d5470555;
-
+            
+            /* Corrigido: Códigos hexadecimais de 8 dígitos */
+            --muted: #7188a388;
+            --muted-dark: #3d547055;
+            
             --border: rgba(56,189,248,.13);
             --border-strong: rgba(56,189,248,.25);
-
             --green: #29b6ff;
-
             --container: 1180px;
         }
-
 
         /* =====================================================
            SCROLLBAR
         ===================================================== */
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #020617;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #252525;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #32465f;
-        }
-
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #252525; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #32465f; }
 
         /* =====================================================
            BACKGROUND
         ===================================================== */
-
         .background-grid {
-            position: fixed;
-            inset: 0;
-            z-index: -3;
-            pointer-events: none;
-
-            background-image:
-                linear-gradient(
-                    rgba(56,189,248,.035) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(56,189,248,.035) 1px,
-                    transparent 1px
-                );
-
+            position: fixed; inset: 0; z-index: -3; pointer-events: none;
+            background-image: linear-gradient(rgba(56,189,248,.035) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(56,189,248,.035) 1px, transparent 1px);
             background-size: 70px 70px;
-
-            mask-image: linear-gradient(
-                to bottom,
-                black,
-                transparent 90%
-            );
+            mask-image: linear-gradient(to bottom, black, transparent 90%);
         }
-
         .background-glow {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            top: -250px;
-            right: -200px;
-
-            border-radius: 50%;
-
-            background: rgba(56,189,248,.05);
-
-            filter: blur(100px);
-
-            z-index: -2;
-            pointer-events: none;
+            position: fixed; width: 600px; height: 600px; top: -250px; right: -200px;
+            border-radius: 50%; background: rgba(56,189,248,.05);
+            filter: blur(100px); z-index: -2; pointer-events: none;
         }
-
 
         /* =====================================================
            HEADER
         ===================================================== */
-
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 74px;
-
-            z-index: 100;
-
-            border-bottom: 1px solid var(--border);
-
-            background: rgba(5,5,5,.78);
-
-            backdrop-filter: blur(20px);
+            position: fixed; top: 0; left: 0; width: 100%; height: 74px;
+            z-index: 100; border-bottom: 1px solid var(--border);
+            background: rgba(5,5,5,.78); backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
-
         .header-inner {
-            width: min(var(--container), 90%);
-            height: 100%;
-
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            width: min(var(--container), 90%); height: 100%; margin: auto;
+            display: flex; align-items: center; justify-content: space-between;
         }
-
         .logo {
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 14px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
-
-            color: #eaf4ff;
+            font-family: "Space Grotesk", sans-serif; font-size: 14px;
+            font-weight: 700; letter-spacing: 2px; color: #eaf4ff;
         }
-
-        .logo::after {
-            content: ".";
-            color: #607895;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
+        .logo::after { content: "."; color: #607895; }
+        nav { display: flex; align-items: center; gap: 30px; }
         nav a {
-            position: relative;
-
-            color: #607895;
-
-            font-size: 10px;
-            font-weight: 600;
-
-            letter-spacing: 1px;
-
-            transition: color .25s ease;
+            position: relative; color: #607895; font-size: 10px;
+            font-weight: 600; letter-spacing: 1px; transition: color .25s ease;
         }
-
         nav a::after {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            bottom: -8px;
-
-            width: 0;
-            height: 1px;
-
-            background: #eaf4ff;
-
-            transition: width .25s ease;
+            content: ""; position: absolute; left: 0; bottom: -8px;
+            width: 0; height: 1px; background: #eaf4ff; transition: width .25s ease;
         }
-
-        nav a:hover {
-            color: #eaf4ff;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
+        nav a:hover { color: #eaf4ff; }
+        nav a:hover::after { width: 100%; }
 
         /* =====================================================
            CONTAINER
         ===================================================== */
-
-        main,
-        footer {
-            width: min(var(--container), 90%);
-            margin: auto;
-        }
-
-        section {
-            scroll-margin-top: 100px;
-        }
-
+        main, footer { width: min(var(--container), 90%); margin: auto; }
+        section { scroll-margin-top: 100px; }
 
         /* =====================================================
            HERO
         ===================================================== */
-
         .hero {
-            min-height: 100vh;
-
-            padding: 150px 0 100px;
-
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 1.35fr)
-                minmax(320px, .65fr);
-
-            gap: 100px;
-
-            align-items: center;
+            min-height: 100vh; padding: 150px 0 100px; display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
+            gap: 100px; align-items: center;
         }
-
         .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            margin-bottom: 28px;
-
-            color: #8198b3;
-
-            font-size: 10px;
-            font-weight: 700;
-
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            display: inline-flex; align-items: center; gap: 9px;
+            margin-bottom: 28px; color: #8198b3; font-size: 10px;
+            font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
         }
-
         .eyebrow::before {
-            content: "";
-
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-
-            background: var(--green);
-
-            box-shadow:
-                0 0 0 5px rgba(99,255,156,.08);
+            content: ""; width: 7px; height: 7px; border-radius: 50%;
+            background: var(--green); box-shadow: 0 0 0 5px rgba(99,255,156,.08);
         }
-
         .hero h1 {
-            font-family: "Space Grotesk", sans-serif;
-
-            color: #eaf4ff;
-
-            font-size: clamp(65px, 10vw, 135px);
-
-            line-height: .82;
-
-            letter-spacing: -7px;
-
-            font-weight: 700;
+            font-family: "Space Grotesk", sans-serif; color: #eaf4ff;
+            font-size: clamp(65px, 10vw, 135px); line-height: .82;
+            letter-spacing: -7px; font-weight: 700;
         }
-
         .hero h1 span {
-            color: transparent;
-
-            -webkit-text-stroke: 1px #eaf4ff;
-
-            text-stroke: 1px #eaf4ff;
+            color: transparent; -webkit-text-stroke: 1px #eaf4ff; text-stroke: 1px #eaf4ff;
         }
-
         .hero-subtitle {
-            margin-top: 35px;
-
-            color: #eee;
-
-            font-size: clamp(18px, 2vw, 24px);
-
-            font-weight: 500;
-
-            letter-spacing: -.4px;
+            margin-top: 35px; color: #eee; font-size: clamp(18px, 2vw, 24px);
+            font-weight: 500; letter-spacing: -.4px;
         }
-
         .hero-description {
-            max-width: 680px;
-
-            margin-top: 20px;
-
-            color: #607895;
-
-            font-size: 14px;
-
-            line-height: 1.9;
+            max-width: 680px; margin-top: 20px; color: #607895;
+            font-size: 14px; line-height: 1.9;
         }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-
-            gap: 10px;
-
-            margin-top: 32px;
-        }
-
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
         .button {
-            min-height: 46px;
-
-            padding: 0 20px;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 4px;
-
-            font-size: 10px;
-            font-weight: 700;
-
-            letter-spacing: 1px;
-
-            transition:
-                transform .25s ease,
-                background .25s ease,
-                border-color .25s ease;
+            min-height: 46px; padding: 0 20px; display: inline-flex;
+            align-items: center; justify-content: center; border-radius: 4px;
+            font-size: 10px; font-weight: 700; letter-spacing: 1px;
+            transition: transform .25s ease, background .25s ease, border-color .25s ease;
         }
-
-        .button.primary {
-            color: #020617;
-
-            background: #eaf4ff;
-        }
-
-        .button.primary:hover {
-            background: #c8e8ff;
-
-            transform: translateY(-3px);
-        }
-
+        .button.primary { color: #020617; background: #eaf4ff; }
+        .button.primary:hover { background: #c8e8ff; transform: translateY(-3px); }
         .button.secondary {
-            color: #91a7c2;
-
-            border: 1px solid var(--border-strong);
-
+            color: #91a7c2; border: 1px solid var(--border-strong);
             background: rgba(56,189,248,.035);
         }
-
         .button.secondary:hover {
-            color: #eaf4ff;
-
-            border-color: #3d5470;
-
-            background: rgba(56,189,248,.07);
-
-            transform: translateY(-3px);
+            color: #eaf4ff; border-color: #3d5470;
+            background: rgba(56,189,248,.07); transform: translateY(-3px);
         }
-
 
         /* =====================================================
            PROFILE CARD
         ===================================================== */
-
         .profile-card {
-            position: relative;
-
-            padding: 32px;
-
-            border: 1px solid var(--border-strong);
-
+            position: relative; padding: 32px; border: 1px solid var(--border-strong);
             border-radius: 12px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(56,189,248,.075),
-                    rgba(15,23,42,.72)
-                );
-
-            box-shadow:
-                0 40px 100px rgba(0,0,0,.72);
-
-            overflow: hidden;
+            background: linear-gradient(145deg, rgba(56,189,248,.075), rgba(15,23,42,.72));
+            box-shadow: 0 40px 100px rgba(0,0,0,.72); overflow: hidden;
         }
-
         .profile-card::before {
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 1px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    #eaf4ff,
-                    transparent
-                );
-
-            opacity: .5;
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, #eaf4ff, transparent); opacity: .5;
         }
-
         .profile-card::after {
-            content: "";
-
-            position: absolute;
-
-            width: 180px;
-            height: 180px;
-
-            right: -100px;
-            bottom: -100px;
-
-            border-radius: 50%;
-
+            content: ""; position: absolute; width: 180px; height: 180px;
+            right: -100px; bottom: -100px; border-radius: 50%;
             border: 1px solid rgba(56,189,248,.12);
         }
-
         .profile-card-title {
-            margin-bottom: 30px;
-
-            color: #eaf4ff;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 13px;
-            font-weight: 600;
-
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            margin-bottom: 30px; color: #eaf4ff; font-family: "Space Grotesk", sans-serif;
+            font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
         }
-
-        .profile-info {
-            display: grid;
-            gap: 0;
-        }
-
-        .profile-info-item {
-            padding: 20px 0;
-
-            border-bottom: 1px solid var(--border);
-        }
-
-        .profile-info-item:first-child {
-            padding-top: 0;
-        }
-
-        .profile-info-item:last-child {
-            border-bottom: 0;
-            padding-bottom: 0;
-        }
-
+        .profile-info { display: grid; gap: 0; }
+        .profile-info-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+        .profile-info-item:first-child { padding-top: 0; }
+        .profile-info-item:last-child { border-bottom: 0; padding-bottom: 0; }
         .profile-info-label {
-            display: block;
-
-            margin-bottom: 7px;
-
-            color: #3d5470;
-
-            font-size: 9px;
-            font-weight: 700;
-
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            display: block; margin-bottom: 7px; color: #3d5470; font-size: 9px;
+            font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
         }
-
-        .profile-info-value {
-            color: #ddd;
-
-            font-size: 13px;
-
-            line-height: 1.6;
-        }
-
+        .profile-info-value { color: #ddd; font-size: 13px; line-height: 1.6; }
 
         /* =====================================================
            SECTIONS
         ===================================================== */
-
-        .content {
-            padding: 120px 0;
-
-            border-top: 1px solid var(--border);
-        }
-
+        .content { padding: 120px 0; border-top: 1px solid var(--border); }
         .section-header {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-
-            gap: 40px;
-
-            margin-bottom: 60px;
+            display: flex; align-items: flex-end; justify-content: space-between;
+            gap: 40px; margin-bottom: 60px;
         }
-
         .section-number {
-            margin-bottom: 12px;
-
-            color: #506984;
-
-            font-size: 9px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
+            margin-bottom: 12px; color: #506984; font-size: 9px;
+            font-weight: 700; letter-spacing: 2px;
         }
-
         .section-title {
-            color: #eaf4ff;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: clamp(40px, 6vw, 68px);
-
-            line-height: .95;
-
-            letter-spacing: -3px;
-
-            font-weight: 700;
+            color: #eaf4ff; font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(40px, 6vw, 68px); line-height: .95;
+            letter-spacing: -3px; font-weight: 700;
         }
-
-        .section-description {
-            max-width: 400px;
-
-            color: #506984;
-
-            font-size: 12px;
-
-            line-height: 1.8;
-        }
-
+        .section-description { max-width: 400px; color: #506984; font-size: 12px; line-height: 1.8; }
 
         /* =====================================================
            SOBRE
         ===================================================== */
-
-        .about-grid {
-            display: grid;
-
-            grid-template-columns: .7fr 1.3fr;
-
-            gap: 100px;
-        }
-
+        .about-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 100px; }
         .about-heading {
-            color: #eaf4ff;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 40px;
-
-            line-height: 1;
-
-            letter-spacing: -2px;
+            color: #eaf4ff; font-family: "Space Grotesk", sans-serif;
+            font-size: 40px; line-height: 1; letter-spacing: -2px;
         }
-
-        .about-heading span {
-            color: #3d5470;
-        }
-
-        .about-text {
-            color: #91a7c2;
-
-            font-size: 15px;
-
-            line-height: 2;
-        }
-
-        .about-text p + p {
-            margin-top: 22px;
-        }
-
-        .about-text strong {
-            color: #eaf4ff;
-            font-weight: 600;
-        }
-
+        .about-heading span { color: #3d5470; }
+        .about-text { color: #91a7c2; font-size: 15px; line-height: 2; }
+        .about-text p + p { margin-top: 22px; }
+        .about-text strong { color: #eaf4ff; font-weight: 600; }
 
         /* =====================================================
            TRAJETÓRIA
         ===================================================== */
-
-        .story {
-            max-width: 900px;
-        }
-
-        .story p {
-            color: #91a7c2;
-
-            font-size: 15px;
-
-            line-height: 2;
-        }
-
-        .story p + p {
-            margin-top: 24px;
-        }
-
-        .story strong {
-            color: #eaf4ff;
-        }
-
+        .story { max-width: 900px; }
+        .story p { color: #91a7c2; font-size: 15px; line-height: 2; }
+        .story p + p { margin-top: 24px; }
+        .story strong { color: #eaf4ff; }
         .highlight {
-            position: relative;
-
-            margin-top: 45px;
-
-            padding: 25px 28px;
-
-            border: 1px solid var(--border);
-
-            border-radius: 6px;
-
-            background: rgba(56,189,248,.035);
-
-            color: #91a7c2;
-
-            font-size: 13px;
-
-            line-height: 1.9;
+            position: relative; margin-top: 45px; padding: 25px 28px;
+            border: 1px solid var(--border); border-radius: 6px;
+            background: rgba(56,189,248,.035); color: #91a7c2; font-size: 13px; line-height: 1.9;
         }
-
         .highlight::before {
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 2px;
-            height: 100%;
-
-            background: #eaf4ff;
+            content: ""; position: absolute; top: 0; left: 0; width: 2px;
+            height: 100%; background: #eaf4ff;
         }
-
 
         /* =====================================================
            FORMAÇÃO
         ===================================================== */
-
-        .education {
-            display: grid;
-            gap: 10px;
-        }
-
+        .education { display: grid; gap: 10px; }
         .education-item {
-            display: grid;
-
-            grid-template-columns: 170px minmax(0,1fr);
-
-            gap: 35px;
-
-            padding: 27px 30px;
-
-            border: 1px solid var(--border);
-
-            border-radius: 7px;
-
-            background: rgba(15,23,42,.72);
-
-            transition:
-                background .25s ease,
-                border-color .25s ease,
-                transform .25s ease;
+            display: grid; grid-template-columns: 170px minmax(0,1fr); gap: 35px;
+            padding: 27px 30px; border: 1px solid var(--border); border-radius: 7px;
+            background: rgba(15,23,42,.72); transition: background .25s ease, border-color .25s ease, transform .25s ease;
         }
-
         .education-item:hover {
-            border-color: var(--border-strong);
-
-            background: rgba(56,189,248,.05);
-
+            border-color: var(--border-strong); background: rgba(56,189,248,.05);
             transform: translateX(5px);
         }
-
         .education-status {
-            color: #607895;
-
-            font-size: 9px;
-            font-weight: 700;
-
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            color: #607895; font-size: 9px; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
         }
-
-        .education-title {
-            color: #eaf4ff;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .education-place {
-            margin-top: 5px;
-
-            color: #506984;
-
-            font-size: 11px;
-        }
-
+        .education-title { color: #eaf4ff; font-family: "Space Grotesk", sans-serif; font-size: 18px; font-weight: 600; }
+        .education-place { margin-top: 5px; color: #506984; font-size: 11px; }
 
         /* =====================================================
            PROJETOS
         ===================================================== */
-
-        .projects {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 12px;
-        }
-
+        .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
         .project {
-            position: relative;
-
-            min-height: 240px;
-
-            padding: 30px;
-
-            border: 1px solid var(--border);
-
-            border-radius: 8px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #081225,
-                    #030817
-                );
-
-            overflow: hidden;
-
-            transition:
-                transform .3s ease,
-                border-color .3s ease;
+            position: relative; min-height: 240px; padding: 30px;
+            border: 1px solid var(--border); border-radius: 8px;
+            background: linear-gradient(145deg, #081225, #030817);
+            overflow: hidden; transition: transform .3s ease, border-color .3s ease;
         }
-
         .project::after {
-            content: "";
-
-            position: absolute;
-
-            width: 120px;
-            height: 120px;
-
-            right: -60px;
-            bottom: -60px;
-
-            border: 1px solid rgba(56,189,248,.1);
-
-            border-radius: 50%;
+            content: ""; position: absolute; width: 120px; height: 120px;
+            right: -60px; bottom: -60px; border: 1px solid rgba(56,189,248,.1); border-radius: 50%;
         }
-
-        .project:hover {
-            transform: translateY(-5px);
-
-            border-color: rgba(56,189,248,.38);
-        }
-
+        .project:hover { transform: translateY(-5px); border-color: rgba(56,189,248,.38); }
         .project-number {
-            margin-bottom: 55px;
-
-            color: #3d5470;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 11px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
+            margin-bottom: 55px; color: #3d5470; font-family: "Space Grotesk", sans-serif;
+            font-size: 11px; font-weight: 700; letter-spacing: 2px;
         }
-
-        .project h3 {
-            margin-bottom: 10px;
-
-            color: #eaf4ff;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 21px;
-        }
-
-        .project p {
-            max-width: 500px;
-
-            color: #506984;
-
-            font-size: 12px;
-
-            line-height: 1.8;
-        }
-
+        .project h3 { margin-bottom: 10px; color: #eaf4ff; font-family: "Space Grotesk", sans-serif; font-size: 21px; }
+        .project p { max-width: 500px; color: #506984; font-size: 12px; line-height: 1.8; }
 
         /* =====================================================
            COMPETÊNCIAS
         ===================================================== */
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-
-            gap: 8px;
-        }
-
+        .skills { display: flex; flex-wrap: wrap; gap: 8px; }
         .skill {
-            padding: 11px 15px;
-
-            border: 1px solid var(--border);
-
-            border-radius: 4px;
-
-            background: rgba(255,255,255,.015);
-
-            color: #8198b3;
-
-            font-size: 11px;
-            font-weight: 500;
-
-            transition:
-                color .25s ease,
-                background .25s ease,
-                border-color .25s ease;
+            padding: 11px 15px; border: 1px solid var(--border); border-radius: 4px;
+            background: rgba(255,255,255,.015); color: #8198b3; font-size: 11px;
+            font-weight: 500; transition: color .25s ease, background .25s ease, border-color .25s ease;
         }
-
-        .skill:hover {
-            color: #eaf4ff;
-
-            border-color: rgba(56,189,248,.38);
-
-            background: rgba(56,189,248,.07);
-        }
-
+        .skill:hover { color: #eaf4ff; border-color: rgba(56,189,248,.38); background: rgba(56,189,248,.07); }
 
         /* =====================================================
            OBJETIVO
         ===================================================== */
-
         .objective {
-            display: grid;
-
-            grid-template-columns: .8fr 1.2fr;
-
-            gap: 100px;
-
-            padding: 40px;
-
-            border: 1px solid var(--border-strong);
-
-            border-radius: 10px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255,255,255,.045),
-                    rgba(255,255,255,.008)
-                );
+            display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px;
+            padding: 40px; border: 1px solid var(--border-strong); border-radius: 10px;
+            background: linear-gradient(135deg, rgba(255,255,255,.045), rgba(255,255,255,.008));
         }
-
         .objective h3 {
-            color: #eaf4ff;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 30px;
-
-            line-height: 1;
-
-            letter-spacing: -1px;
+            color: #eaf4ff; font-family: "Space Grotesk", sans-serif;
+            font-size: 30px; line-height: 1; letter-spacing: -1px;
         }
-
-        .objective h3 span {
-            color: #3d5470;
-        }
-
-        .objective p {
-            color: #8198b3;
-
-            font-size: 14px;
-
-            line-height: 1.9;
-        }
-
-        .objective p + p {
-            margin-top: 15px;
-        }
-
+        .objective h3 span { color: #3d5470; }
+        .objective p { color: #8198b3; font-size: 14px; line-height: 1.9; }
+        .objective p + p { margin-top: 15px; }
 
         /* =====================================================
            CONTATO
         ===================================================== */
-
-        .contact-grid {
-            display: grid;
-
-            grid-template-columns: .8fr 1.2fr;
-
-            gap: 100px;
-        }
-
+        .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; }
         .contact-title {
-            color: #eaf4ff;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: clamp(48px, 7vw, 85px);
-
-            line-height: .86;
-
-            letter-spacing: -5px;
+            color: #eaf4ff; font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(48px, 7vw, 85px); line-height: .86; letter-spacing: -5px;
         }
-
-        .contact-title span {
-            color: transparent;
-
-            -webkit-text-stroke: 1px #eaf4ff;
-        }
-
-        .contact-list {
-            display: grid;
-        }
-
-        .contact-item {
-            padding: 21px 0;
-
-            border-bottom: 1px solid var(--border);
-        }
-
-        .contact-item:first-child {
-            padding-top: 0;
-        }
-
+        .contact-title span { color: transparent; -webkit-text-stroke: 1px #eaf4ff; }
+        .contact-list { display: grid; }
+        .contact-item { padding: 21px 0; border-bottom: 1px solid var(--border); }
+        .contact-item:first-child { padding-top: 0; }
         .contact-label {
-            display: block;
-
-            margin-bottom: 6px;
-
-            color: #3d5470;
-
-            font-size: 9px;
-            font-weight: 700;
-
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            display: block; margin-bottom: 6px; color: #3d5470; font-size: 9px;
+            font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
         }
-
-        .contact-item a,
-        .contact-item span {
-            color: #ccc;
-
-            font-size: 14px;
-        }
-
-        .contact-item a {
-            transition: color .2s ease;
-        }
-
-        .contact-item a:hover {
-            color: #eaf4ff;
-        }
-
+        .contact-item a, .contact-item span { color: #ccc; font-size: 14px; }
+        .contact-item a { transition: color .2s ease; }
+        .contact-item a:hover { color: #eaf4ff; }
 
         /* =====================================================
            FOOTER
         ===================================================== */
-
         footer {
-            padding: 30px 0;
-
-            border-top: 1px solid var(--border);
-
-            display: flex;
-
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 20px;
-
-            color: #32465f;
-
-            font-size: 9px;
-
-            letter-spacing: .5px;
+            padding: 30px 0; border-top: 1px solid var(--border); display: flex;
+            align-items: center; justify-content: space-between; gap: 20px;
+            color: #32465f; font-size: 9px; letter-spacing: .5px;
         }
-
-        footer strong {
-            color: #7188a3;
-        }
-
+        footer strong { color: #7188a3; }
 
         /* =====================================================
            ANIMAÇÃO
         ===================================================== */
-
         .reveal {
-            opacity: 0;
-
-            transform: translateY(25px);
-
-            transition:
-                opacity .8s ease,
-                transform .8s ease;
+            opacity: 0; transform: translateY(25px);
+            transition: opacity .8s ease, transform .8s ease;
         }
-
-        .reveal.visible {
-            opacity: 1;
-
-            transform: translateY(0);
-        }
-
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
         /* =====================================================
            RESPONSIVO
         ===================================================== */
-
         @media (max-width: 900px) {
-
-            nav {
-                display: none;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-
-                gap: 60px;
-
-                padding-top: 130px;
-            }
-
-            .profile-card {
-                max-width: 600px;
-            }
-
-            .about-grid,
-            .personal-grid,
-            .objective,
-            .contact-grid {
-                grid-template-columns: 1fr;
-
-                gap: 45px;
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header {
-                display: block;
-            }
-
-            .section-description {
-                margin-top: 20px;
-            }
+            nav { display: none; }
+            .hero { grid-template-columns: 1fr; gap: 60px; padding-top: 130px; }
+            .profile-card { max-width: 600px; }
+            .about-grid, .personal-grid, .objective, .contact-grid { grid-template-columns: 1fr; gap: 45px; }
+            .projects { grid-template-columns: 1fr; }
+            .section-header { display: block; }
+            .section-description { margin-top: 20px; }
         }
-
-
         @media (max-width: 600px) {
-
-            main,
-            footer,
-            .header-inner {
-                width: 90%;
-            }
-
-            .hero {
-                padding:
-                    120px 0
-                    70px;
-            }
-
-            .hero h1 {
-                font-size: 62px;
-
-                letter-spacing: -4px;
-            }
-
-            .hero-subtitle {
-                font-size: 18px;
-            }
-
-            .content {
-                padding: 80px 0;
-            }
-
-            .section-title {
-                font-size: 42px;
-            }
-
-            .about-heading,
-            .personal-heading {
-                font-size: 32px;
-            }
-
-            .education-item {
-                grid-template-columns: 1fr;
-
-                gap: 10px;
-
-                padding: 22px;
-            }
-
-            .project {
-                min-height: auto;
-
-                padding: 25px;
-            }
-
-            .project-number {
-                margin-bottom: 40px;
-            }
-
-            .objective {
-                padding: 28px;
-            }
-
-            .contact-title {
-                font-size: 58px;
-            }
-
-            footer {
-                flex-direction: column;
-
-                align-items: flex-start;
-            }
+            main, footer, .header-inner { width: 90%; }
+            .hero { padding: 120px 0 70px; }
+            .hero h1 { font-size: 62px; letter-spacing: -4px; }
+            .hero-subtitle { font-size: 18px; }
+            .content { padding: 80px 0; }
+            .section-title { font-size: 42px; }
+            .about-heading, .personal-heading { font-size: 32px; }
+            .education-item { grid-template-columns: 1fr; gap: 10px; padding: 22px; }
+            .project { min-height: auto; padding: 25px; }
+            .project-number { margin-bottom: 40px; }
+            .objective { padding: 28px; }
+            .contact-title { font-size: 58px; }
+            footer { flex-direction: column; align-items: flex-start; }
         }
-
 
         /* =====================================================
            ACESSIBILIDADE / REDUÇÃO DE MOVIMENTO
         ===================================================== */
-
         @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: .01ms !important; animation-iteration-count: 1 !important;
                 transition-duration: .01ms !important;
             }
-
-            .reveal {
-                opacity: 1;
-                transform: none;
-            }
+            .reveal { opacity: 1; transform: none; }
         }
-
 
         /* =====================================================
            IMPRESSÃO
         ===================================================== */
-
         @media print {
-
-            body {
-                background: #eaf4ff;
-                color: #222;
-            }
-
-            .background-grid,
-            .background-glow,
-            header,
-            .hero-actions,
-            footer {
-                display: none;
-            }
-
-            main {
-                width: 100%;
-            }
-
-            .hero {
-                min-height: auto;
-
-                padding: 30px 0;
-
-                grid-template-columns: 1fr;
-            }
-
-            .profile-card {
-                display: none;
-            }
-
-            .content {
-                padding: 35px 0;
-
-                border-color: #ddd;
-            }
-
-            .hero h1,
-            .section-title,
-            .about-heading,
-            .contact-title,
-            .education-title,
-            .project h3,
-            .objective h3 {
-                color: #081225;
-            }
-
-            .hero h1 span,
-            .contact-title span {
-                color: #081225;
-                -webkit-text-stroke: 0;
-            }
-
-            .hero-description,
-            .about-text,
-            .story p,
-            .project p,
-            .objective p,
-            .section-description,
-            .contact-item a,
-            .contact-item span {
-                color: #32465f;
-            }
-
-            .project,
-            .education-item,
-            .objective {
-                background: #eaf4ff;
-
-                border-color: #ddd;
-
-                break-inside: avoid;
-            }
-
-            .reveal {
-                opacity: 1;
-                transform: none;
-            }
+            body { background: #eaf4ff; color: #222; }
+            .background-grid, .background-glow, header, .hero-actions, footer { display: none; }
+            main { width: 100%; }
+            .hero { min-height: auto; padding: 30px 0; grid-template-columns: 1fr; }
+            .profile-card { display: none; }
+            .content { padding: 35px 0; border-color: #ddd; }
+            .hero h1, .section-title, .about-heading, .contact-title, .education-title, .project h3, .objective h3 { color: #081225; }
+            .hero h1 span, .contact-title span { color: #081225; -webkit-text-stroke: 0; }
+            .hero-description, .about-text, .story p, .project p, .objective p, .section-description, .contact-item a, .contact-item span { color: #32465f; }
+            .project, .education-item, .objective { background: #eaf4ff; border-color: #ddd; break-inside: avoid; }
+            .reveal { opacity: 1; transform: none; }
         }
-
 
         /* MIDNIGHT BLUE — high-tech armored aesthetic */
         :root {
@@ -1316,678 +419,223 @@
         .profile-card::before { background: linear-gradient(90deg, transparent, #38bdf8, transparent); }
         .project:hover, .education-item:hover { border-color: rgba(56,189,248,.42); box-shadow: 0 12px 40px rgba(14,165,233,.08); }
         .section-number, .project-number { color: #38bdf8; }
-
     </style>
+
+    <style id="ironman-typography">
+        :root {
+            --font-display: "Orbitron", sans-serif;
+            --font-tech: "Rajdhani", sans-serif;
+            --font-body: "Inter", sans-serif;
+        }
+        body { font-family: var(--font-body); }
+        .logo, .hero h1, .section-title, .contact-title,
+        .education-title, .project h3, .objective h3,
+        .profile-card-title { font-family: var(--font-display); }
+        .eyebrow, nav a, .button, .section-number,
+        .profile-info-label, .education-status, .project-number,
+        .skill, .contact-label, footer { font-family: var(--font-tech); }
+        .hero h1, .section-title, .contact-title { font-weight: 700; text-transform: uppercase; }
+        .section-number, .project-number, .eyebrow, .profile-info-label, .contact-label { letter-spacing: 2px; }
+        nav a, .button, .skill, .education-status { letter-spacing: 1.2px; }
+    </style>
+
 </head>
-
-
 <body>
 
     <div class="background-grid"></div>
     <div class="background-glow"></div>
 
-
-    <!-- =====================================================
-         HEADER
-    ===================================================== -->
-
     <header>
-
         <div class="header-inner">
-
-            <a href="#" class="logo">
-                OTÁVIO LEITE
-            </a>
-
+            <a href="#" class="logo">OTÁVIO LEITE</a>
+            <!-- Corrigido: Os hrefs agora batem perfeitamente com os IDs das seções -->
             <nav>
+                <a href="#inicio">INÍCIO</a>
                 <a href="#sobre">SOBRE</a>
-                <a href="#pessoal">FORA DA CARREIRA</a>
                 <a href="#experiencia">TRAJETÓRIA</a>
                 <a href="#formacao">FORMAÇÃO</a>
                 <a href="#projetos">PROJETOS</a>
                 <a href="#competencias">COMPETÊNCIAS</a>
+                <a href="#fora-da-carreira">FORA DA CARREIRA</a>
                 <a href="#contato">CONTATO</a>
             </nav>
-
         </div>
-
     </header>
-
-
-    <!-- =====================================================
-         MAIN
-    ===================================================== -->
 
     <main>
 
-
         <!-- =================================================
-             HERO
+             HERO (Adicionado: Estrutura que estava faltando no HTML)
         ================================================= -->
-
-        <section class="hero">
-
-            <div class="reveal">
-
-                <div class="eyebrow">
-                    Disponível para estágio
-                </div>
-
-                <h1>
-                    OTÁVIO<br>
-                    <span>LEITE</span>
-                </h1>
-
-                <p class="hero-subtitle">
-                    Ciência da Computação · Engenharia Elétrica
-                </p>
-
+        <section class="hero reveal" id="inicio">
+            <div>
+                <div class="eyebrow">Portfólio</div>
+                <h1>OTÁVIO <span>LEITE</span></h1>
+                <div class="hero-subtitle">Ciência da Computação & Engenharia Elétrica</div>
                 <p class="hero-description">
-                    Estudante de Ciência da Computação e Engenharia
-                    Elétrica, com formação técnica em Eletrotécnica
-                    e interesse em programação, redes, sistemas
-                    embarcados e Segurança da Informação.
+                    Sou focado em unir hardware e software, explorando desde sistemas embarcados até segurança da informação.
                 </p>
-
                 <div class="hero-actions">
-
-                    <a
-                        href="#contato"
-                        class="button primary"
-                    >
-                        ENTRAR EM CONTATO
-                    </a>
-
-                    <a
-                        href="#projetos"
-                        class="button secondary"
-                    >
-                        VER PROJETOS
-                    </a>
-
+                    <a href="#projetos" class="button primary">VER PROJETOS</a>
+                    <a href="#contato" class="button secondary">ENTRAR EM CONTATO</a>
                 </div>
-
             </div>
 
-
-            <aside class="profile-card reveal">
-
-                <div class="profile-card-title">
-                    Perfil profissional
-                </div>
-
+            <div class="profile-card">
+                <div class="profile-card-title">Perfil Técnico</div>
                 <div class="profile-info">
-
                     <div class="profile-info-item">
-
-                        <span class="profile-info-label">
-                            Área de interesse
-                        </span>
-
-                        <span class="profile-info-value">
-                            Tecnologia e Segurança da Informação
-                        </span>
-
+                        <span class="profile-info-label">Localização</span>
+                        <span class="profile-info-value">Campos dos Goytacazes, RJ</span>
                     </div>
-
-
                     <div class="profile-info-item">
-
-                        <span class="profile-info-label">
-                            Formação
-                        </span>
-
-                        <span class="profile-info-value">
-                            Ciência da Computação · Engenharia Elétrica
-                        </span>
-
+                        <span class="profile-info-label">Pesquisa Acadêmica</span>
+                        <span class="profile-info-value">Bolsista CNPq (NPT - IFF)</span>
                     </div>
-
-
-                    <div class="profile-info-item">
-
-                        <span class="profile-info-label">
-                            Formação técnica
-                        </span>
-
-                        <span class="profile-info-value">
-                            Técnico em Eletrotécnica
-                        </span>
-
-                    </div>
-
-
-                    <div class="profile-info-item">
-
-                        <span class="profile-info-label">
-                            Disponibilidade
-                        </span>
-
-                        <span class="profile-info-value">
-                            Estágio
-                        </span>
-
-                    </div>
-
                 </div>
-
-            </aside>
-
+            </div>
         </section>
 
-
         <!-- =================================================
-             SOBRE
+             SOBRE (Adicionado: Faltava o HTML correspondente à aba 'Sobre')
         ================================================= -->
-
-        <section
-            class="content reveal"
-            id="sobre"
-        >
-
-            <div class="section-header">
-
-                <div>
-
-                    <div class="section-number">
-                        01 · PERFIL
-                    </div>
-
-                    <h2 class="section-title">
-                        SOBRE MIM
-                    </h2>
-
-                </div>
-
-                <p class="section-description">
-                    Perfil multidisciplinar entre computação,
-                    engenharia, eletrônica e segurança.
-                </p>
-
-            </div>
-
-
+        <section class="content reveal" id="sobre">
             <div class="about-grid">
-
                 <div>
-
-                    <h3 class="about-heading">
-                        TECNOLOGIA,<br>
-                        <span>ENGENHARIA E COMPUTAÇÃO.</span>
-                    </h3>
-
+                    <h2 class="about-heading">SOBRE <span>MIM</span></h2>
                 </div>
-
-
                 <div class="about-text">
-
                     <p>
-                        Sou estudante e desenvolvedor de projetos
-                        acadêmicos e pessoais, com interesse na
-                        interseção entre computação, eletrônica
-                        e segurança.
+                        Sou um profissional em formação focado na interseção entre hardware e tecnologia de software. Atualmente, curso <strong>Engenharia Elétrica no Instituto Federal Fluminense (IFF)</strong> e <strong>Ciência da Computação na Estácio de Sá</strong>.
                     </p>
-
                     <p>
-                        Atualmente curso
-                        <strong>Ciência da Computação</strong> e
-                        <strong>Engenharia Elétrica</strong>,
-                        além de possuir formação técnica em
-                        <strong>Eletrotécnica</strong>.
+                        Além dos meus estudos acadêmicos, atuo como pesquisador discente no Núcleo de Pesquisas em Telecomunicações (NPT), desenvolvendo projetos e aprofundando meus conhecimentos práticos.
                     </p>
-
-                    <p>
-                        Minha formação acadêmica é complementada
-                        por estudos autodidatas em programação,
-                        Linux, redes, sistemas embarcados e
-                        Segurança da Informação.
-                    </p>
-
                 </div>
-
             </div>
-
         </section>
-
-
-        <!-- =================================================
-             FORA DA CARREIRA
-        ================================================= -->
-
-        <section class="content reveal" id="pessoal">
-
-            <div class="section-header">
-                <div>
-                    <div class="section-number">
-                        02 · PESSOAL
-                    </div>
-                    <h2 class="section-title">
-                        FORA DA CARREIRA
-                    </h2>
-                </div>
-
-                <p class="section-description">
-                    Além da tecnologia, também há espaço para música,
-                    jogos e boas conexões com as pessoas.
-                </p>
-            </div>
-
-            <div class="personal-grid">
-                <div>
-                    <h3 class="personal-heading">
-                        UM CARA NORMAL,<br>
-                        <span>FORA DO CÓDIGO.</span>
-                    </h3>
-                </div>
-
-                <div class="personal-text">
-                    <p>
-                        Fora da carreira e dos estudos, sou uma pessoa tranquila e sociável.
-                        Procuro me dar bem com todo mundo e acredito que boas relações tornam
-                        qualquer ambiente mais leve e produtivo.
-                    </p>
-
-                    <p>
-                        Gosto de música e de tocar instrumentos de corda, especialmente
-                        <strong>guitarra, ukulele e violão</strong>. Também gosto de jogos
-                        eletrônicos e daquele lado mais nerd de explorar universos, histórias
-                        e desafios nos videogames.
-                    </p>
-
-                    <p>
-                        Quando surge algum problema ou conflito, minha tendência é me afastar
-                        um pouco para analisar a situação com calma e buscar uma solução da
-                        forma mais racional, respeitosa e profissional possível, sem deixar
-                        que o lado pessoal atrapalhe a resolução.
-                    </p>
-
-                    <div class="personal-hobbies">
-                        <span class="personal-hobby">Guitarra</span>
-                        <span class="personal-hobby">Violão</span>
-                        <span class="personal-hobby">Ukulele</span>
-                        <span class="personal-hobby">Videogames</span>
-                        <span class="personal-hobby">Cultura Nerd</span>
-                        <span class="personal-hobby">Música</span>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
 
         <!-- =================================================
              TRAJETÓRIA
         ================================================= -->
-
-        <section
-            class="content reveal"
-            id="experiencia"
-        >
-
+        <section class="content reveal" id="experiencia">
             <div class="section-header">
-
                 <div>
-
-                    <div class="section-number">
-                        03 · TRAJETÓRIA
-                    </div>
-
-                    <h2 class="section-title">
-                        EXPERIÊNCIA
-                    </h2>
-
+                    <div class="section-number">03 · TRAJETÓRIA</div>
+                    <h2 class="section-title">EXPERIÊNCIA</h2>
                 </div>
-
                 <p class="section-description">
-                    Uma trajetória construída a partir da prática,
-                    formação técnica e evolução acadêmica.
+                    Uma trajetória construída a partir da prática, formação técnica e evolução acadêmica.
                 </p>
-
             </div>
-
-
             <div class="story">
-
-                <p>
-                    Meu interesse por tecnologia começou cedo,
-                    principalmente pela curiosidade em
-                    <strong>construir, desmontar e compreender
-                    sistemas</strong>.
-                </p>
-
-                <p>
-                    Aos 12 anos, comecei a desenvolver projetos
-                    utilizando <strong>Raspberry Pi</strong>,
-                    <strong>Arduino</strong> e componentes
-                    eletrônicos, iniciando uma trajetória prática
-                    em hardware e sistemas embarcados.
-                </p>
-
-                <p>
-                    Entre os projetos desenvolvidos esteve um
-                    <strong>fliperama baseado em RetroPie</strong>,
-                    posteriormente apresentado em uma feira
-                    universitária. Também desenvolvi experimentos
-                    envolvendo RFID, leitores, cartões,
-                    microcontroladores e integração entre
-                    hardware e software.
-                </p>
-
-                <p>
-                    Aos 14 anos, ingressei no curso técnico de
-                    <strong>Eletrotécnica no Instituto Federal
-                    Fluminense</strong>, aprovado em primeiro lugar.
-                    Posteriormente, iniciei a graduação em
-                    <strong>Engenharia Elétrica</strong> e,
-                    em 2026, passei a cursar também
-                    <strong>Ciência da Computação</strong>.
-                </p>
-
-                <p>
-                    Atualmente, direciono parte dos meus estudos
-                    para <strong>Embarcados</strong>,
-                    buscando consolidar conhecimentos em redes,
-                    sistemas operacionais, programação e
-                    infraestrutura.
-                </p>
-
-
+                <p>Meu interesse por tecnologia começou cedo, principalmente pela curiosidade em <strong>construir, desmontar e compreender sistemas</strong>.</p>
+                <p>Aos 12 anos, comecei a desenvolver projetos utilizando <strong>Raspberry Pi</strong>, <strong>Arduino</strong> e componentes eletrônicos, iniciando uma trajetória prática em hardware e sistemas embarcados.</p>
+                <p>Entre os projetos desenvolvidos esteve um <strong>fliperama baseado em RetroPie</strong>, posteriormente apresentado em uma feira universitária. Também desenvolvi experimentos envolvendo RFID, leitores, cartões, microcontroladores e integração entre hardware e software.</p>
+                <p>Aos 14 anos, ingressei no curso técnico de <strong>Eletrotécnica no Instituto Federal Fluminense</strong>, aprovado em primeiro lugar. Posteriormente, iniciei a graduação em <strong>Engenharia Elétrica</strong> e, em 2026, passei a cursar também <strong>Ciência da Computação</strong>.</p>
+                <p>Atualmente, direciono parte dos meus estudos para <strong>Embarcados</strong>, buscando consolidar conhecimentos em redes, sistemas operacionais, programação e infraestrutura.</p>
                 <div class="highlight">
-
-                    Objetivo profissional: desenvolver uma base
-                    técnica sólida em computação e segurança,
-                    combinando conhecimentos de programação,
-                    redes, sistemas, eletrônica e engenharia.
-
+                    Objetivo profissional: desenvolver uma base técnica sólida em computação e segurança, combinando conhecimentos de programação, redes, sistemas, eletrônica e engenharia.
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- =================================================
              FORMAÇÃO
         ================================================= -->
-
-        <section
-            class="content reveal"
-            id="formacao"
-        >
-
+        <section class="content reveal" id="formacao">
             <div class="section-header">
-
                 <div>
-
-                    <div class="section-number">
-                        04 · EDUCAÇÃO
-                    </div>
-
-                    <h2 class="section-title">
-                        FORMAÇÃO
-                    </h2>
-
+                    <div class="section-number">04 · EDUCAÇÃO</div>
+                    <h2 class="section-title">FORMAÇÃO</h2>
                 </div>
-
             </div>
-
-
             <div class="education">
-
                 <article class="education-item">
-
-                    <div class="education-status">
-                        Concluído
-                    </div>
-
+                    <div class="education-status">Concluído</div>
                     <div>
-
-                        <div class="education-title">
-                            Técnico em Eletrotécnica
-                        </div>
-
-                        <div class="education-place">
-                            IFF — Campus Campos Centro
-                        </div>
-
+                        <div class="education-title">Técnico em Eletrotécnica</div>
+                        <div class="education-place">IFF — Campus Campos Centro</div>
                     </div>
-
                 </article>
-
-
                 <article class="education-item">
-
-                    <div class="education-status">
-                        2023.2 — Cursando
-                    </div>
-
+                    <div class="education-status">2023.2 — Cursando</div>
                     <div>
-
-                        <div class="education-title">
-                            Engenharia Elétrica
-                        </div>
-
-                        <div class="education-place">
-                            IFF — Campus Campos Centro
-                        </div>
-
+                        <div class="education-title">Engenharia Elétrica</div>
+                        <div class="education-place">IFF — Campus Campos Centro</div>
                     </div>
-
                 </article>
-
-
                 <article class="education-item">
-
-                    <div class="education-status">
-                        2026.1 — Cursando
-                    </div>
-
+                    <div class="education-status">2026.1 — Cursando</div>
                     <div>
-
-                        <div class="education-title">
-                            Ciência da Computação
-                        </div>
-
-                        <div class="education-place">
-                            Estácio de Sá
-                        </div>
-
+                        <div class="education-title">Ciência da Computação</div>
+                        <div class="education-place">Estácio de Sá</div>
                     </div>
-
                 </article>
-
             </div>
-
         </section>
-
 
         <!-- =================================================
              PROJETOS
         ================================================= -->
-
-        <section
-            class="content reveal"
-            id="projetos"
-        >
-
+        <section class="content reveal" id="projetos">
             <div class="section-header">
-
                 <div>
-
-                    <div class="section-number">
-                        05 · PROJETOS
-                    </div>
-
-                    <h2 class="section-title">
-                        PROJETOS
-                    </h2>
-
+                    <div class="section-number">05 · PROJETOS</div>
+                    <h2 class="section-title">PROJETOS</h2>
                 </div>
-
                 <p class="section-description">
-                    Experimentos e projetos acadêmicos que
-                    conectam software, hardware e engenharia.
+                    Experimentos e projetos acadêmicos que conectam software, hardware e engenharia.
                 </p>
-
             </div>
-
-
             <div class="projects">
-
-
                 <article class="project">
-
-                    <div class="project-number">
-                        01
-                    </div>
-
-                    <h3>
-                        Sistemas Embarcados
-                    </h3>
-
-                    <p>
-                        Projetos utilizando Raspberry Pi,
-                        Arduino e diferentes componentes
-                        eletrônicos durante estudos e
-                        experimentações pessoais.
-                    </p>
-
+                    <div class="project-number">01</div>
+                    <h3>Sistemas Embarcados</h3>
+                    <p>Projetos utilizando Raspberry Pi, Arduino e diferentes componentes eletrônicos durante estudos e experimentações pessoais.</p>
                 </article>
-
-
                 <article class="project">
-
-                    <div class="project-number">
-                        02
-                    </div>
-
-                    <h3>
-                        Arcade com RetroPie
-                    </h3>
-
-                    <p>
-                        Desenvolvimento de um fliperama utilizando
-                        Raspberry Pi e RetroPie, posteriormente
-                        apresentado em evento universitário.
-                    </p>
-
+                    <div class="project-number">02</div>
+                    <h3>Arcade com RetroPie</h3>
+                    <p>Desenvolvimento de um fliperama utilizando Raspberry Pi e RetroPie, posteriormente apresentado em evento universitário.</p>
                 </article>
-
-
                 <article class="project">
-
-                    <div class="project-number">
-                        03
-                    </div>
-
-                    <h3>
-                        RFID e Hardware
-                    </h3>
-
-                    <p>
-                        Experimentação com leitores RFID,
-                        cartões, microcontroladores e integração
-                        entre hardware e software.
-                    </p>
-
+                    <div class="project-number">03</div>
+                    <h3>RFID e Hardware</h3>
+                    <p>Experimentação com leitores RFID, cartões, microcontroladores e integração entre hardware e software.</p>
                 </article>
-
-
                 <article class="project">
-
-                    <div class="project-number">
-                        04
-                    </div>
-
-                    <h3>
-                        Projetos Acadêmicos
-                    </h3>
-
-                    <p>
-                        Desenvolvimento e participação em projetos
-                        relacionados às áreas de engenharia,
-                        computação e tecnologia.
-                    </p>
-
+                    <div class="project-number">04</div>
+                    <h3>Projetos Acadêmicos</h3>
+                    <p>Desenvolvimento e participação em projetos relacionados às áreas de engenharia, computação e tecnologia.</p>
                 </article>
-
-
                 <article class="project">
-
-                    <div class="project-number">
-                        05
-                    </div>
-
-                    <h3>
-                        Feira Saber Fazer
-                    </h3>
-
-                    <p>
-                        Participação em projetos da Feira Saber
-                        Fazer entre 2020 e 2025, com continuidade
-                        em atividades e projetos atuais.
-                    </p>
-
+                    <div class="project-number">05</div>
+                    <h3>Feira Saber Fazer</h3>
+                    <p>Participação em projetos da Feira Saber Fazer entre 2020 e 2025, com continuidade em atividades e projetos atuais.</p>
                 </article>
-
-
                 <article class="project">
-
-                    <div class="project-number">
-                        06
-                    </div>
-
-                    <h3>
-                        Apoio Tecnológico
-                    </h3>
-
-                    <p>
-                        Participação em bolsa de apoio tecnológico
-                        e atividades relacionadas a laboratórios
-                        virtuais e telecomunicações em 2026.
-                    </p>
-
+                    <div class="project-number">06</div>
+                    <h3>Apoio Tecnológico</h3>
+                    <p>Participação em bolsa de apoio tecnológico e atividades relacionadas a laboratórios virtuais e telecomunicações em 2026.</p>
                 </article>
-
-
             </div>
-
         </section>
-
 
         <!-- =================================================
              COMPETÊNCIAS
         ================================================= -->
-
-        <section
-            class="content reveal"
-            id="competencias"
-        >
-
+        <section class="content reveal" id="competencias">
             <div class="section-header">
-
                 <div>
-
-                    <div class="section-number">
-                        06 · COMPETÊNCIAS
-                    </div>
-
-                    <h2 class="section-title">
-                        CONHECIMENTOS
-                    </h2>
-
+                    <div class="section-number">06 · COMPETÊNCIAS</div>
+                    <h2 class="section-title">CONHECIMENTOS</h2>
                 </div>
-
                 <p class="section-description">
-                    Tecnologias e áreas técnicas presentes
-                    na formação e nos estudos atuais.
+                    Tecnologias e áreas técnicas presentes na formação e nos estudos atuais.
                 </p>
-
             </div>
-
-
             <div class="skills">
-
                 <span class="skill">Linux</span>
                 <span class="skill">Python</span>
                 <span class="skill">C / C++</span>
@@ -2002,221 +650,117 @@
                 <span class="skill">Eletrotécnica</span>
                 <span class="skill">Engenharia Elétrica</span>
                 <span class="skill">Ciência da Computação</span>
-
             </div>
-
         </section>
-
 
         <!-- =================================================
              OBJETIVO
         ================================================= -->
-
         <section class="content reveal">
-
             <div class="objective">
-
                 <div>
-
-                    <h3>
-                        OBJETIVO<br>
-                        <span>PROFISSIONAL</span>
-                    </h3>
-
+                    <h3>OBJETIVO<br><span>PROFISSIONAL</span></h3>
                 </div>
-
                 <div>
-
                     <p>
-                        Busco uma oportunidade de estágio na área
-                        de tecnologia, especialmente em desenvolvimento,
-                        infraestrutura, redes ou Segurança da Informação.
+                        Busco uma oportunidade de estágio na área de tecnologia, especialmente em desenvolvimento, infraestrutura, redes ou Segurança da Informação.
                     </p>
-
                     <p>
-                        Meu objetivo é aplicar os conhecimentos
-                        adquiridos na graduação e na formação técnica,
-                        enquanto desenvolvo experiência profissional
-                        e aprofundo minha base em computação e segurança.
+                        Meu objetivo é aplicar os conhecimentos adquiridos na graduação e na formação técnica, enquanto desenvolvo experiência profissional e aprofundo minha base em computação e segurança.
                     </p>
-
                 </div>
-
             </div>
-
         </section>
 
+        <!-- =================================================
+             FORA DA CARREIRA (Movido para depois do profissional)
+        ================================================= -->
+        <section class="content reveal" id="fora-da-carreira">
+            <div class="section-header">
+                <div>
+                    <div class="section-number">07 · FORA DA CARREIRA</div>
+                    <h2 class="section-title">ALÉM DA TECNOLOGIA</h2>
+                </div>
+                <p class="section-description">
+                    Um pouco sobre quem eu sou quando não estou estudando ou trabalhando.
+                </p>
+            </div>
+            <div class="story">
+                <p>
+                    Fora da carreira, sou uma pessoa tranquila e me dou bem com diferentes tipos de gente.
+                    Gosto de tocar instrumentos de corda, como <strong>guitarra, violão e ukulele</strong>,
+                    e também de jogar videogames e curtir coisas do universo nerd.
+                </p>
+                <p>
+                    Quando aparece algum problema, prefiro respirar, me afastar um pouco e resolver a situação
+                    da forma mais racional e profissional possível.
+                </p>
+            </div>
+        </section>
 
         <!-- =================================================
              CONTATO
         ================================================= -->
-
-        <section
-            class="content reveal"
-            id="contato"
-        >
-
+        <section class="content reveal" id="contato">
             <div class="section-header">
-
                 <div>
-
-                    <div class="section-number">
-                        07 · CONTATO
-                    </div>
-
-                    <h2 class="section-title">
-                        CONTATO
-                    </h2>
-
+                    <div class="section-number">08 · CONTATO</div>
+                    <h2 class="section-title">CONTATO</h2>
                 </div>
-
             </div>
-
-
             <div class="contact-grid">
-
                 <div>
-
-                    <h2 class="contact-title">
-                        VAMOS<br>
-                        <span>CONVERSAR.</span>
-                    </h2>
-
+                    <h2 class="contact-title">VAMOS<br><span>CONVERSAR.</span></h2>
                 </div>
-
-
                 <div class="contact-list">
-
-
                     <div class="contact-item">
-
-                        <span class="contact-label">
-                            Telefone
-                        </span>
-
-                        <a href="tel:+5522999031808">
-                            (22) 99903-1808
-                        </a>
-
+                        <span class="contact-label">Telefone</span>
+                        <a href="tel:+5522999031808">(22) 99903-1808</a>
                     </div>
-
-
                     <div class="contact-item">
-
-                        <span class="contact-label">
-                            E-mail
-                        </span>
-
-                        <a href="mailto:o.otavio.dias.leite@gmail.com">
-                            o.otavio.dias.leite@gmail.com
-                        </a>
-
+                        <span class="contact-label">E-mail</span>
+                        <a href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com</a>
                     </div>
-
-
                     <div class="contact-item">
-
-                        <span class="contact-label">
-                            LinkedIn
-                        </span>
-
-                        <a
-                            href="https://www.linkedin.com/in/otavio-dias-leite-976027366"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Otávio Dias Leite
-                        </a>
-
+                        <span class="contact-label">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/otavio-dias-leite-976027366" target="_blank" rel="noopener noreferrer">Otávio Dias Leite</a>
                     </div>
-
-
                     <div class="contact-item">
-
-                        <span class="contact-label">
-                            Disponibilidade
-                        </span>
-
-                        <span>
-                            Disponível para estágio
-                        </span>
-
+                        <span class="contact-label">Disponibilidade</span>
+                        <span>Disponível para estágio</span>
                     </div>
-
-
                 </div>
-
             </div>
-
         </section>
 
     </main>
 
-
     <!-- =====================================================
          FOOTER
     ===================================================== -->
-
     <footer>
-
-        <span>
-            <strong>OTÁVIO LEITE</strong>
-        </span>
-
-        <span>
-            COMPUTAÇÃO · ENGENHARIA · SEGURANÇA
-        </span>
-
-        <span>
-            © 2026
-        </span>
-
+        <span><strong>OTÁVIO LEITE</strong></span>
+        <span>COMPUTAÇÃO · ENGENHARIA · SEGURANÇA</span>
+        <span>© 2026</span>
     </footer>
-
 
     <!-- =====================================================
          JAVASCRIPT
     ===================================================== -->
-
     <script>
-
-        const elements =
-            document.querySelectorAll(".reveal");
-
-
-        const observer =
-            new IntersectionObserver(
-
-                (entries) => {
-
-                    entries.forEach((entry) => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add("visible");
-
-                            observer.unobserve(entry.target);
-
-                        }
-
-                    });
-
-                },
-
-                {
-                    threshold: 0.08
+        const elements = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
                 }
-
-            );
-
+            });
+        }, { threshold: 0.08 });
 
         elements.forEach((element) => {
-
             observer.observe(element);
-
         });
-
     </script>
-
 </body>
 </html>
