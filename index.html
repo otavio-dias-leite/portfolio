@@ -35,16 +35,16 @@
         }
 
         body {
-            background: #050505;
-            color: #d6d6d6;
+            background: #030712;
+            color: #c7d7eb;
             font-family: "Inter", sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         body::selection {
-            background: #ffffff;
-            color: #000000;
+            background: #eaf4ff;
+            color: #020617;
         }
 
         a {
@@ -57,23 +57,23 @@
         }
 
         :root {
-            --black: #000000;
-            --bg: #050505;
-            --surface: #0b0b0b;
-            --surface-2: #101010;
-            --surface-3: #151515;
+            --black: #020617;
+            --bg: #030712;
+            --surface: #07101f;
+            --surface-2: #0a1426;
+            --surface-3: #0e1a30;
 
-            --white: #ffffff;
-            --white-soft: #ededed;
+            --white: #eaf4ff;
+            --white-soft: #dcecff;
 
-            --text: #cfcfcf;
-            --muted: #888888;
-            --muted-dark: #555555;
+            --text: #bfd0e5;
+            --muted: #7188a3888;
+            --muted-dark: #3d5470555;
 
-            --border: rgba(255,255,255,.09);
-            --border-strong: rgba(255,255,255,.18);
+            --border: rgba(56,189,248,.13);
+            --border-strong: rgba(56,189,248,.25);
 
-            --green: #63ff9c;
+            --green: #29b6ff;
 
             --container: 1180px;
         }
@@ -88,7 +88,7 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #000;
+            background: #020617;
         }
 
         ::-webkit-scrollbar-thumb {
@@ -97,7 +97,7 @@
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #444;
+            background: #32465f;
         }
 
 
@@ -113,12 +113,12 @@
 
             background-image:
                 linear-gradient(
-                    rgba(255,255,255,.025) 1px,
+                    rgba(56,189,248,.035) 1px,
                     transparent 1px
                 ),
                 linear-gradient(
                     90deg,
-                    rgba(255,255,255,.025) 1px,
+                    rgba(56,189,248,.035) 1px,
                     transparent 1px
                 );
 
@@ -140,7 +140,7 @@
 
             border-radius: 50%;
 
-            background: rgba(255,255,255,.035);
+            background: rgba(56,189,248,.05);
 
             filter: blur(100px);
 
@@ -190,12 +190,12 @@
 
             letter-spacing: 2px;
 
-            color: #fff;
+            color: #eaf4ff;
         }
 
         .logo::after {
             content: ".";
-            color: #777;
+            color: #607895;
         }
 
         nav {
@@ -207,7 +207,7 @@
         nav a {
             position: relative;
 
-            color: #777;
+            color: #607895;
 
             font-size: 10px;
             font-weight: 600;
@@ -228,13 +228,13 @@
             width: 0;
             height: 1px;
 
-            background: #fff;
+            background: #eaf4ff;
 
             transition: width .25s ease;
         }
 
         nav a:hover {
-            color: #fff;
+            color: #eaf4ff;
         }
 
         nav a:hover::after {
@@ -284,7 +284,7 @@
 
             margin-bottom: 28px;
 
-            color: #999;
+            color: #8198b3;
 
             font-size: 10px;
             font-weight: 700;
@@ -310,7 +310,7 @@
         .hero h1 {
             font-family: "Space Grotesk", sans-serif;
 
-            color: #fff;
+            color: #eaf4ff;
 
             font-size: clamp(65px, 10vw, 135px);
 
@@ -324,9 +324,9 @@
         .hero h1 span {
             color: transparent;
 
-            -webkit-text-stroke: 1px #fff;
+            -webkit-text-stroke: 1px #eaf4ff;
 
-            text-stroke: 1px #fff;
+            text-stroke: 1px #eaf4ff;
         }
 
         .hero-subtitle {
@@ -346,7 +346,7 @@
 
             margin-top: 20px;
 
-            color: #777;
+            color: #607895;
 
             font-size: 14px;
 
@@ -385,31 +385,31 @@
         }
 
         .button.primary {
-            color: #000;
+            color: #020617;
 
-            background: #fff;
+            background: #eaf4ff;
         }
 
         .button.primary:hover {
-            background: #d8d8d8;
+            background: #c8e8ff;
 
             transform: translateY(-3px);
         }
 
         .button.secondary {
-            color: #aaa;
+            color: #91a7c2;
 
             border: 1px solid var(--border-strong);
 
-            background: rgba(255,255,255,.02);
+            background: rgba(56,189,248,.035);
         }
 
         .button.secondary:hover {
-            color: #fff;
+            color: #eaf4ff;
 
-            border-color: #555;
+            border-color: #3d5470;
 
-            background: rgba(255,255,255,.05);
+            background: rgba(56,189,248,.07);
 
             transform: translateY(-3px);
         }
@@ -431,12 +431,12 @@
             background:
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,.055),
-                    rgba(255,255,255,.012)
+                    rgba(56,189,248,.075),
+                    rgba(15,23,42,.72)
                 );
 
             box-shadow:
-                0 40px 100px rgba(0,0,0,.55);
+                0 40px 100px rgba(0,0,0,.72);
 
             overflow: hidden;
         }
@@ -456,7 +456,7 @@
                 linear-gradient(
                     90deg,
                     transparent,
-                    #fff,
+                    #eaf4ff,
                     transparent
                 );
 
@@ -476,13 +476,13 @@
 
             border-radius: 50%;
 
-            border: 1px solid rgba(255,255,255,.08);
+            border: 1px solid rgba(56,189,248,.12);
         }
 
         .profile-card-title {
             margin-bottom: 30px;
 
-            color: #fff;
+            color: #eaf4ff;
 
             font-family: "Space Grotesk", sans-serif;
 
@@ -518,7 +518,7 @@
 
             margin-bottom: 7px;
 
-            color: #555;
+            color: #3d5470;
 
             font-size: 9px;
             font-weight: 700;
@@ -559,7 +559,7 @@
         .section-number {
             margin-bottom: 12px;
 
-            color: #666;
+            color: #506984;
 
             font-size: 9px;
             font-weight: 700;
@@ -568,7 +568,7 @@
         }
 
         .section-title {
-            color: #fff;
+            color: #eaf4ff;
 
             font-family: "Space Grotesk", sans-serif;
 
@@ -584,7 +584,7 @@
         .section-description {
             max-width: 400px;
 
-            color: #666;
+            color: #506984;
 
             font-size: 12px;
 
@@ -605,7 +605,7 @@
         }
 
         .about-heading {
-            color: #fff;
+            color: #eaf4ff;
 
             font-family: "Space Grotesk", sans-serif;
 
@@ -617,11 +617,11 @@
         }
 
         .about-heading span {
-            color: #555;
+            color: #3d5470;
         }
 
         .about-text {
-            color: #aaa;
+            color: #91a7c2;
 
             font-size: 15px;
 
@@ -633,7 +633,7 @@
         }
 
         .about-text strong {
-            color: #fff;
+            color: #eaf4ff;
             font-weight: 600;
         }
 
@@ -647,7 +647,7 @@
         }
 
         .story p {
-            color: #aaa;
+            color: #91a7c2;
 
             font-size: 15px;
 
@@ -659,7 +659,7 @@
         }
 
         .story strong {
-            color: #fff;
+            color: #eaf4ff;
         }
 
         .highlight {
@@ -673,9 +673,9 @@
 
             border-radius: 6px;
 
-            background: rgba(255,255,255,.025);
+            background: rgba(56,189,248,.035);
 
-            color: #aaa;
+            color: #91a7c2;
 
             font-size: 13px;
 
@@ -693,7 +693,7 @@
             width: 2px;
             height: 100%;
 
-            background: #fff;
+            background: #eaf4ff;
         }
 
 
@@ -719,7 +719,7 @@
 
             border-radius: 7px;
 
-            background: rgba(255,255,255,.012);
+            background: rgba(15,23,42,.72);
 
             transition:
                 background .25s ease,
@@ -730,13 +730,13 @@
         .education-item:hover {
             border-color: var(--border-strong);
 
-            background: rgba(255,255,255,.035);
+            background: rgba(56,189,248,.05);
 
             transform: translateX(5px);
         }
 
         .education-status {
-            color: #777;
+            color: #607895;
 
             font-size: 9px;
             font-weight: 700;
@@ -746,7 +746,7 @@
         }
 
         .education-title {
-            color: #fff;
+            color: #eaf4ff;
 
             font-family: "Space Grotesk", sans-serif;
 
@@ -757,7 +757,7 @@
         .education-place {
             margin-top: 5px;
 
-            color: #666;
+            color: #506984;
 
             font-size: 11px;
         }
@@ -790,8 +790,8 @@
             background:
                 linear-gradient(
                     145deg,
-                    #111,
-                    #060606
+                    #081225,
+                    #030817
                 );
 
             overflow: hidden;
@@ -812,7 +812,7 @@
             right: -60px;
             bottom: -60px;
 
-            border: 1px solid rgba(255,255,255,.06);
+            border: 1px solid rgba(56,189,248,.1);
 
             border-radius: 50%;
         }
@@ -820,13 +820,13 @@
         .project:hover {
             transform: translateY(-5px);
 
-            border-color: rgba(255,255,255,.25);
+            border-color: rgba(56,189,248,.38);
         }
 
         .project-number {
             margin-bottom: 55px;
 
-            color: #555;
+            color: #3d5470;
 
             font-family: "Space Grotesk", sans-serif;
 
@@ -839,7 +839,7 @@
         .project h3 {
             margin-bottom: 10px;
 
-            color: #fff;
+            color: #eaf4ff;
 
             font-family: "Space Grotesk", sans-serif;
 
@@ -849,7 +849,7 @@
         .project p {
             max-width: 500px;
 
-            color: #666;
+            color: #506984;
 
             font-size: 12px;
 
@@ -877,7 +877,7 @@
 
             background: rgba(255,255,255,.015);
 
-            color: #999;
+            color: #8198b3;
 
             font-size: 11px;
             font-weight: 500;
@@ -889,11 +889,11 @@
         }
 
         .skill:hover {
-            color: #fff;
+            color: #eaf4ff;
 
-            border-color: rgba(255,255,255,.25);
+            border-color: rgba(56,189,248,.38);
 
-            background: rgba(255,255,255,.05);
+            background: rgba(56,189,248,.07);
         }
 
 
@@ -923,7 +923,7 @@
         }
 
         .objective h3 {
-            color: #fff;
+            color: #eaf4ff;
 
             font-family: "Space Grotesk", sans-serif;
 
@@ -935,11 +935,11 @@
         }
 
         .objective h3 span {
-            color: #555;
+            color: #3d5470;
         }
 
         .objective p {
-            color: #999;
+            color: #8198b3;
 
             font-size: 14px;
 
@@ -964,7 +964,7 @@
         }
 
         .contact-title {
-            color: #fff;
+            color: #eaf4ff;
 
             font-family: "Space Grotesk", sans-serif;
 
@@ -978,7 +978,7 @@
         .contact-title span {
             color: transparent;
 
-            -webkit-text-stroke: 1px #fff;
+            -webkit-text-stroke: 1px #eaf4ff;
         }
 
         .contact-list {
@@ -1000,7 +1000,7 @@
 
             margin-bottom: 6px;
 
-            color: #555;
+            color: #3d5470;
 
             font-size: 9px;
             font-weight: 700;
@@ -1021,7 +1021,7 @@
         }
 
         .contact-item a:hover {
-            color: #fff;
+            color: #eaf4ff;
         }
 
 
@@ -1041,7 +1041,7 @@
 
             gap: 20px;
 
-            color: #444;
+            color: #32465f;
 
             font-size: 9px;
 
@@ -1049,7 +1049,7 @@
         }
 
         footer strong {
-            color: #888;
+            color: #7188a3;
         }
 
 
@@ -1097,6 +1097,7 @@
             }
 
             .about-grid,
+            .personal-grid,
             .objective,
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -1150,7 +1151,8 @@
                 font-size: 42px;
             }
 
-            .about-heading {
+            .about-heading,
+            .personal-heading {
                 font-size: 32px;
             }
 
@@ -1220,7 +1222,7 @@
         @media print {
 
             body {
-                background: #fff;
+                background: #eaf4ff;
                 color: #222;
             }
 
@@ -1261,12 +1263,12 @@
             .education-title,
             .project h3,
             .objective h3 {
-                color: #111;
+                color: #081225;
             }
 
             .hero h1 span,
             .contact-title span {
-                color: #111;
+                color: #081225;
                 -webkit-text-stroke: 0;
             }
 
@@ -1278,13 +1280,13 @@
             .section-description,
             .contact-item a,
             .contact-item span {
-                color: #444;
+                color: #32465f;
             }
 
             .project,
             .education-item,
             .objective {
-                background: #fff;
+                background: #eaf4ff;
 
                 border-color: #ddd;
 
@@ -1298,114 +1300,22 @@
         }
 
 
-        /* =====================================================
-           TEMA — NOIR VERMELHO / CINEMATOGRÁFICO
-        ===================================================== */
+        /* MIDNIGHT BLUE — high-tech armored aesthetic */
         :root {
-            --black: #000000;
-            --bg: #050303;
-            --surface: #0c0808;
-            --surface-2: #130909;
-            --surface-3: #1b0b0b;
-            --white: #f2eeee;
-            --white-soft: #ddd6d6;
-            --text: #c9c0c0;
-            --muted: #857777;
-            --muted-dark: #554545;
-            --border: rgba(185, 20, 30, .18);
-            --border-strong: rgba(220, 25, 35, .42);
-            --red: #b3131d;
-            --red-bright: #e01b2d;
+            --blue: #0ea5e9;
+            --cyan: #38bdf8;
+            --blue-glow: rgba(14,165,233,.35);
         }
-
-        body {
-            background:
-                radial-gradient(circle at 85% 10%, rgba(150, 8, 18, .13), transparent 28%),
-                radial-gradient(circle at 12% 75%, rgba(90, 5, 12, .08), transparent 30%),
-                #050303;
-        }
-
-        body::selection { background: var(--red-bright); color: #fff; }
-
-        .background-grid {
-            background-image:
-                linear-gradient(rgba(180, 18, 28, .035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(180, 18, 28, .035) 1px, transparent 1px);
-        }
-        .background-glow {
-            background: rgba(180, 10, 22, .14);
-            filter: blur(120px);
-        }
-        header {
-            background: rgba(4, 2, 2, .84);
-            border-bottom-color: rgba(190, 22, 32, .22);
-        }
-        .logo::after { color: var(--red-bright); }
-        nav a::after { background: var(--red-bright); }
-        .eyebrow { color: #aa9696; }
-        .eyebrow::before {
-            background: var(--red-bright);
-            box-shadow: 0 0 0 5px rgba(224, 27, 45, .10), 0 0 18px rgba(224, 27, 45, .35);
-        }
-        .hero h1 span, .contact-title span {
-            -webkit-text-stroke-color: var(--red-bright);
-            text-stroke-color: var(--red-bright);
-        }
-        .button.primary {
-            color: #fff;
-            background: linear-gradient(135deg, #8f0d16, var(--red-bright));
-            box-shadow: 0 10px 35px rgba(190, 12, 28, .20);
-        }
-        .button.primary:hover { background: linear-gradient(135deg, #b3131d, #f02a3a); }
-        .button.secondary { border-color: rgba(210, 30, 40, .38); }
-        .button.secondary:hover { border-color: var(--red-bright); background: rgba(190, 15, 28, .10); }
-
-        .profile-card, .objective {
-            border-color: rgba(200, 25, 35, .32);
-            background: linear-gradient(145deg, rgba(110, 8, 15, .18), rgba(255,255,255,.008));
-            box-shadow: 0 40px 100px rgba(0,0,0,.72), inset 0 1px 0 rgba(220, 35, 45, .12);
-        }
-        .profile-card::before {
-            background: linear-gradient(90deg, transparent, var(--red-bright), transparent);
-            opacity: .7;
-        }
-        .profile-card::after { border-color: rgba(210, 25, 35, .16); }
-        .section-number, .education-status, .project-number, .contact-label { color: #a92a32; }
-        .content { border-top-color: rgba(190, 20, 30, .16); }
-        .highlight {
-            border-color: rgba(205, 25, 35, .28);
-            background: linear-gradient(90deg, rgba(150, 10, 18, .12), rgba(255,255,255,.012));
-        }
-        .highlight::before { background: var(--red-bright); box-shadow: 0 0 18px rgba(224, 27, 45, .45); }
-        .education-item, .skill {
-            border-color: rgba(190, 20, 30, .16);
-            background: rgba(255,255,255,.01);
-        }
-        .education-item:hover, .skill:hover {
-            border-color: rgba(224, 27, 45, .55);
-            background: rgba(150, 8, 18, .10);
-        }
-        .project {
-            border-color: rgba(190, 20, 30, .18);
-            background: linear-gradient(145deg, #170707, #050303 72%);
-            box-shadow: inset 0 1px 0 rgba(220, 30, 40, .05);
-        }
-        .project::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background: linear-gradient(120deg, transparent 55%, rgba(170, 8, 18, .08));
-        }
-        .project::after { border-color: rgba(210, 25, 35, .14); }
-        .project:hover {
-            border-color: rgba(224, 27, 45, .65);
-            box-shadow: 0 18px 45px rgba(0,0,0,.42), 0 0 35px rgba(160, 8, 18, .08);
-        }
-        .objective { background: linear-gradient(135deg, rgba(120, 8, 16, .18), rgba(255,255,255,.008)); }
-        footer { border-top-color: rgba(190, 20, 30, .18); }
-        ::-webkit-scrollbar-thumb { background: #4b1015; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--red); }
+        body { background: radial-gradient(circle at 78% 8%, rgba(14,165,233,.12), transparent 28%), #030712; }
+        .background-glow { background: rgba(14,165,233,.12); box-shadow: 0 0 180px rgba(14,165,233,.12); }
+        .eyebrow::before { background: var(--cyan); box-shadow: 0 0 0 5px rgba(56,189,248,.09), 0 0 22px rgba(56,189,248,.5); }
+        .button.primary { color: #eaf4ff; background: linear-gradient(135deg, #075985, #0ea5e9); border: 1px solid rgba(125,211,252,.45); box-shadow: 0 0 24px rgba(14,165,233,.18); }
+        .button.primary:hover { background: linear-gradient(135deg, #0369a1, #38bdf8); box-shadow: 0 0 34px rgba(56,189,248,.35); }
+        nav a::after, .highlight::before { background: var(--cyan); box-shadow: 0 0 12px rgba(56,189,248,.5); }
+        .profile-card, .objective { border-color: rgba(56,189,248,.2); box-shadow: 0 40px 100px rgba(0,0,0,.7), inset 0 1px 0 rgba(125,211,252,.08); }
+        .profile-card::before { background: linear-gradient(90deg, transparent, #38bdf8, transparent); }
+        .project:hover, .education-item:hover { border-color: rgba(56,189,248,.42); box-shadow: 0 12px 40px rgba(14,165,233,.08); }
+        .section-number, .project-number { color: #38bdf8; }
 
     </style>
 </head>
@@ -1431,6 +1341,7 @@
 
             <nav>
                 <a href="#sobre">SOBRE</a>
+                <a href="#pessoal">FORA DA CARREIRA</a>
                 <a href="#experiencia">TRAJETÓRIA</a>
                 <a href="#formacao">FORMAÇÃO</a>
                 <a href="#projetos">PROJETOS</a>
@@ -1640,6 +1551,71 @@
 
 
         <!-- =================================================
+             FORA DA CARREIRA
+        ================================================= -->
+
+        <section class="content reveal" id="pessoal">
+
+            <div class="section-header">
+                <div>
+                    <div class="section-number">
+                        02 · PESSOAL
+                    </div>
+                    <h2 class="section-title">
+                        FORA DA CARREIRA
+                    </h2>
+                </div>
+
+                <p class="section-description">
+                    Além da tecnologia, também há espaço para música,
+                    jogos e boas conexões com as pessoas.
+                </p>
+            </div>
+
+            <div class="personal-grid">
+                <div>
+                    <h3 class="personal-heading">
+                        UM CARA NORMAL,<br>
+                        <span>FORA DO CÓDIGO.</span>
+                    </h3>
+                </div>
+
+                <div class="personal-text">
+                    <p>
+                        Fora da carreira e dos estudos, sou uma pessoa tranquila e sociável.
+                        Procuro me dar bem com todo mundo e acredito que boas relações tornam
+                        qualquer ambiente mais leve e produtivo.
+                    </p>
+
+                    <p>
+                        Gosto de música e de tocar instrumentos de corda, especialmente
+                        <strong>guitarra, ukulele e violão</strong>. Também gosto de jogos
+                        eletrônicos e daquele lado mais nerd de explorar universos, histórias
+                        e desafios nos videogames.
+                    </p>
+
+                    <p>
+                        Quando surge algum problema ou conflito, minha tendência é me afastar
+                        um pouco para analisar a situação com calma e buscar uma solução da
+                        forma mais racional, respeitosa e profissional possível, sem deixar
+                        que o lado pessoal atrapalhe a resolução.
+                    </p>
+
+                    <div class="personal-hobbies">
+                        <span class="personal-hobby">Guitarra</span>
+                        <span class="personal-hobby">Violão</span>
+                        <span class="personal-hobby">Ukulele</span>
+                        <span class="personal-hobby">Videogames</span>
+                        <span class="personal-hobby">Cultura Nerd</span>
+                        <span class="personal-hobby">Música</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
              TRAJETÓRIA
         ================================================= -->
 
@@ -1653,7 +1629,7 @@
                 <div>
 
                     <div class="section-number">
-                        02 · TRAJETÓRIA
+                        03 · TRAJETÓRIA
                     </div>
 
                     <h2 class="section-title">
@@ -1744,7 +1720,7 @@
                 <div>
 
                     <div class="section-number">
-                        03 · EDUCAÇÃO
+                        04 · EDUCAÇÃO
                     </div>
 
                     <h2 class="section-title">
@@ -1839,7 +1815,7 @@
                 <div>
 
                     <div class="section-number">
-                        04 · PROJETOS
+                        05 · PROJETOS
                     </div>
 
                     <h2 class="section-title">
@@ -1993,7 +1969,7 @@
                 <div>
 
                     <div class="section-number">
-                        05 · COMPETÊNCIAS
+                        06 · COMPETÊNCIAS
                     </div>
 
                     <h2 class="section-title">
@@ -2085,7 +2061,7 @@
                 <div>
 
                     <div class="section-number">
-                        06 · CONTATO
+                        07 · CONTATO
                     </div>
 
                     <h2 class="section-title">
