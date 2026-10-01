@@ -1,167 +1,640 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Otávio Leite — Engenharia Elétrica, Projetos Elétricos e Desenvolvimento Full Stack.">
   <title>Otávio Leite — Portfólio</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
-    /* Tema: projetos elétricos e plantas técnicas */
-:root {
-  --bg: #07111c;
-  --bg-gradient: radial-gradient(circle at 50% 0%, #102942 0%, #07111c 68%);
-  --panel: rgba(11, 27, 42, 0.88);
-  --panel-hover: rgba(16, 39, 59, 0.96);
-  --line: rgba(75, 184, 220, 0.22);
-  --line-hover: rgba(255, 190, 65, 0.65);
-  --blue: #ffbf43;
-  --blue2: #55d6f2;
-  --text: #eff7fc;
-  --muted: #9bb0bf;
-}
+    :root {
+      --bg: #07111c;
+      --bg-gradient: radial-gradient(ellipse at 50% 0%, #0f2842 0%, #07111c 75%);
+      --panel: rgba(11, 27, 42, 0.75);
+      --panel-border: rgba(85, 214, 242, 0.2);
+      --panel-hover: rgba(16, 39, 59, 0.88);
+      --line: rgba(75, 184, 220, 0.2);
+      --line-hover: rgba(255, 191, 67, 0.7);
+      --amber: #ffbf43;
+      --amber-glow: rgba(255, 191, 67, 0.25);
+      --cyan: #55d6f2;
+      --cyan-glow: rgba(85, 214, 242, 0.2);
+      --text: #eff7fc;
+      --muted: #9bb0bf;
+      --font-heading: 'Orbitron', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'Fira Code', monospace;
+    }
 
-/* Grade sutil, inspirada em plantas e diagramas técnicos */
-body {
-  background-color: var(--bg);
-  background-image:
-    radial-gradient(ellipse at 50% 0%, rgba(21, 67, 96, 0.5), transparent 65%),
-    linear-gradient(rgba(85, 214, 242, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(85, 214, 242, 0.045) 1px, transparent 1px),
-    linear-gradient(rgba(85, 214, 242, 0.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(85, 214, 242, 0.018) 1px, transparent 1px);
-  background-size:
-    auto,
-    40px 40px,
-    40px 40px,
-    8px 8px,
-    8px 8px;
-  background-attachment: fixed;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Cabeçalho com acabamento de painel técnico */
-header {
-  background: rgba(5, 14, 23, 0.94);
-  border-bottom-color: rgba(85, 214, 242, 0.28);
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.brand {
-  color: var(--blue);
-  text-shadow: 0 0 14px rgba(255, 191, 67, 0.28);
-}
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse at 50% -10%, rgba(21, 67, 96, 0.45), transparent 70%),
+        linear-gradient(rgba(85, 214, 242, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(85, 214, 242, 0.04) 1px, transparent 1px),
+        linear-gradient(rgba(85, 214, 242, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(85, 214, 242, 0.015) 1px, transparent 1px);
+      background-size:
+        100% 100%,
+        40px 40px,
+        40px 40px,
+        10px 10px,
+        10px 10px;
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
 
-nav a:hover {
-  color: var(--blue);
-  text-shadow: 0 0 10px rgba(255, 191, 67, 0.35);
-}
+    /* Layout Utility Classes */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+    }
 
-.lang {
-  border-color: var(--line);
-}
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px dashed var(--line);
+      position: relative;
+    }
 
-.lang button.active {
-  background: var(--blue);
-  color: #101820;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 14, 23, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--panel-border);
+      transition: border-color 0.3s ease;
+    }
 
-/* Títulos com destaque de sinalização elétrica */
-h1 span,
-.contact-title span {
-  color: var(--blue);
-  text-shadow: 0 0 24px rgba(255, 191, 67, 0.25);
-}
+    header .container.header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
 
-.eyebrow,
-.index,
-.summary-title,
-.card-number,
-.education-status {
-  color: var(--blue);
-}
+    .brand {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--amber);
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px var(--amber-glow);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-/* Cartões com contorno azul e detalhe amarelo ao passar o mouse */
-.summary,
-.card,
-.education-item {
-  border-color: var(--line);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-}
+    .brand::before {
+      content: "⚡";
+      font-size: 1.1rem;
+    }
 
-.card {
-  position: relative;
-  overflow: hidden;
-}
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 28px;
-  width: 42px;
-  height: 2px;
-  background: var(--blue);
-  opacity: 0.8;
-}
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.25s ease;
+    }
 
-.card:hover,
-.education-item:hover {
-  border-color: var(--line-hover);
-}
+    nav a:hover {
+      color: var(--amber);
+      text-shadow: 0 0 10px var(--amber-glow);
+    }
 
-.card:hover::before {
-  width: 76px;
-  transition: width 0.25s ease;
-}
+    /* Language Switcher */
+    .lang {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      background: rgba(11, 27, 42, 0.6);
+    }
 
-/* Botão principal com aparência de destaque de painel */
-.button.primary {
-  background: linear-gradient(135deg, #ffd16e, #f2a91d);
-  color: #101820;
-  box-shadow: 0 4px 18px rgba(255, 191, 67, 0.2);
-}
+    .lang button {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      padding: 0.35rem 0.65rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
 
-.button.primary:hover {
-  background: linear-gradient(135deg, #ffe09a, #ffc247);
-  box-shadow: 0 6px 22px rgba(255, 191, 67, 0.35);
-}
+    .lang button.active {
+      background: var(--amber);
+      color: #07111c;
+      font-weight: 700;
+    }
 
-.button.secondary:hover {
-  border-color: var(--blue2);
-  color: var(--blue2);
-}
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 2.5rem;
+      align-items: center;
+      padding: 6rem 0 4rem;
+      border-bottom: 1px dashed var(--line);
+    }
 
-/* Habilidades no estilo de etiquetas técnicas */
-.skill {
-  border-color: rgba(85, 214, 242, 0.25);
-  color: var(--blue2);
-}
+    .eyebrow {
+      color: var(--cyan);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-.skill:hover {
-  border-color: var(--blue);
-  background: rgba(255, 191, 67, 0.08);
-  box-shadow: 0 4px 14px rgba(255, 191, 67, 0.12);
-}
+    .eyebrow::before {
+      content: "//";
+      color: var(--amber);
+    }
 
-/* Links e separadores de contato */
-.contact-row {
-  border-bottom-color: var(--line);
-}
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
 
-.contact-row a:hover {
-  color: var(--blue);
-  text-shadow: 0 0 10px rgba(255, 191, 67, 0.28);
-}
+    h1 span {
+      color: var(--amber);
+      text-shadow: 0 0 20px var(--amber-glow);
+    }
 
-section,
-footer {
-  border-color: var(--line);
-}
+    .role {
+      font-family: var(--font-mono);
+      color: var(--cyan);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
 
+    .intro {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.75rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, #ffd16e, #f2a91d);
+      color: #07111c;
+      box-shadow: 0 4px 20px var(--amber-glow);
+      border: 1px solid var(--amber);
+    }
+
+    .button.primary:hover {
+      background: linear-gradient(135deg, #ffe09a, #ffc247);
+      box-shadow: 0 6px 26px rgba(255, 191, 67, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .button.secondary {
+      background: rgba(11, 27, 42, 0.6);
+      color: var(--text);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(8px);
+    }
+
+    .button.secondary:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      box-shadow: 0 4px 18px var(--cyan-glow);
+      transform: translateY(-2px);
+    }
+
+    /* Sidebar Summary Panel */
+    .summary {
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      position: relative;
+    }
+
+    .summary::before {
+      content: "SPECIFICATIONS";
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: var(--bg);
+      padding: 0 8px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--amber);
+      border: 1px solid var(--panel-border);
+      border-radius: 4px;
+    }
+
+    .summary-title {
+      font-family: var(--font-heading);
+      color: var(--amber);
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .summary-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(85, 214, 242, 0.1);
+    }
+
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .summary-row .label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .summary-row .value {
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .index {
+      font-family: var(--font-mono);
+      color: var(--amber);
+      font-size: 1.25rem;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    /* Modern Grids */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid.three-cols {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    /* Cards */
+    .card {
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--panel-border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--cyan);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: var(--line-hover);
+      background: var(--panel-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .card:hover::before {
+      background: var(--amber);
+      box-shadow: 0 0 10px var(--amber-glow);
+    }
+
+    .card-number {
+      font-family: var(--font-mono);
+      color: var(--amber);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      background: rgba(255, 191, 67, 0.1);
+      border-radius: 4px;
+      border: 1px solid rgba(255, 191, 67, 0.2);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    /* About Section Specific Layout */
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .lead {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cyan);
+      line-height: 1.4;
+    }
+
+    .text p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .education {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .education-item {
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .education-item:hover {
+      border-color: var(--cyan);
+      background: var(--panel-hover);
+      transform: translateX(4px);
+    }
+
+    .education-status {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--amber);
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      background: rgba(255, 191, 67, 0.1);
+      border: 1px solid rgba(255, 191, 67, 0.25);
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .education-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .education-place {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Skills Badges */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .skill {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--cyan);
+      border: 1px solid rgba(85, 214, 242, 0.3);
+      background: rgba(11, 27, 42, 0.5);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+      cursor: default;
+    }
+
+    .skill:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+      background: rgba(255, 191, 67, 0.08);
+      box-shadow: 0 4px 14px var(--amber-glow);
+      transform: translateY(-2px);
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+
+    .contact-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      line-height: 1.2;
+    }
+
+    .contact-title span {
+      color: var(--amber);
+      text-shadow: 0 0 20px var(--amber-glow);
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-row:last-child {
+      border-bottom: none;
+    }
+
+    .contact-row .label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .contact-row a, .contact-row span:not(.label) {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.25s ease;
+    }
+
+    .contact-row a:hover {
+      color: var(--amber);
+      text-shadow: 0 0 10px var(--amber-glow);
+    }
+
+    /* Footer */
+    footer {
+      padding: 2.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer strong {
+      color: var(--amber);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 3rem 0;
+      }
+      .two {
+        grid-template-columns: 1fr;
+      }
+      .contact {
+        grid-template-columns: 1fr;
+        padding: 1.75rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header .container.header {
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        gap: 0.75rem;
+      }
+      nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.25rem;
+        gap: 1rem;
+      }
+      nav a {
+        white-space: nowrap;
+        font-size: 0.8rem;
+      }
+      .education-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
     <div class="container header">
       <a class="brand" href="#home">Otávio Leite</a>
@@ -173,7 +646,9 @@ footer {
     </div>
   </header>
 
-  <main id="home">
+  <main id="home" class="container">
+
+    <!-- Hero Section -->
     <section class="hero">
       <div>
         <div class="eyebrow" data-i18n="hero.eyebrow"></div>
@@ -187,78 +662,189 @@ footer {
       </div>
       <aside class="summary">
         <div class="summary-title" data-i18n="summary.title"></div>
-        <div class="summary-row"><span class="label" data-i18n="summary.locationLabel"></span><span class="value" data-i18n="summary.location"></span></div>
-        <div class="summary-row"><span class="label" data-i18n="summary.educationLabel"></span><span class="value" data-i18n="summary.education"></span></div>
-        <div class="summary-row"><span class="label" data-i18n="summary.focusLabel"></span><span class="value" data-i18n="summary.focus"></span></div>
+        <div class="summary-row">
+          <span class="label" data-i18n="summary.locationLabel"></span>
+          <span class="value" data-i18n="summary.location"></span>
+        </div>
+        <div class="summary-row">
+          <span class="label" data-i18n="summary.educationLabel"></span>
+          <span class="value" data-i18n="summary.education"></span>
+        </div>
+        <div class="summary-row">
+          <span class="label" data-i18n="summary.focusLabel"></span>
+          <span class="value" data-i18n="summary.focus"></span>
+        </div>
       </aside>
     </section>
 
+    <!-- About Section -->
     <section id="about">
-      <div class="section-head"><div class="index">01</div><h2 class="section-title" data-i18n="about.title"></h2></div>
+      <div class="section-head">
+        <div class="index">01</div>
+        <h2 class="section-title" data-i18n="about.title"></h2>
+      </div>
       <div class="two">
         <div class="lead" data-i18n="about.lead"></div>
-        <div class="text"><p data-i18n="about.p1"></p><p data-i18n="about.p2"></p></div>
+        <div class="text">
+          <p data-i18n="about.p1"></p>
+          <p data-i18n="about.p2"></p>
+        </div>
       </div>
     </section>
 
+    <!-- Experience Section -->
     <section id="experience">
-      <div class="section-head"><div class="index">02</div><h2 class="section-title" data-i18n="experience.title"></h2></div>
+      <div class="section-head">
+        <div class="index">02</div>
+        <h2 class="section-title" data-i18n="experience.title"></h2>
+      </div>
       <div class="grid three-cols">
-        <article class="card"><div class="card-number">01</div><h3 data-i18n="experience.e1.title"></h3><p data-i18n="experience.e1.text"></p></article>
-        <article class="card"><div class="card-number">02</div><h3 data-i18n="experience.e2.title"></h3><p data-i18n="experience.e2.text"></p></article>
-        <article class="card"><div class="card-number">03</div><h3 data-i18n="experience.e3.title"></h3><p data-i18n="experience.e3.text"></p></article>
+        <article class="card">
+          <div class="card-number">01</div>
+          <h3 data-i18n="experience.e1.title"></h3>
+          <p data-i18n="experience.e1.text"></p>
+        </article>
+        <article class="card">
+          <div class="card-number">02</div>
+          <h3 data-i18n="experience.e2.title"></h3>
+          <p data-i18n="experience.e2.text"></p>
+        </article>
+        <article class="card">
+          <div class="card-number">03</div>
+          <h3 data-i18n="experience.e3.title"></h3>
+          <p data-i18n="experience.e3.text"></p>
+        </article>
       </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
-      <div class="section-head"><div class="index">03</div><h2 class="section-title" data-i18n="projects.title"></h2></div>
+      <div class="section-head">
+        <div class="index">03</div>
+        <h2 class="section-title" data-i18n="projects.title"></h2>
+      </div>
       <div class="grid">
-        <article class="card"><div class="card-number">2026</div><h3 data-i18n="projects.p1.title"></h3><p data-i18n="projects.p1.text"></p></article>
-        <article class="card"><div class="card-number">2025</div><h3 data-i18n="projects.p2.title"></h3><p data-i18n="projects.p2.text"></p></article>
-        <article class="card"><div class="card-number">2024</div><h3 data-i18n="projects.p3.title"></h3><p data-i18n="projects.p3.text"></p></article>
-        <article class="card"><div class="card-number">2022</div><h3 data-i18n="projects.p4.title"></h3><p data-i18n="projects.p4.text"></p></article>
-        <article class="card"><div class="card-number">2022</div><h3 data-i18n="projects.p5.title"></h3><p data-i18n="projects.p5.text"></p></article>
+        <article class="card">
+          <div class="card-number">2026</div>
+          <h3 data-i18n="projects.p1.title"></h3>
+          <p data-i18n="projects.p1.text"></p>
+        </article>
+        <article class="card">
+          <div class="card-number">2025</div>
+          <h3 data-i18n="projects.p2.title"></h3>
+          <p data-i18n="projects.p2.text"></p>
+        </article>
+        <article class="card">
+          <div class="card-number">2024</div>
+          <h3 data-i18n="projects.p3.title"></h3>
+          <p data-i18n="projects.p3.text"></p>
+        </article>
+        <article class="card">
+          <div class="card-number">2022</div>
+          <h3 data-i18n="projects.p4.title"></h3>
+          <p data-i18n="projects.p4.text"></p>
+        </article>
+        <article class="card">
+          <div class="card-number">2022</div>
+          <h3 data-i18n="projects.p5.title"></h3>
+          <p data-i18n="projects.p5.text"></p>
+        </article>
       </div>
     </section>
 
+    <!-- Education Section -->
     <section id="education">
-      <div class="section-head"><div class="index">04</div><h2 class="section-title" data-i18n="education.title"></h2></div>
+      <div class="section-head">
+        <div class="index">04</div>
+        <h2 class="section-title" data-i18n="education.title"></h2>
+      </div>
       <div class="education">
-        <article class="education-item"><div class="education-status" data-i18n="education.e1.status"></div><div><div class="education-title" data-i18n="education.e1.title"></div><div class="education-place">IFF — Campus Campos Centro</div></div></article>
-        <article class="education-item"><div class="education-status" data-i18n="education.e2.status"></div><div><div class="education-title" data-i18n="education.e2.title"></div><div class="education-place">IFF — Campus Campos Centro</div></div></article>
-        <article class="education-item"><div class="education-status" data-i18n="education.e3.status"></div><div><div class="education-title" data-i18n="education.e3.title"></div><div class="education-place">Estácio de Sá</div></div></article>
+        <article class="education-item">
+          <div class="education-status" data-i18n="education.e1.status"></div>
+          <div>
+            <div class="education-title" data-i18n="education.e1.title"></div>
+            <div class="education-place">IFF — Campus Campos Centro</div>
+          </div>
+        </article>
+        <article class="education-item">
+          <div class="education-status" data-i18n="education.e2.status"></div>
+          <div>
+            <div class="education-title" data-i18n="education.e2.title"></div>
+            <div class="education-place">IFF — Campus Campos Centro</div>
+          </div>
+        </article>
+        <article class="education-item">
+          <div class="education-status" data-i18n="education.e3.status"></div>
+          <div>
+            <div class="education-title" data-i18n="education.e3.title"></div>
+            <div class="education-place">Estácio de Sá</div>
+          </div>
+        </article>
       </div>
       <div class="skills" id="skills"></div>
     </section>
 
+    <!-- Personal Section -->
     <section id="personal">
-      <div class="section-head"><div class="index">05</div><h2 class="section-title" data-i18n="personal.title"></h2></div>
+      <div class="section-head">
+        <div class="index">05</div>
+        <h2 class="section-title" data-i18n="personal.title"></h2>
+      </div>
       <div class="grid three-cols">
-        <article class="card"><div class="card-number">01</div><h3 data-i18n="personal.p1.title"></h3><p data-i18n="personal.p1.text"></p></article>
-        <article class="card"><div class="card-number">02</div><h3 data-i18n="personal.p2.title"></h3><p data-i18n="personal.p2.text"></p></article>
-        <article class="card"><div class="card-number">03</div><h3 data-i18n="personal.p3.title"></h3><p data-i18n="personal.p3.text"></p></article>
+        <article class="card">
+          <div class="card-number">01</div>
+          <h3 data-i18n="personal.p1.title"></h3>
+          <p data-i18n="personal.p1.text"></p>
+        </article>
+        <article class="card">
+          <div class="card-number">02</div>
+          <h3 data-i18n="personal.p2.title"></h3>
+          <p data-i18n="personal.p2.text"></p>
+        </article>
+        <article class="card">
+          <div class="card-number">03</div>
+          <h3 data-i18n="personal.p3.title"></h3>
+          <p data-i18n="personal.p3.text"></p>
+        </article>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
-      <div class="section-head"><div class="index">06</div><h2 class="section-title" data-i18n="contact.title"></h2></div>
+      <div class="section-head">
+        <div class="index">06</div>
+        <h2 class="section-title" data-i18n="contact.title"></h2>
+      </div>
       <div class="contact">
         <div class="contact-title" data-i18n="contact.headline"></div>
         <div>
-          <div class="contact-row"><span class="label" data-i18n="contact.phoneLabel"></span><a href="tel:+5522999031808">(22) 99903-1808</a></div>
-          <div class="contact-row"><span class="label">Email</span><a href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com</a></div>
-          <div class="contact-row"><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/otavio-dias-leite-976027366" target="_blank" rel="noopener noreferrer">Otávio Dias Leite</a></div>
-          <div class="contact-row"><span class="label" data-i18n="contact.availabilityLabel"></span><span data-i18n="contact.availability"></span></div>
+          <div class="contact-row">
+            <span class="label" data-i18n="contact.phoneLabel"></span>
+            <a href="tel:+5522999031808">(22) 99903-1808</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">Email</span>
+            <a href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/otavio-dias-leite-976027366" target="_blank" rel="noopener noreferrer">Otávio Dias Leite</a>
+          </div>
+          <div class="contact-row">
+            <span class="label" data-i18n="contact.availabilityLabel"></span>
+            <span data-i18n="contact.availability"></span>
+          </div>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer>
-    <span><strong>Otávio Leite</strong></span>
-    <span data-i18n="footer.focus"></span>
-    <span>2026</span>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <span><strong>Otávio Leite</strong></span>
+      <span data-i18n="footer.focus"></span>
+      <span>2026</span>
+    </footer>
+  </main>
 
   <script>
     const t = {
