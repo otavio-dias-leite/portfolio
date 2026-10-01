@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Otávio Leite — Electrical Engineering, Electrical Projects and Full Stack Development portfolio.">
-  <title>Otávio Leite — Portfolio</title>
+  <meta name="description" content="Otávio Leite — Engenharia Elétrica, Projetos Elétricos e Desenvolvimento Full Stack.">
+  <title>Otávio Leite — Portfólio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
@@ -13,101 +13,105 @@
       --bg: #050b14;
       --bg-gradient: radial-gradient(circle at top center, #0d213a 0%, #050b14 70%);
       --panel: rgba(13, 29, 45, 0.75);
-      --panel-hover: rgba(18, 39, 61, 0.85);
+      --panel-hover: rgba(18, 39, 61, 0.9);
       --line: rgba(77, 174, 232, 0.18);
-      --line-hover: rgba(77, 174, 232, 0.4);
+      --line-hover: rgba(77, 174, 232, 0.45);
       --blue: #4daee8;
       --blue2: #8dcfff;
       --text: #f0f6fc;
       --muted: #8aa1b3;
       --max: 1100px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; background: var(--bg); }
     body { font-family: "Inter", sans-serif; background: var(--bg-gradient); color: var(--text); line-height: 1.7; min-height: 100vh; }
     a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
-    .container { width: min(var(--max), 90%); margin: auto; }
     
+    .container { width: min(var(--max), 90%); margin: auto; }
+
     header { position: sticky; top: 0; z-index: 50; background: rgba(5, 11, 20, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
     .header { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
     .brand { font-family: "Orbitron", sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; color: var(--blue2); text-shadow: 0 0 15px rgba(141, 207, 255, 0.3); }
-    
+
     nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
     nav a, .lang button { font-family: "Orbitron", sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-    nav a { color: var(--muted); }
+    nav a { color: var(--muted); position: relative; padding: 4px 0; }
     nav a:hover { color: var(--blue2); text-shadow: 0 0 8px rgba(77,174,232,0.5); }
-    
-    .lang { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: rgba(0,0,0,0.2); }
-    .lang button { border: 0; background: transparent; color: var(--muted); padding: 7px 11px; cursor: pointer; transition: all 0.2s; }
+
+    .lang { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: rgba(0,0,0,0.3); }
+    .lang button { border: 0; background: transparent; color: var(--muted); padding: 7px 11px; cursor: pointer; transition: all 0.2s ease; }
     .lang button.active { background: var(--blue); color: var(--bg); font-weight: 700; }
-    
+    .lang button:hover:not(.active) { color: var(--blue2); background: rgba(77, 174, 232, 0.1); }
+
     main { width: min(var(--max), 90%); margin: auto; }
     section { padding: 90px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 84px; }
-    
+
     .hero { min-height: calc(100vh - 72px); display: grid; grid-template-columns: 1.25fr .75fr; gap: 50px; align-items: center; }
     .eyebrow, .index { font-family: "Orbitron", sans-serif; color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
     .eyebrow { margin-bottom: 18px; }
-    
+
     h1 { font-family: "Orbitron", sans-serif; font-size: clamp(48px, 7vw, 84px); line-height: 1; letter-spacing: -2px; text-transform: uppercase; }
-    h1 span { display: block; color: var(--blue2); text-shadow: 0 0 30px rgba(77, 174, 232, 0.3); }
-    
+    h1 span { display: block; color: var(--blue2); text-shadow: 0 0 30px rgba(77, 174, 232, 0.35); }
+
     .role { margin-top: 22px; font-family: "Orbitron", sans-serif; font-size: 13px; font-weight: 600; line-height: 1.6; color: var(--blue2); letter-spacing: 0.5px; }
     .intro { max-width: 650px; margin-top: 15px; color: var(--muted); font-size: 14px; line-height: 1.8; }
-    
+
     .actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border: 1px solid var(--line); font-family: "Orbitron", sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; border-radius: 8px; transition: all 0.25s ease; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border: 1px solid var(--line); font-family: "Orbitron", sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; border-radius: 8px; transition: all 0.25s ease; cursor: pointer; }
     .button.primary { background: linear-gradient(135deg, var(--blue), #348bc4); border-color: transparent; color: var(--bg); box-shadow: 0 4px 15px rgba(77,174,232,0.3); }
     .button.primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(77,174,232,0.5); background: linear-gradient(135deg, var(--blue2), var(--blue)); }
     .button.secondary { background: rgba(13, 29, 45, 0.5); }
-    .button.secondary:hover { border-color: var(--blue); color: var(--blue2); background: rgba(77, 174, 232, 0.05); }
-    
+    .button.secondary:hover { border-color: var(--blue); color: var(--blue2); background: rgba(77, 174, 232, 0.08); transform: translateY(-2px); }
+
     .summary { padding: 28px; border: 1px solid var(--line); background: var(--panel); backdrop-filter: blur(10px); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
     .summary-title { margin-bottom: 18px; font-family: "Orbitron", sans-serif; color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
     .summary-row { padding: 14px 0; border-top: 1px solid var(--line); }
     .summary-row:first-of-type { border-top: 0; padding-top: 0; }
     .label { display: block; margin-bottom: 4px; font-family: "Orbitron", sans-serif; color: var(--muted); font-size: 8px; letter-spacing: 1.2px; text-transform: uppercase; }
     .value { font-size: 13px; line-height: 1.6; color: var(--text); font-weight: 500; }
-    
+
     .section-head { margin-bottom: 40px; }
     .section-title { margin-top: 8px; font-family: "Orbitron", sans-serif; font-size: clamp(28px, 4vw, 46px); line-height: 1.1; letter-spacing: -1px; text-transform: uppercase; }
-    
+
     .two { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: start; }
     .lead { font-family: "Orbitron", sans-serif; color: var(--blue2); font-size: 20px; font-weight: 600; line-height: 1.5; }
     .text { color: var(--muted); font-size: 14px; line-height: 1.9; }
     .text p + p { margin-top: 20px; }
-    
+
     .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .card { padding: 28px; border: 1px solid var(--line); background: var(--panel); backdrop-filter: blur(10px); border-radius: 12px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .grid.three-cols { grid-template-columns: repeat(3, 1fr); }
+    .card { padding: 28px; border: 1px solid var(--line); background: var(--panel); backdrop-filter: blur(10px); border-radius: 12px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; }
     .card:hover { border-color: var(--line-hover); transform: translateY(-4px); background: var(--panel-hover); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
     .card-number { margin-bottom: 20px; font-family: "Orbitron", sans-serif; color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
     .card h3 { margin-bottom: 10px; font-family: "Orbitron", sans-serif; font-size: 15px; line-height: 1.4; color: var(--text); }
     .card p { color: var(--muted); font-size: 13px; line-height: 1.8; }
-    
+
     .education { display: grid; gap: 12px; }
-    .education-item { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 22px 26px; border: 1px solid var(--line); background: var(--panel); border-radius: 12px; align-items: center; transition: all 0.2s; }
+    .education-item { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 22px 26px; border: 1px solid var(--line); background: var(--panel); border-radius: 12px; align-items: center; transition: all 0.2s ease; }
     .education-item:hover { border-color: var(--line-hover); background: var(--panel-hover); }
     .education-status { font-family: "Orbitron", sans-serif; color: var(--blue); font-size: 8px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
     .education-title { font-family: "Orbitron", sans-serif; font-size: 13px; font-weight: 600; color: var(--text); }
     .education-place { margin-top: 4px; color: var(--muted); font-size: 12px; }
-    
-    .skills { display: flex; flex-wrap: gap; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-    .skill { padding: 10px 16px; border: 1px solid var(--line); background: var(--panel); color: var(--blue2); font-family: "Orbitron", sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1px; border-radius: 8px; transition: all 0.2s; }
-    .skill:hover { border-color: var(--blue); background: rgba(77,174,232,0.1); transform: translateY(-2px); }
-    
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .skill { padding: 10px 16px; border: 1px solid var(--line); background: var(--panel); color: var(--blue2); font-family: "Orbitron", sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1px; border-radius: 8px; transition: all 0.2s ease; }
+    .skill:hover { border-color: var(--blue); background: rgba(77,174,232,0.12); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(77,174,232,0.15); }
+
     .contact { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: center; }
     .contact-title { font-family: "Orbitron", sans-serif; font-size: clamp(36px, 5vw, 60px); line-height: 1.1; letter-spacing: -1.5px; text-transform: uppercase; }
     .contact-title span { color: var(--blue2); text-shadow: 0 0 25px rgba(77,174,232,0.3); }
     .contact-row { padding: 16px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; }
     .contact-row a, .contact-row > span:last-child { font-size: 14px; font-weight: 500; color: var(--text); }
     .contact-row a:hover { color: var(--blue2); text-shadow: 0 0 10px rgba(77,174,232,0.4); }
-    
+
     footer { width: min(var(--max), 90%); margin: auto; padding: 30px 0 40px; display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-family: "Orbitron", sans-serif; font-size: 8px; letter-spacing: 1px; text-transform: uppercase; border-top: 1px solid var(--line); }
     footer strong { color: var(--blue2); }
-    
+
     @media(max-width: 900px) {
       nav { display: none; }
       .hero, .two, .contact { grid-template-columns: 1fr; gap: 40px; }
-      .grid { grid-template-columns: 1fr; }
+      .grid, .grid.three-cols { grid-template-columns: 1fr; }
     }
     @media(max-width: 620px) {
       section { padding: 60px 0; }
@@ -121,9 +125,9 @@
   <header>
     <div class="container header">
       <a class="brand" href="#home">Otávio Leite</a>
-      <nav id="nav"></nav>
-      <div class="lang" aria-label="Language">
-        <button type="button" data-lang="en" class="active">EN</button>
+      <nav id="nav" aria-label="Navegação principal"></nav>
+      <div class="lang" aria-label="Seleção de idioma / Language selector">
+        <button type="button" data-lang="en">EN</button>
         <button type="button" data-lang="pt">PT-BR</button>
       </div>
     </div>
@@ -159,7 +163,7 @@
 
     <section id="experience">
       <div class="section-head"><div class="index">02</div><h2 class="section-title" data-i18n="experience.title"></h2></div>
-      <div class="grid">
+      <div class="grid three-cols">
         <article class="card"><div class="card-number">01</div><h3 data-i18n="experience.e1.title"></h3><p data-i18n="experience.e1.text"></p></article>
         <article class="card"><div class="card-number">02</div><h3 data-i18n="experience.e2.title"></h3><p data-i18n="experience.e2.text"></p></article>
         <article class="card"><div class="card-number">03</div><h3 data-i18n="experience.e3.title"></h3><p data-i18n="experience.e3.text"></p></article>
@@ -180,8 +184,8 @@
     <section id="education">
       <div class="section-head"><div class="index">04</div><h2 class="section-title" data-i18n="education.title"></h2></div>
       <div class="education">
-        <article class="education-item"><div class="education-status" data-i18n="education.e1.status"></div><div><div class="education-title" data-i18n="education.e1.title"></div><div class="education-place">IFF — Campos Centro Campus</div></div></article>
-        <article class="education-item"><div class="education-status" data-i18n="education.e2.status"></div><div><div class="education-title" data-i18n="education.e2.title"></div><div class="education-place">IFF — Campos Centro Campus</div></div></article>
+        <article class="education-item"><div class="education-status" data-i18n="education.e1.status"></div><div><div class="education-title" data-i18n="education.e1.title"></div><div class="education-place">IFF — Campus Campos Centro</div></div></article>
+        <article class="education-item"><div class="education-status" data-i18n="education.e2.status"></div><div><div class="education-title" data-i18n="education.e2.title"></div><div class="education-place">IFF — Campus Campos Centro</div></div></article>
         <article class="education-item"><div class="education-status" data-i18n="education.e3.status"></div><div><div class="education-title" data-i18n="education.e3.title"></div><div class="education-place">Estácio de Sá</div></div></article>
       </div>
       <div class="skills" id="skills"></div>
@@ -189,7 +193,7 @@
 
     <section id="personal">
       <div class="section-head"><div class="index">05</div><h2 class="section-title" data-i18n="personal.title"></h2></div>
-      <div class="grid">
+      <div class="grid three-cols">
         <article class="card"><div class="card-number">01</div><h3 data-i18n="personal.p1.title"></h3><p data-i18n="personal.p1.text"></p></article>
         <article class="card"><div class="card-number">02</div><h3 data-i18n="personal.p2.title"></h3><p data-i18n="personal.p2.text"></p></article>
         <article class="card"><div class="card-number">03</div><h3 data-i18n="personal.p3.title"></h3><p data-i18n="personal.p3.text"></p></article>
@@ -210,7 +214,11 @@
     </section>
   </main>
 
-  <footer><span><strong>Otávio Leite</strong></span><span data-i18n="footer.focus"></span><span>2026</span></footer>
+  <footer>
+    <span><strong>Otávio Leite</strong></span>
+    <span data-i18n="footer.focus"></span>
+    <span>2026</span>
+  </footer>
 
   <script>
     const t = {
@@ -258,7 +266,7 @@
           title:"Outside Work",
           p1:{title:"Focused, Objective and Calm",text:"I am a focused, objective and calm person. I prefer clear thinking and practical decisions."},
           p2:{title:"Music Production",text:"I enjoy music production and exploring creative ideas with sound."},
-          p3:{title:"Game Creation",text:"I also enjoy creating games and turning ideas into interactive projects."}
+          p3:{title:"Hardware & Embedded Systems",text:"I enjoy experimenting with single-board computers, microcontrollers, and hands-on tech setups."}
         },
         contact: { title:"Contact", headline:'Let\'s <span>Talk.</span>', phoneLabel:"Phone", availabilityLabel:"Availability", availability:"Available for internship opportunities" },
         footer:{focus:"Electrical Engineering · Electrical Projects · Full Stack Development"}
@@ -307,7 +315,7 @@
           title:"Fora da Carreira",
           p1:{title:"Focado, Objetivo e Tranquilo",text:"Sou uma pessoa focada, objetiva e tranquila. Prefiro pensar com clareza e tomar decisões práticas."},
           p2:{title:"Produção Musical",text:"Gosto de produção musical e de explorar ideias criativas com som."},
-          p3:{title:"Criação de Jogos",text:"Também gosto de criar jogos e transformar ideias em projetos interativos."}
+          p3:{title:"Hardware e Embarcados",text:"Gosto de explorar computadores de placa única, microcontroladores e montar projetos práticos de tecnologia."}
         },
         contact: { title:"Contato", headline:'Vamos <span>Conversar.</span>', phoneLabel:"Telefone", availabilityLabel:"Disponibilidade", availability:"Disponível para oportunidades de estágio" },
         footer:{focus:"Engenharia Elétrica · Projetos Elétricos · Desenvolvimento Full Stack"}
@@ -319,11 +327,17 @@
     const nodes = document.querySelectorAll("[data-i18n]");
     const buttons = document.querySelectorAll("[data-lang]");
 
-    function get(obj,path){ return path.split(".").reduce((v,k)=>v[k],obj); }
+    function get(obj, path) { 
+      return path.split(".").reduce((v, k) => (v && v[k] !== undefined) ? v[k] : "", obj); 
+    }
 
-    function render(lang){
-      const x = t[lang];
-      nodes.forEach(n => n.innerHTML = get(x,n.dataset.i18n));
+    function render(lang) {
+      const x = t[lang] || t.pt;
+      nodes.forEach(n => {
+        const val = get(x, n.dataset.i18n);
+        if (val) n.innerHTML = val;
+      });
+      
       nav.innerHTML = `
         <a href="#about">${x.nav.about}</a>
         <a href="#experience">${x.nav.experience}</a>
@@ -331,14 +345,19 @@
         <a href="#education">${x.nav.education}</a>
         <a href="#personal">${x.nav.personal}</a>
         <a href="#contact">${x.nav.contact}</a>`;
-      skills.innerHTML = x.skills.map(s=>`<span class="skill">${s}</span>`).join("");
-      buttons.forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+        
+      skills.innerHTML = x.skills.map(s => `<span class="skill">${s}</span>`).join("");
+      buttons.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+      
       document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
       document.title = lang === "pt" ? "Otávio Leite — Portfólio" : "Otávio Leite — Portfolio";
+      localStorage.setItem("preferred_lang", lang);
     }
 
-    buttons.forEach(b=>b.addEventListener("click",()=>render(b.dataset.lang)));
-    render("en");
+    buttons.forEach(b => b.addEventListener("click", () => render(b.dataset.lang)));
+
+    const savedLang = localStorage.getItem("preferred_lang") || "pt";
+    render(savedLang);
   </script>
 </body>
 </html>
