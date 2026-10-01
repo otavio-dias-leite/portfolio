@@ -9,116 +9,156 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #050b14;
-      --bg-gradient: radial-gradient(circle at top center, #0d213a 0%, #050b14 70%);
-      --panel: rgba(13, 29, 45, 0.75);
-      --panel-hover: rgba(18, 39, 61, 0.9);
-      --line: rgba(77, 174, 232, 0.18);
-      --line-hover: rgba(77, 174, 232, 0.45);
-      --blue: #4daee8;
-      --blue2: #8dcfff;
-      --text: #f0f6fc;
-      --muted: #8aa1b3;
-      --max: 1100px;
-    }
+    /* Tema: projetos elétricos e plantas técnicas */
+:root {
+  --bg: #07111c;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #102942 0%, #07111c 68%);
+  --panel: rgba(11, 27, 42, 0.88);
+  --panel-hover: rgba(16, 39, 59, 0.96);
+  --line: rgba(75, 184, 220, 0.22);
+  --line-hover: rgba(255, 190, 65, 0.65);
+  --blue: #ffbf43;
+  --blue2: #55d6f2;
+  --text: #eff7fc;
+  --muted: #9bb0bf;
+}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; background: var(--bg); }
-    body { font-family: "Inter", sans-serif; background: var(--bg-gradient); color: var(--text); line-height: 1.7; min-height: 100vh; }
-    a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
-    
-    .container { width: min(var(--max), 90%); margin: auto; }
+/* Grade sutil, inspirada em plantas e diagramas técnicos */
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(21, 67, 96, 0.5), transparent 65%),
+    linear-gradient(rgba(85, 214, 242, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(85, 214, 242, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(85, 214, 242, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(85, 214, 242, 0.018) 1px, transparent 1px);
+  background-size:
+    auto,
+    40px 40px,
+    40px 40px,
+    8px 8px,
+    8px 8px;
+  background-attachment: fixed;
+}
 
-    header { position: sticky; top: 0; z-index: 50; background: rgba(5, 11, 20, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-    .header { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .brand { font-family: "Orbitron", sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; color: var(--blue2); text-shadow: 0 0 15px rgba(141, 207, 255, 0.3); }
+/* Cabeçalho com acabamento de painel técnico */
+header {
+  background: rgba(5, 14, 23, 0.94);
+  border-bottom-color: rgba(85, 214, 242, 0.28);
+}
 
-    nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
-    nav a, .lang button { font-family: "Orbitron", sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-    nav a { color: var(--muted); position: relative; padding: 4px 0; }
-    nav a:hover { color: var(--blue2); text-shadow: 0 0 8px rgba(77,174,232,0.5); }
+.brand {
+  color: var(--blue);
+  text-shadow: 0 0 14px rgba(255, 191, 67, 0.28);
+}
 
-    .lang { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: rgba(0,0,0,0.3); }
-    .lang button { border: 0; background: transparent; color: var(--muted); padding: 7px 11px; cursor: pointer; transition: all 0.2s ease; }
-    .lang button.active { background: var(--blue); color: var(--bg); font-weight: 700; }
-    .lang button:hover:not(.active) { color: var(--blue2); background: rgba(77, 174, 232, 0.1); }
+nav a:hover {
+  color: var(--blue);
+  text-shadow: 0 0 10px rgba(255, 191, 67, 0.35);
+}
 
-    main { width: min(var(--max), 90%); margin: auto; }
-    section { padding: 90px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 84px; }
+.lang {
+  border-color: var(--line);
+}
 
-    .hero { min-height: calc(100vh - 72px); display: grid; grid-template-columns: 1.25fr .75fr; gap: 50px; align-items: center; }
-    .eyebrow, .index { font-family: "Orbitron", sans-serif; color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
-    .eyebrow { margin-bottom: 18px; }
+.lang button.active {
+  background: var(--blue);
+  color: #101820;
+}
 
-    h1 { font-family: "Orbitron", sans-serif; font-size: clamp(48px, 7vw, 84px); line-height: 1; letter-spacing: -2px; text-transform: uppercase; }
-    h1 span { display: block; color: var(--blue2); text-shadow: 0 0 30px rgba(77, 174, 232, 0.35); }
+/* Títulos com destaque de sinalização elétrica */
+h1 span,
+.contact-title span {
+  color: var(--blue);
+  text-shadow: 0 0 24px rgba(255, 191, 67, 0.25);
+}
 
-    .role { margin-top: 22px; font-family: "Orbitron", sans-serif; font-size: 13px; font-weight: 600; line-height: 1.6; color: var(--blue2); letter-spacing: 0.5px; }
-    .intro { max-width: 650px; margin-top: 15px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.eyebrow,
+.index,
+.summary-title,
+.card-number,
+.education-status {
+  color: var(--blue);
+}
 
-    .actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border: 1px solid var(--line); font-family: "Orbitron", sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; border-radius: 8px; transition: all 0.25s ease; cursor: pointer; }
-    .button.primary { background: linear-gradient(135deg, var(--blue), #348bc4); border-color: transparent; color: var(--bg); box-shadow: 0 4px 15px rgba(77,174,232,0.3); }
-    .button.primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(77,174,232,0.5); background: linear-gradient(135deg, var(--blue2), var(--blue)); }
-    .button.secondary { background: rgba(13, 29, 45, 0.5); }
-    .button.secondary:hover { border-color: var(--blue); color: var(--blue2); background: rgba(77, 174, 232, 0.08); transform: translateY(-2px); }
+/* Cartões com contorno azul e detalhe amarelo ao passar o mouse */
+.summary,
+.card,
+.education-item {
+  border-color: var(--line);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
 
-    .summary { padding: 28px; border: 1px solid var(--line); background: var(--panel); backdrop-filter: blur(10px); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .summary-title { margin-bottom: 18px; font-family: "Orbitron", sans-serif; color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
-    .summary-row { padding: 14px 0; border-top: 1px solid var(--line); }
-    .summary-row:first-of-type { border-top: 0; padding-top: 0; }
-    .label { display: block; margin-bottom: 4px; font-family: "Orbitron", sans-serif; color: var(--muted); font-size: 8px; letter-spacing: 1.2px; text-transform: uppercase; }
-    .value { font-size: 13px; line-height: 1.6; color: var(--text); font-weight: 500; }
+.card {
+  position: relative;
+  overflow: hidden;
+}
 
-    .section-head { margin-bottom: 40px; }
-    .section-title { margin-top: 8px; font-family: "Orbitron", sans-serif; font-size: clamp(28px, 4vw, 46px); line-height: 1.1; letter-spacing: -1px; text-transform: uppercase; }
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 42px;
+  height: 2px;
+  background: var(--blue);
+  opacity: 0.8;
+}
 
-    .two { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: start; }
-    .lead { font-family: "Orbitron", sans-serif; color: var(--blue2); font-size: 20px; font-weight: 600; line-height: 1.5; }
-    .text { color: var(--muted); font-size: 14px; line-height: 1.9; }
-    .text p + p { margin-top: 20px; }
+.card:hover,
+.education-item:hover {
+  border-color: var(--line-hover);
+}
 
-    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .grid.three-cols { grid-template-columns: repeat(3, 1fr); }
-    .card { padding: 28px; border: 1px solid var(--line); background: var(--panel); backdrop-filter: blur(10px); border-radius: 12px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; }
-    .card:hover { border-color: var(--line-hover); transform: translateY(-4px); background: var(--panel-hover); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
-    .card-number { margin-bottom: 20px; font-family: "Orbitron", sans-serif; color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
-    .card h3 { margin-bottom: 10px; font-family: "Orbitron", sans-serif; font-size: 15px; line-height: 1.4; color: var(--text); }
-    .card p { color: var(--muted); font-size: 13px; line-height: 1.8; }
+.card:hover::before {
+  width: 76px;
+  transition: width 0.25s ease;
+}
 
-    .education { display: grid; gap: 12px; }
-    .education-item { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 22px 26px; border: 1px solid var(--line); background: var(--panel); border-radius: 12px; align-items: center; transition: all 0.2s ease; }
-    .education-item:hover { border-color: var(--line-hover); background: var(--panel-hover); }
-    .education-status { font-family: "Orbitron", sans-serif; color: var(--blue); font-size: 8px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
-    .education-title { font-family: "Orbitron", sans-serif; font-size: 13px; font-weight: 600; color: var(--text); }
-    .education-place { margin-top: 4px; color: var(--muted); font-size: 12px; }
+/* Botão principal com aparência de destaque de painel */
+.button.primary {
+  background: linear-gradient(135deg, #ffd16e, #f2a91d);
+  color: #101820;
+  box-shadow: 0 4px 18px rgba(255, 191, 67, 0.2);
+}
 
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-    .skill { padding: 10px 16px; border: 1px solid var(--line); background: var(--panel); color: var(--blue2); font-family: "Orbitron", sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1px; border-radius: 8px; transition: all 0.2s ease; }
-    .skill:hover { border-color: var(--blue); background: rgba(77,174,232,0.12); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(77,174,232,0.15); }
+.button.primary:hover {
+  background: linear-gradient(135deg, #ffe09a, #ffc247);
+  box-shadow: 0 6px 22px rgba(255, 191, 67, 0.35);
+}
 
-    .contact { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: center; }
-    .contact-title { font-family: "Orbitron", sans-serif; font-size: clamp(36px, 5vw, 60px); line-height: 1.1; letter-spacing: -1.5px; text-transform: uppercase; }
-    .contact-title span { color: var(--blue2); text-shadow: 0 0 25px rgba(77,174,232,0.3); }
-    .contact-row { padding: 16px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; }
-    .contact-row a, .contact-row > span:last-child { font-size: 14px; font-weight: 500; color: var(--text); }
-    .contact-row a:hover { color: var(--blue2); text-shadow: 0 0 10px rgba(77,174,232,0.4); }
+.button.secondary:hover {
+  border-color: var(--blue2);
+  color: var(--blue2);
+}
 
-    footer { width: min(var(--max), 90%); margin: auto; padding: 30px 0 40px; display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-family: "Orbitron", sans-serif; font-size: 8px; letter-spacing: 1px; text-transform: uppercase; border-top: 1px solid var(--line); }
-    footer strong { color: var(--blue2); }
+/* Habilidades no estilo de etiquetas técnicas */
+.skill {
+  border-color: rgba(85, 214, 242, 0.25);
+  color: var(--blue2);
+}
 
-    @media(max-width: 900px) {
-      nav { display: none; }
-      .hero, .two, .contact { grid-template-columns: 1fr; gap: 40px; }
-      .grid, .grid.three-cols { grid-template-columns: 1fr; }
-    }
-    @media(max-width: 620px) {
-      section { padding: 60px 0; }
-      .hero { min-height: auto; padding-top: 30px; }
-      .education-item { grid-template-columns: 1fr; gap: 8px; }
-      footer { flex-direction: column; text-align: center; gap: 10px; }
-    }
+.skill:hover {
+  border-color: var(--blue);
+  background: rgba(255, 191, 67, 0.08);
+  box-shadow: 0 4px 14px rgba(255, 191, 67, 0.12);
+}
+
+/* Links e separadores de contato */
+.contact-row {
+  border-bottom-color: var(--line);
+}
+
+.contact-row a:hover {
+  color: var(--blue);
+  text-shadow: 0 0 10px rgba(255, 191, 67, 0.28);
+}
+
+section,
+footer {
+  border-color: var(--line);
+}
+
   </style>
 </head>
 <body>
