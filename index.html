@@ -560,7 +560,8 @@
       text-transform: uppercase;
     }
 
-    .contact-row a, .contact-row span:not(.label) {
+    .contact-row a,
+    .contact-row span:not(.label) {
       color: var(--text);
       text-decoration: none;
       font-weight: 500;
@@ -593,9 +594,11 @@
         grid-template-columns: 1fr;
         padding: 3rem 0;
       }
+
       .two {
         grid-template-columns: 1fr;
       }
+
       .contact {
         grid-template-columns: 1fr;
         padding: 1.75rem;
@@ -610,6 +613,7 @@
         padding-bottom: 0.75rem;
         gap: 0.75rem;
       }
+
       nav {
         order: 3;
         width: 100%;
@@ -617,15 +621,18 @@
         padding-bottom: 0.25rem;
         gap: 1rem;
       }
+
       nav a {
         white-space: nowrap;
         font-size: 0.8rem;
       }
+
       .education-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.75rem;
       }
+
       footer {
         flex-direction: column;
         text-align: center;
@@ -633,12 +640,15 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
     <div class="container header">
       <a class="brand" href="#home">Otávio Leite</a>
+
       <nav id="nav" aria-label="Navegação principal"></nav>
+
       <div class="lang" aria-label="Seleção de idioma / Language selector">
         <button type="button" data-lang="en">EN</button>
         <button type="button" data-lang="pt">PT-BR</button>
@@ -652,20 +662,27 @@
     <section class="hero">
       <div>
         <div class="eyebrow" data-i18n="hero.eyebrow"></div>
+
         <h1>Otávio <span>Leite</span></h1>
+
         <div class="role" data-i18n="hero.role"></div>
+
         <p class="intro" data-i18n="hero.text"></p>
+
         <div class="actions">
           <a class="button primary" href="#projects" data-i18n="hero.projects"></a>
           <a class="button secondary" href="#contact" data-i18n="hero.contact"></a>
         </div>
       </div>
+
       <aside class="summary">
         <div class="summary-title" data-i18n="summary.title"></div>
+
         <div class="summary-row">
           <span class="label" data-i18n="summary.locationLabel"></span>
           <span class="value" data-i18n="summary.location"></span>
         </div>
+
         <div class="summary-row">
           <span class="label" data-i18n="summary.educationLabel"></span>
           <span class="value" data-i18n="summary.education"></span>
@@ -679,8 +696,10 @@
         <div class="index">01</div>
         <h2 class="section-title" data-i18n="about.title"></h2>
       </div>
+
       <div class="two">
         <div class="lead" data-i18n="about.lead"></div>
+
         <div class="text">
           <p data-i18n="about.p1"></p>
         </div>
@@ -693,22 +712,33 @@
         <div class="index">02</div>
         <h2 class="section-title" data-i18n="experience.title"></h2>
       </div>
+
       <div class="grid three-cols">
+
         <article class="card">
           <div class="card-number">01</div>
+
           <h3 data-i18n="experience.e1.title"></h3>
+
           <p data-i18n="experience.e1.text"></p>
         </article>
+
         <article class="card">
           <div class="card-number">02</div>
+
           <h3 data-i18n="experience.e2.title"></h3>
+
           <p data-i18n="experience.e2.text"></p>
         </article>
+
         <article class="card">
           <div class="card-number">03</div>
+
           <h3 data-i18n="experience.e3.title"></h3>
+
           <p data-i18n="experience.e3.text"></p>
         </article>
+
       </div>
     </section>
 
@@ -718,32 +748,49 @@
         <div class="index">03</div>
         <h2 class="section-title" data-i18n="projects.title"></h2>
       </div>
+
       <div class="grid">
+
         <article class="card">
           <div class="card-number">2026</div>
+
           <h3 data-i18n="projects.p1.title"></h3>
+
           <p data-i18n="projects.p1.text"></p>
         </article>
+
         <article class="card">
           <div class="card-number">2025</div>
+
           <h3 data-i18n="projects.p2.title"></h3>
+
           <p data-i18n="projects.p2.text"></p>
         </article>
+
         <article class="card">
           <div class="card-number">2024</div>
+
           <h3 data-i18n="projects.p3.title"></h3>
+
           <p data-i18n="projects.p3.text"></p>
         </article>
+
         <article class="card">
           <div class="card-number">2022</div>
+
           <h3 data-i18n="projects.p4.title"></h3>
+
           <p data-i18n="projects.p4.text"></p>
         </article>
+
         <article class="card">
           <div class="card-number">2022</div>
+
           <h3 data-i18n="projects.p5.title"></h3>
+
           <p data-i18n="projects.p5.text"></p>
         </article>
+
       </div>
     </section>
 
@@ -753,29 +800,38 @@
         <div class="index">04</div>
         <h2 class="section-title" data-i18n="education.title"></h2>
       </div>
+
       <div class="education">
+
         <article class="education-item">
           <div class="education-status" data-i18n="education.e1.status"></div>
+
           <div>
             <div class="education-title" data-i18n="education.e1.title"></div>
             <div class="education-place">IFF — Campus Campos Centro</div>
           </div>
         </article>
+
         <article class="education-item">
           <div class="education-status" data-i18n="education.e2.status"></div>
+
           <div>
             <div class="education-title" data-i18n="education.e2.title"></div>
             <div class="education-place">IFF — Campus Campos Centro</div>
           </div>
         </article>
+
         <article class="education-item">
           <div class="education-status" data-i18n="education.e3.status"></div>
+
           <div>
             <div class="education-title" data-i18n="education.e3.title"></div>
             <div class="education-place">Estácio de Sá</div>
           </div>
         </article>
+
       </div>
+
       <div class="skills" id="skills"></div>
     </section>
 
@@ -785,22 +841,33 @@
         <div class="index">05</div>
         <h2 class="section-title" data-i18n="personal.title"></h2>
       </div>
+
       <div class="grid three-cols">
+
         <article class="card">
           <div class="card-number">01</div>
+
           <h3 data-i18n="personal.p1.title"></h3>
+
           <p data-i18n="personal.p1.text"></p>
         </article>
+
         <article class="card">
           <div class="card-number">02</div>
+
           <h3 data-i18n="personal.p2.title"></h3>
+
           <p data-i18n="personal.p2.text"></p>
         </article>
+
         <article class="card">
           <div class="card-number">03</div>
+
           <h3 data-i18n="personal.p3.title"></h3>
+
           <p data-i18n="personal.p3.text"></p>
         </article>
+
       </div>
     </section>
 
@@ -810,25 +877,43 @@
         <div class="index">06</div>
         <h2 class="section-title" data-i18n="contact.title"></h2>
       </div>
+
       <div class="contact">
+
         <div class="contact-title" data-i18n="contact.headline"></div>
+
         <div>
+
           <div class="contact-row">
             <span class="label" data-i18n="contact.phoneLabel"></span>
             <a href="tel:+5522999031808">(22) 99903-1808</a>
           </div>
+
           <div class="contact-row">
             <span class="label">Email</span>
-            <a href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com</a>
+
+            <a href="mailto:o.otavio.dias.leite@gmail.com">
+              o.otavio.dias.leite@gmail.com
+            </a>
           </div>
+
           <div class="contact-row">
             <span class="label">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/otavio-dias-leite-976027366" target="_blank" rel="noopener noreferrer">Otávio Dias Leite</a>
+
+            <a
+              href="https://www.linkedin.com/in/otavio-dias-leite-976027366"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Otávio Dias Leite
+            </a>
           </div>
+
           <div class="contact-row">
             <span class="label" data-i18n="contact.availabilityLabel"></span>
             <span data-i18n="contact.availability"></span>
           </div>
+
         </div>
       </div>
     </section>
@@ -839,103 +924,295 @@
       <span data-i18n="footer.focus"></span>
       <span>2026</span>
     </footer>
+
   </main>
 
   <script>
     const t = {
       en: {
-        nav: { about:"About", experience:"Experience", projects:"Projects", education:"Education", personal:"Personal", contact:"Contact" },
+        nav: {
+          about: "About",
+          experience: "Experience",
+          projects: "Projects",
+          education: "Education",
+          personal: "Personal",
+          contact: "Contact"
+        },
+
         hero: {
-          eyebrow:"Professional Portfolio",
-          role:"Electrical Engineering · Computer Science",
-          text:"Professional in training with a technical background in Electrotechnics and current studies in Electrical Engineering and Computer Science.",
-          projects:"View Projects", contact:"Contact"
+          eyebrow: "Professional Portfolio",
+          role: "Electrical Engineering · Computer Science",
+          text: "Professional in training with a technical background in Electrotechnics and current studies in Electrical Engineering and Computer Science.",
+          projects: "View Projects",
+          contact: "Contact"
         },
+
         summary: {
-          title:"Professional Summary", locationLabel:"Location", location:"Campos dos Goytacazes, RJ, Brazil",
-          educationLabel:"Education", education:"Electrical Engineering · Computer Science"
+          title: "Professional Summary",
+          locationLabel: "Location",
+          location: "Campos dos Goytacazes, RJ, Brazil",
+          educationLabel: "Education",
+          education: "Electrical Engineering · Computer Science"
         },
+
         about: {
-          title:"Profile",
-          lead:"Engineering for practical problems. Software for useful solutions.",
-          p1:"I am currently studying Electrical Engineering at Instituto Federal Fluminense (IFF) and Computer Science at Estácio de Sá."
+          title: "Profile",
+          lead: "Engineering for practical problems. Software for useful solutions.",
+          p1: "I am currently studying Electrical Engineering at Instituto Federal Fluminense (IFF) and Computer Science at Estácio de Sá, combining engineering fundamentals with programming and technology."
         },
+
         experience: {
-          title:"Experience",
-          e1:{title:"Research Project — IFF Blog Recovery",text:"Research project focused on recovering and rebuilding a page from an old IFF university blog."},
-          e2:{title:"CNPq Research Scholarship — Telecommunications",text:"Research in Telecommunications, including a tutorial for an IFF virtual laboratory in computer networks."},
-          e3:{title:"DAAT Scholarship — Technological Support",text:"Technological support activities in IFF laboratories."}
+          title: "Experience",
+
+          e1: {
+            title: "Research Project — IFF Blog Recovery",
+            text: "Research project focused on recovering and rebuilding a page from an old IFF university blog."
+          },
+
+          e2: {
+            title: "CNPq Research Scholarship — Telecommunications",
+            text: "Research in Telecommunications, including the development of a tutorial for an IFF virtual laboratory in computer networks."
+          },
+
+          e3: {
+            title: "DAAT Scholarship — Technological Support",
+            text: "Technological support activities carried out in IFF laboratories, assisting with technical and practical demands."
+          }
         },
+
         projects: {
-          title:"Saber Fazer Saber Fair",
-          p1:{title:"ESP32 Fire Monitoring System",text:"Fire monitoring prototype for a bakery scenario, developed in 2026."},
-          p2:{title:"Virtual Telecommunications Laboratories",text:"Virtual laboratory work in Telecommunications, developed in 2025."},
-          p3:{title:"Arduino Temperature Monitoring",text:"Temperature monitoring using Arduino and Tinkercad, developed in 2024."},
-          p4:{title:"PLC Demonstration",text:"Practical PLC demonstration developed in 2022."},
-          p5:{title:"Functional Tesla Coil",text:"Functional Tesla coil project developed in 2022."}
+          title: "Saber Fazer Saber Fair",
+
+          p1: {
+            title: "ESP32 Fire Monitoring System",
+            text: "Fire monitoring prototype for a bakery scenario, developed in 2026."
+          },
+
+          p2: {
+            title: "Virtual Telecommunications Laboratories",
+            text: "Virtual laboratory project in Telecommunications, developed in 2025."
+          },
+
+          p3: {
+            title: "Arduino Temperature Monitoring",
+            text: "Temperature monitoring system using Arduino and Tinkercad, developed in 2024."
+          },
+
+          p4: {
+            title: "PLC Demonstration",
+            text: "Practical PLC demonstration developed in 2022."
+          },
+
+          p5: {
+            title: "Functional Tesla Coil",
+            text: "Functional Tesla coil project developed in 2022."
+          }
         },
+
         education: {
-          title:"Education",
-          e1:{status:"Completed",title:"Technical Program in Electrotechnics"},
-          e2:{status:"In Progress",title:"Bachelor's Degree in Electrical Engineering"},
-          e3:{status:"In Progress",title:"Bachelor's Degree in Computer Science"}
+          title: "Education",
+
+          e1: {
+            status: "Completed",
+            title: "Technical Program in Electrotechnics"
+          },
+
+          e2: {
+            status: "In Progress",
+            title: "Bachelor's Degree in Electrical Engineering"
+          },
+
+          e3: {
+            status: "In Progress",
+            title: "Bachelor's Degree in Computer Science"
+          }
         },
-        skills:["Linux","Python","C / C++","Git","GitHub","Programming","Electrical Engineering","Electrotechnics","Electronics"],
+
+        skills: [
+          "Linux",
+          "Python",
+          "C / C++",
+          "Git",
+          "GitHub",
+          "Programming",
+          "Electrical Engineering",
+          "Electrotechnics",
+          "Electronics"
+        ],
+
         personal: {
-          title:"Outside Work",
-          p1:{title:"Focused, Objective and Calm",text:"I am a focused, objective and calm person. I prefer clear thinking and practical decisions."},
-          p2:{title:"Music Production",text:"I enjoy music production and exploring creative ideas with sound."},
-          p3:{title:"Hardware & Embedded Systems",text:"I enjoy experimenting with single-board computers, microcontrollers, and hands-on tech setups."}
+          title: "Outside Work",
+
+          p1: {
+            title: "Focused, Objective and Calm",
+            text: "I am a focused, objective and calm person. I value clear thinking, consistency and practical decisions."
+          },
+
+          p2: {
+            title: "Guitar",
+            text: "I play guitar and enjoy dedicating time to practice, improving technique and exploring different sounds."
+          },
+
+          p3: {
+            title: "Continuous Learning",
+            text: "I enjoy learning new concepts, exploring different areas of technology and continuously improving my technical skills."
+          }
         },
-        contact: { title:"Contact", headline:'Let\'s <span>Talk.</span>', phoneLabel:"Phone", availabilityLabel:"Availability", availability:"Available for internship opportunities" },
-        footer:{focus:"Professional Portfolio"}
+
+        contact: {
+          title: "Contact",
+          headline: "Let's <span>Talk.</span>",
+          phoneLabel: "Phone",
+          availabilityLabel: "Availability",
+          availability: "Available for internship opportunities and freelance work"
+        },
+
+        footer: {
+          focus: "Professional Portfolio"
+        }
       },
+
       pt: {
-        nav: { about:"Sobre", experience:"Experiência", projects:"Projetos", education:"Formação", personal:"Pessoal", contact:"Contato" },
+        nav: {
+          about: "Sobre",
+          experience: "Experiência",
+          projects: "Projetos",
+          education: "Formação",
+          personal: "Pessoal",
+          contact: "Contato"
+        },
+
         hero: {
-          eyebrow:"Portfólio Profissional",
-          role:"Engenharia Elétrica · Ciência da Computação",
-          text:"Profissional em formação, com base técnica em Eletrotécnica e estudos atuais em Engenharia Elétrica e Ciência da Computação.",
-          projects:"Ver Projetos", contact:"Contato"
+          eyebrow: "Portfólio Profissional",
+          role: "Engenharia Elétrica · Ciência da Computação",
+          text: "Profissional em formação, com base técnica em Eletrotécnica e estudos atuais em Engenharia Elétrica e Ciência da Computação.",
+          projects: "Ver Projetos",
+          contact: "Contato"
         },
+
         summary: {
-          title:"Resumo Profissional", locationLabel:"Localização", location:"Campos dos Goytacazes, RJ, Brasil",
-          educationLabel:"Formação", education:"Engenharia Elétrica · Ciência da Computação"
+          title: "Resumo Profissional",
+          locationLabel: "Localização",
+          location: "Campos dos Goytacazes, RJ, Brasil",
+          educationLabel: "Formação",
+          education: "Engenharia Elétrica · Ciência da Computação"
         },
+
         about: {
-          title:"Perfil",
-          lead:"Engenharia para problemas práticos. Software para soluções úteis.",
-          p1:"Atualmente, curso Engenharia Elétrica no Instituto Federal Fluminense (IFF) e Ciência da Computação na Estácio de Sá."
+          title: "Perfil",
+          lead: "Engenharia para problemas práticos. Software para soluções úteis.",
+          p1: "Atualmente, curso Engenharia Elétrica no Instituto Federal Fluminense (IFF) e Ciência da Computação na Estácio de Sá, unindo fundamentos de engenharia, programação e tecnologia."
         },
+
         experience: {
-          title:"Experiência",
-          e1:{title:"Projeto de Pesquisa — Recuperação de Blog do IFF",text:"Projeto de pesquisa voltado à recuperação e reconstrução de uma página de um blog antigo do IFF."},
-          e2:{title:"Bolsa CNPq — Pesquisa em Telecomunicações",text:"Pesquisa em Telecomunicações, incluindo um tutorial para um laboratório virtual de redes do IFF."},
-          e3:{title:"Bolsa DAAT — Apoio Tecnológico",text:"Atividades de apoio tecnológico em laboratórios do IFF."}
+          title: "Experiência",
+
+          e1: {
+            title: "Projeto de Pesquisa — Recuperação de Blog do IFF",
+            text: "Projeto de pesquisa voltado à recuperação e reconstrução de uma página de um blog antigo do IFF."
+          },
+
+          e2: {
+            title: "Bolsa CNPq — Pesquisa em Telecomunicações",
+            text: "Pesquisa em Telecomunicações, incluindo o desenvolvimento de um tutorial para um laboratório virtual de redes do IFF."
+          },
+
+          e3: {
+            title: "Bolsa DAAT — Apoio Tecnológico",
+            text: "Atividades de apoio tecnológico realizadas em laboratórios do IFF, auxiliando em demandas técnicas e práticas."
+          }
         },
+
         projects: {
-          title:"Feira Saber Fazer Saber",
-          p1:{title:"Sistema de Monitoramento de Incêndio com ESP32",text:"Protótipo de monitoramento de incêndio para uma padaria, desenvolvido em 2026."},
-          p2:{title:"Laboratórios Virtuais em Telecomunicações",text:"Trabalho com laboratório virtual em Telecomunicações, desenvolvido em 2025."},
-          p3:{title:"Monitoramento de Temperatura com Arduino",text:"Monitoramento de temperatura com Arduino e Tinkercad, desenvolvido em 2024."},
-          p4:{title:"Demonstração de CLP",text:"Demonstração prática de CLP desenvolvida em 2022."},
-          p5:{title:"Bobina de Tesla Funcional",text:"Projeto funcional de Bobina de Tesla desenvolvido em 2022."}
+          title: "Feira Saber Fazer Saber",
+
+          p1: {
+            title: "Sistema de Monitoramento de Incêndio com ESP32",
+            text: "Protótipo de monitoramento de incêndio para uma padaria, desenvolvido em 2026."
+          },
+
+          p2: {
+            title: "Laboratórios Virtuais em Telecomunicações",
+            text: "Projeto com laboratório virtual em Telecomunicações, desenvolvido em 2025."
+          },
+
+          p3: {
+            title: "Monitoramento de Temperatura com Arduino",
+            text: "Sistema de monitoramento de temperatura com Arduino e Tinkercad, desenvolvido em 2024."
+          },
+
+          p4: {
+            title: "Demonstração de CLP",
+            text: "Demonstração prática de CLP desenvolvida em 2022."
+          },
+
+          p5: {
+            title: "Bobina de Tesla Funcional",
+            text: "Projeto funcional de Bobina de Tesla desenvolvido em 2022."
+          }
         },
+
         education: {
-          title:"Formação",
-          e1:{status:"Concluído",title:"Técnico em Eletrotécnica"},
-          e2:{status:"Cursando",title:"Engenharia Elétrica"},
-          e3:{status:"Cursando",title:"Ciência da Computação"}
+          title: "Formação",
+
+          e1: {
+            status: "Concluído",
+            title: "Técnico em Eletrotécnica"
+          },
+
+          e2: {
+            status: "Cursando",
+            title: "Engenharia Elétrica"
+          },
+
+          e3: {
+            status: "Cursando",
+            title: "Ciência da Computação"
+          }
         },
-        skills:["Linux","Python","C / C++","Git","GitHub","Programação","Engenharia Elétrica","Eletrotécnica","Eletrônica"],
+
+        skills: [
+          "Linux",
+          "Python",
+          "C / C++",
+          "Git",
+          "GitHub",
+          "Programação",
+          "Engenharia Elétrica",
+          "Eletrotécnica",
+          "Eletrônica"
+        ],
+
         personal: {
-          title:"Fora da Carreira",
-          p1:{title:"Focado, Objetivo e Tranquilo",text:"Sou uma pessoa focada, objetiva e tranquila. Prefiro pensar com clareza e tomar decisões práticas."},
-          p2:{title:"Produção Musical",text:"Gosto de produção musical e de explorar ideias criativas com som."},
-          p3:{title:"Hardware e Embarcados",text:"Gosto de explorar computadores de placa única, microcontroladores e montar projetos práticos de tecnologia."}
+          title: "Fora da Carreira",
+
+          p1: {
+            title: "Focado, Objetivo e Tranquilo",
+            text: "Sou uma pessoa focada, objetiva e tranquila. Valorizo clareza de pensamento, consistência e decisões práticas."
+          },
+
+          p2: {
+            title: "Guitarra",
+            text: "Toco guitarra e gosto de dedicar tempo à prática, aprimorar minha técnica e explorar diferentes sonoridades."
+          },
+
+          p3: {
+            title: "Aprendizado Contínuo",
+            text: "Gosto de aprender novos conceitos, explorar diferentes áreas da tecnologia e aprimorar continuamente minhas habilidades técnicas."
+          }
         },
-        contact: { title:"Contato", headline:'Vamos <span>Conversar.</span>', phoneLabel:"Telefone", availabilityLabel:"Disponibilidade", availability:"Disponível para oportunidades de estágio, <br> e trabalhos freelancer" },
-        footer:{focus:"Portfólio Profissional"}
+
+        contact: {
+          title: "Contato",
+          headline: "Vamos <span>Conversar.</span>",
+          phoneLabel: "Telefone",
+          availabilityLabel: "Disponibilidade",
+          availability: "Disponível para oportunidades de estágio e trabalhos freelancer"
+        },
+
+        footer: {
+          focus: "Portfólio Profissional"
+        }
       }
     };
 
@@ -944,37 +1221,68 @@
     const nodes = document.querySelectorAll("[data-i18n]");
     const buttons = document.querySelectorAll("[data-lang]");
 
-    function get(obj, path) { 
-      return path.split(".").reduce((v, k) => (v && v[k] !== undefined) ? v[k] : "", obj); 
+    function get(obj, path) {
+      return path
+        .split(".")
+        .reduce(
+          (v, k) => (v && v[k] !== undefined) ? v[k] : "",
+          obj
+        );
     }
 
     function render(lang) {
       const x = t[lang] || t.pt;
+
       nodes.forEach(n => {
         const val = get(x, n.dataset.i18n);
-        if (val) n.innerHTML = val;
+
+        if (val) {
+          n.innerHTML = val;
+        }
       });
-      
+
       nav.innerHTML = `
         <a href="#about">${x.nav.about}</a>
         <a href="#experience">${x.nav.experience}</a>
         <a href="#projects">${x.nav.projects}</a>
         <a href="#education">${x.nav.education}</a>
         <a href="#personal">${x.nav.personal}</a>
-        <a href="#contact">${x.nav.contact}</a>`;
-        
-      skills.innerHTML = x.skills.map(s => `<span class="skill">${s}</span>`).join("");
-      buttons.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
-      
-      document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
-      document.title = lang === "pt" ? "Otávio Leite — Portfólio" : "Otávio Leite — Portfolio";
+        <a href="#contact">${x.nav.contact}</a>
+      `;
+
+      skills.innerHTML = x.skills
+        .map(skill => `<span class="skill">${skill}</span>`)
+        .join("");
+
+      buttons.forEach(button => {
+        button.classList.toggle(
+          "active",
+          button.dataset.lang === lang
+        );
+      });
+
+      document.documentElement.lang =
+        lang === "pt" ? "pt-BR" : "en";
+
+      document.title =
+        lang === "pt"
+          ? "Otávio Leite — Portfólio"
+          : "Otávio Leite — Portfolio";
+
       localStorage.setItem("preferred_lang", lang);
     }
 
-    buttons.forEach(b => b.addEventListener("click", () => render(b.dataset.lang)));
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        render(button.dataset.lang);
+      });
+    });
 
-    const savedLang = localStorage.getItem("preferred_lang") || "pt";
+    const savedLang =
+      localStorage.getItem("preferred_lang") || "pt";
+
     render(savedLang);
   </script>
+
 </body>
 </html>
