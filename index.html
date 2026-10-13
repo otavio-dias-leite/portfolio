@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Otávio Leite — Engenharia Elétrica e Ciência da Computação.">
+  <meta name="description" content="Otávio Leite — Engenharia Elétrica, Ciência da Computação e Segurança da Informação.">
   <title>Otávio Leite — Portfólio</title>
 
   <!-- Fonts -->
@@ -13,19 +13,19 @@
 
   <style>
     :root {
-      --bg: #07111c;
-      --bg-gradient: radial-gradient(ellipse at 50% 0%, #0f2842 0%, #07111c 75%);
-      --panel: rgba(11, 27, 42, 0.75);
-      --panel-border: rgba(85, 214, 242, 0.2);
-      --panel-hover: rgba(16, 39, 59, 0.88);
-      --line: rgba(75, 184, 220, 0.2);
-      --line-hover: rgba(255, 191, 67, 0.7);
-      --amber: #ffbf43;
-      --amber-glow: rgba(255, 191, 67, 0.25);
-      --cyan: #55d6f2;
-      --cyan-glow: rgba(85, 214, 242, 0.2);
+      --bg: #090611;
+      --bg-gradient: radial-gradient(ellipse at 50% 0%, #25123a 0%, #090611 75%);
+      --panel: rgba(24, 15, 39, 0.75);
+      --panel-border: rgba(177, 128, 245, 0.2);
+      --panel-hover: rgba(36, 20, 54, 0.88);
+      --line: rgba(150, 99, 223, 0.2);
+      --line-hover: rgba(186, 126, 255, 0.7);
+      --purple: #bb81ff;
+      --purple-glow: rgba(186, 126, 255, 0.25);
+      --lavender: #c8a4ff;
+      --lavender-glow: rgba(177, 128, 245, 0.2);
       --text: #eff7fc;
-      --muted: #9bb0bf;
+      --muted: #b9abc9;
       --font-heading: 'Orbitron', sans-serif;
       --font-body: 'Inter', sans-serif;
       --font-mono: 'Fira Code', monospace;
@@ -44,11 +44,11 @@
     body {
       background-color: var(--bg);
       background-image:
-        radial-gradient(ellipse at 50% -10%, rgba(21, 67, 96, 0.45), transparent 70%),
-        linear-gradient(rgba(85, 214, 242, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(85, 214, 242, 0.04) 1px, transparent 1px),
-        linear-gradient(rgba(85, 214, 242, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(85, 214, 242, 0.015) 1px, transparent 1px);
+        radial-gradient(ellipse at 50% -10%, rgba(68, 33, 104, 0.45), transparent 70%),
+        linear-gradient(rgba(177, 128, 245, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(177, 128, 245, 0.04) 1px, transparent 1px),
+        linear-gradient(rgba(177, 128, 245, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(177, 128, 245, 0.015) 1px, transparent 1px);
       background-size:
         100% 100%,
         40px 40px,
@@ -96,22 +96,19 @@
     }
 
     .brand {
+      position: relative;
       font-family: var(--font-heading);
       font-weight: 800;
       font-size: 1.25rem;
-      color: var(--amber);
+      color: var(--purple);
       text-decoration: none;
       letter-spacing: 1px;
-      text-shadow: 0 0 12px var(--amber-glow);
+      text-shadow: 0 0 12px var(--purple-glow);
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
-    .brand::before {
-      content: "⚡";
-      font-size: 1.1rem;
-    }
 
     nav {
       display: flex;
@@ -130,8 +127,8 @@
     }
 
     nav a:hover {
-      color: var(--amber);
-      text-shadow: 0 0 10px var(--amber-glow);
+      color: var(--purple);
+      text-shadow: 0 0 10px var(--purple-glow);
     }
 
     /* Language Switcher */
@@ -141,7 +138,7 @@
       border: 1px solid var(--line);
       border-radius: 6px;
       overflow: hidden;
-      background: rgba(11, 27, 42, 0.6);
+      background: rgba(24, 15, 39, 0.6);
     }
 
     .lang button {
@@ -157,8 +154,8 @@
     }
 
     .lang button.active {
-      background: var(--amber);
-      color: #07111c;
+      background: var(--purple);
+      color: #090611;
       font-weight: 700;
     }
 
@@ -172,7 +169,7 @@
     }
 
     .eyebrow {
-      color: var(--cyan);
+      color: var(--lavender);
       font-family: var(--font-mono);
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -185,7 +182,7 @@
 
     .eyebrow::before {
       content: "//";
-      color: var(--amber);
+      color: var(--purple);
     }
 
     h1 {
@@ -198,13 +195,66 @@
     }
 
     h1 span {
-      color: var(--amber);
-      text-shadow: 0 0 20px var(--amber-glow);
+      color: var(--purple);
+      text-shadow: 0 0 20px var(--purple-glow);
+    }
+
+    .lock-icon {
+      width: 1.05rem;
+      height: 1.05rem;
+      flex: 0 0 auto;
+      display: block;
+      stroke: currentColor;
+    }
+
+    h1.glitch {
+      position: relative;
+      display: inline-block;
+      isolation: isolate;
+    }
+
+    h1.glitch::before,
+    h1.glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0.62;
+    }
+
+    h1.glitch::before {
+      color: #e0c8ff;
+      animation: glitch-top 4.8s infinite steps(1);
+    }
+
+    h1.glitch::after {
+      color: #9b59e8;
+      animation: glitch-bottom 4.1s infinite steps(1);
+    }
+
+    @keyframes glitch-top {
+      0%, 91%, 100% { clip-path: inset(0 0 82% 0); transform: translate(-2px, 0); }
+      93% { clip-path: inset(18% 0 61% 0); transform: translate(3px, -1px); }
+      95% { clip-path: inset(58% 0 24% 0); transform: translate(-3px, 1px); }
+      97% { clip-path: inset(38% 0 43% 0); transform: translate(1px, 0); }
+    }
+
+    @keyframes glitch-bottom {
+      0%, 88%, 100% { clip-path: inset(86% 0 0 0); transform: translate(2px, 0); }
+      90% { clip-path: inset(22% 0 60% 0); transform: translate(-3px, 1px); }
+      93% { clip-path: inset(64% 0 17% 0); transform: translate(2px, -1px); }
+      96% { clip-path: inset(40% 0 39% 0); transform: translate(-1px, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      h1.glitch::before,
+      h1.glitch::after { animation: none; }
     }
 
     .role {
       font-family: var(--font-mono);
-      color: var(--cyan);
+      color: var(--lavender);
       font-size: 0.95rem;
       font-weight: 500;
       margin-bottom: 1.25rem;
@@ -238,29 +288,29 @@
     }
 
     .button.primary {
-      background: linear-gradient(135deg, #ffd16e, #f2a91d);
-      color: #07111c;
-      box-shadow: 0 4px 20px var(--amber-glow);
-      border: 1px solid var(--amber);
+      background: linear-gradient(135deg, #d8b8ff, #9658df);
+      color: #090611;
+      box-shadow: 0 4px 20px var(--purple-glow);
+      border: 1px solid var(--purple);
     }
 
     .button.primary:hover {
-      background: linear-gradient(135deg, #ffe09a, #ffc247);
-      box-shadow: 0 6px 26px rgba(255, 191, 67, 0.45);
+      background: linear-gradient(135deg, #edddff, #c896ff);
+      box-shadow: 0 6px 26px rgba(186, 126, 255, 0.45);
       transform: translateY(-2px);
     }
 
     .button.secondary {
-      background: rgba(11, 27, 42, 0.6);
+      background: rgba(24, 15, 39, 0.6);
       color: var(--text);
       border: 1px solid var(--panel-border);
       backdrop-filter: blur(8px);
     }
 
     .button.secondary:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-      box-shadow: 0 4px 18px var(--cyan-glow);
+      border-color: var(--lavender);
+      color: var(--lavender);
+      box-shadow: 0 4px 18px var(--lavender-glow);
       transform: translateY(-2px);
     }
 
@@ -285,14 +335,14 @@
       padding: 0 8px;
       font-family: var(--font-mono);
       font-size: 0.65rem;
-      color: var(--amber);
+      color: var(--purple);
       border: 1px solid var(--panel-border);
       border-radius: 4px;
     }
 
     .summary-title {
       font-family: var(--font-heading);
-      color: var(--amber);
+      color: var(--purple);
       font-size: 1rem;
       margin-bottom: 1.25rem;
       text-transform: uppercase;
@@ -304,7 +354,7 @@
       flex-direction: column;
       gap: 0.25rem;
       padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(85, 214, 242, 0.1);
+      border-bottom: 1px solid rgba(177, 128, 245, 0.1);
     }
 
     .summary-row:last-child {
@@ -333,7 +383,7 @@
 
     .index {
       font-family: var(--font-mono);
-      color: var(--amber);
+      color: var(--purple);
       font-size: 1.25rem;
       font-weight: 700;
       opacity: 0.9;
@@ -378,7 +428,7 @@
       left: 0;
       width: 4px;
       height: 100%;
-      background: var(--cyan);
+      background: var(--lavender);
       opacity: 0.7;
       transition: all 0.3s ease;
     }
@@ -391,21 +441,21 @@
     }
 
     .card:hover::before {
-      background: var(--amber);
-      box-shadow: 0 0 10px var(--amber-glow);
+      background: var(--purple);
+      box-shadow: 0 0 10px var(--purple-glow);
     }
 
     .card-number {
       font-family: var(--font-mono);
-      color: var(--amber);
+      color: var(--purple);
       font-size: 0.85rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
       display: inline-block;
       padding: 0.15rem 0.5rem;
-      background: rgba(255, 191, 67, 0.1);
+      background: rgba(186, 126, 255, 0.1);
       border-radius: 4px;
-      border: 1px solid rgba(255, 191, 67, 0.2);
+      border: 1px solid rgba(186, 126, 255, 0.2);
     }
 
     .card h3 {
@@ -431,7 +481,7 @@
     .lead {
       font-size: 1.35rem;
       font-weight: 500;
-      color: var(--cyan);
+      color: var(--lavender);
       line-height: 1.4;
     }
 
@@ -461,7 +511,7 @@
     }
 
     .education-item:hover {
-      border-color: var(--cyan);
+      border-color: var(--lavender);
       background: var(--panel-hover);
       transform: translateX(4px);
     }
@@ -470,11 +520,11 @@
       font-family: var(--font-mono);
       font-size: 0.75rem;
       font-weight: 700;
-      color: var(--amber);
+      color: var(--purple);
       text-transform: uppercase;
       padding: 0.3rem 0.75rem;
-      background: rgba(255, 191, 67, 0.1);
-      border: 1px solid rgba(255, 191, 67, 0.25);
+      background: rgba(186, 126, 255, 0.1);
+      border: 1px solid rgba(186, 126, 255, 0.25);
       border-radius: 4px;
       white-space: nowrap;
     }
@@ -502,9 +552,9 @@
     .skill {
       font-family: var(--font-mono);
       font-size: 0.82rem;
-      color: var(--cyan);
-      border: 1px solid rgba(85, 214, 242, 0.3);
-      background: rgba(11, 27, 42, 0.5);
+      color: var(--lavender);
+      border: 1px solid rgba(177, 128, 245, 0.3);
+      background: rgba(24, 15, 39, 0.5);
       padding: 0.4rem 0.85rem;
       border-radius: 6px;
       transition: all 0.25s ease;
@@ -512,10 +562,10 @@
     }
 
     .skill:hover {
-      border-color: var(--amber);
-      color: var(--amber);
-      background: rgba(255, 191, 67, 0.08);
-      box-shadow: 0 4px 14px var(--amber-glow);
+      border-color: var(--purple);
+      color: var(--purple);
+      background: rgba(186, 126, 255, 0.08);
+      box-shadow: 0 4px 14px var(--purple-glow);
       transform: translateY(-2px);
     }
 
@@ -538,8 +588,8 @@
     }
 
     .contact-title span {
-      color: var(--amber);
-      text-shadow: 0 0 20px var(--amber-glow);
+      color: var(--purple);
+      text-shadow: 0 0 20px var(--purple-glow);
     }
 
     /*
@@ -582,8 +632,8 @@
     }
 
     .contact-row a:hover {
-      color: var(--amber);
-      text-shadow: 0 0 10px var(--amber-glow);
+      color: var(--purple);
+      text-shadow: 0 0 10px var(--purple-glow);
     }
 
     /* Footer */
@@ -599,7 +649,7 @@
     }
 
     footer strong {
-      color: var(--amber);
+      color: var(--purple);
     }
 
     @media (max-width: 900px) {
@@ -682,7 +732,8 @@
     <div class="container header">
 
       <a class="brand" href="#home">
-        Otávio Leite
+        <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10" width="15" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.2v2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span>Otávio Leite</span>
       </a>
 
       <nav id="nav" aria-label="Navegação principal"></nav>
@@ -707,7 +758,7 @@
           data-i18n="hero.eyebrow"
         ></div>
 
-        <h1>
+        <h1 class="glitch" data-text="Otávio Leite">
           Otávio <span>Leite</span>
         </h1>
 
@@ -772,6 +823,11 @@
             data-i18n="summary.education"
           ></span>
 
+        </div>
+
+        <div class="summary-row">
+          <span class="label" data-i18n="summary.focusLabel"></span>
+          <span class="value" data-i18n="summary.focus"></span>
         </div>
 
       </aside>
@@ -1232,8 +1288,8 @@
 
         hero: {
           eyebrow: "Professional Portfolio",
-          role: "Electrical Engineering · Computer Science",
-          text: "Professional in training with a technical background in Electrotechnics and current studies in Electrical Engineering and Computer Science.",
+          role: "Electrical Engineering · Computer Science · Information Security",
+          text: "Electrical Engineering and Computer Science student with a technical background in Electrotechnics and a strong interest in information security, networks, and secure systems.",
           projects: "View Projects",
           contact: "Contact"
         },
@@ -1243,13 +1299,15 @@
           locationLabel: "Location",
           location: "Campos dos Goytacazes, RJ, Brazil",
           educationLabel: "Education",
-          education: "Electrical Engineering · Computer Science"
+          education: "Electrical Engineering · Computer Science",
+          focusLabel: "Main Interest",
+          focus: "Information Security"
         },
 
         about: {
           title: "Profile",
-          lead: "Engineering for practical problems. Software for useful solutions.",
-          p1: "I am currently studying Electrical Engineering at Instituto Federal Fluminense (IFF) and Computer Science at Estácio de Sá, combining engineering fundamentals with programming and technology."
+          lead: "Engineering, software, and security for systems that matter.",
+          p1: "I study Electrical Engineering at Instituto Federal Fluminense (IFF) and Computer Science at Estácio de Sá. With a technical background in Electrotechnics and years of self-directed programming, I am especially interested in information security, networks, and the intersection of hardware and software."
         },
 
         experience: {
@@ -1368,7 +1426,7 @@
 
           availabilityLabel: "Availability",
 
-          availability: "Available for internship opportunities and freelance work"
+          availability: "Open to freelance projects, internships, technical work, and collaboration opportunities"
 
         },
 
@@ -1391,8 +1449,8 @@
 
         hero: {
           eyebrow: "Portfólio Profissional",
-          role: "Engenharia Elétrica · Ciência da Computação",
-          text: "Profissional em formação, com base técnica em Eletrotécnica e estudos atuais em Engenharia Elétrica e Ciência da Computação.",
+          role: "Engenharia Elétrica · Ciência da Computação · Segurança da Informação",
+          text: "Estudante de Engenharia Elétrica e Ciência da Computação, com formação técnica em Eletrotécnica e interesse especial em segurança da informação, redes e sistemas.",
           projects: "Ver Projetos",
           contact: "Contato"
         },
@@ -1402,13 +1460,15 @@
           locationLabel: "Localização",
           location: "Campos dos Goytacazes, RJ, Brasil",
           educationLabel: "Formação",
-          education: "Engenharia Elétrica · Ciência da Computação"
+          education: "Engenharia Elétrica · Ciência da Computação",
+          focusLabel: "Principal Interesse",
+          focus: "Segurança da Informação"
         },
 
         about: {
           title: "Perfil",
-          lead: "Engenharia para problemas práticos. Software para soluções úteis.",
-          p1: "Atualmente, curso Engenharia Elétrica no Instituto Federal Fluminense (IFF) e Ciência da Computação na Estácio de Sá, unindo fundamentos de engenharia, programação e tecnologia."
+          lead: "Engenharia, software e segurança para sistemas que importam.",
+          p1: "Curso Engenharia Elétrica no Instituto Federal Fluminense (IFF) e Ciência da Computação na Estácio de Sá. Tenho formação técnica em Eletrotécnica e estudo programação há anos por conta própria. Meu principal interesse é segurança da informação, redes e a integração entre hardware e software."
         },
 
         experience: {
@@ -1491,6 +1551,7 @@
           "Git",
           "GitHub",
           "Programação",
+          "Segurança da Informação",
           "Engenharia Elétrica",
           "Eletrotécnica",
           "Eletrônica"
@@ -1527,7 +1588,7 @@
 
           availabilityLabel: "Disponibilidade",
 
-          availability: "Disponível para oportunidades de estágio e trabalhos freelancer"
+          availability: "Aceito propostas de freelancer, estágio, trabalhos técnicos e oportunidades de colaboração."
 
         },
 
