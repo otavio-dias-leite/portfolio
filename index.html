@@ -1676,7 +1676,56 @@
         }
 
       }
-
+,
+      zh: {
+        nav: { about: "关于", experience: "经历", projects: "项目", education: "教育", personal: "个人", contact: "联系" },
+        hero: {
+          eyebrow: "个人专业作品集",
+          role: "电气工程 · 计算机科学 · 信息安全",
+          text: "电气工程与计算机科学专业学生，拥有电工技术背景，重点关注信息安全、网络和安全系统。",
+          projects: "查看项目", contact: "联系"
+        },
+        summary: {
+          title: "专业简介", locationLabel: "所在地", location: "巴西里约热内卢州坎普斯-杜斯戈伊塔卡济斯",
+          educationLabel: "学历", education: "电气工程 · 计算机科学", focusLabel: "主要兴趣", focus: "信息安全"
+        },
+        about: {
+          title: "个人简介", lead: "以工程、软件和安全构建重要系统。",
+          p1: "我在弗卢米嫩塞联邦学院（IFF）学习电气工程，并在Estácio de Sá学习计算机科学。我拥有电工技术专业背景，多年来一直自主学习编程，尤其关注信息安全、网络以及硬件与软件的交叉领域。"
+        },
+        experience: {
+          title: "经历",
+          e1: { title: "研究项目 — IFF博客恢复", text: "研究项目，致力于恢复并重建IFF旧大学博客中的一个页面。" },
+          e2: { title: "CNPq研究奖学金 — 电信", text: "开展电信领域研究，包括为IFF计算机网络虚拟实验室开发教程。" },
+          e3: { title: "DAAT奖学金 — 技术支持", text: "在IFF实验室开展技术支持工作，协助处理技术和实践方面的需求。" }
+        },
+        projects: {
+          title: "Saber Fazer Saber科技展",
+          p1: { title: "ESP32火灾监测系统", text: "为面包店场景开发的火灾监测原型，完成于2026年。" },
+          p2: { title: "虚拟电信实验室", text: "于2025年开发的电信虚拟实验室项目。" },
+          p3: { title: "Arduino温度监测", text: "使用Arduino和Tinkercad开发的温度监测系统，完成于2024年。" },
+          p4: { title: "PLC演示", text: "于2022年开发的PLC实践演示项目。" },
+          p5: { title: "可运行特斯拉线圈", text: "于2022年开发的可运行特斯拉线圈项目。" }
+        },
+        education: {
+          title: "教育背景",
+          e1: { status: "已完成", title: "电工技术专业课程" },
+          e2: { status: "在读", title: "电气工程学士" },
+          e3: { status: "在读", title: "计算机科学学士" }
+        },
+        skills: ["Linux", "Python", "C / C++", "Git", "GitHub", "编程", "电气工程", "电工技术", "电子学"],
+        personal: {
+          title: "工作之外",
+          p1: { title: "专注、务实、沉稳", text: "我是一个专注、务实且沉稳的人。我重视清晰的思考、持续性和实际决策。" },
+          p2: { title: "吉他", text: "我弹吉他，喜欢投入时间练习、提升技巧并探索不同的音色。" },
+          p3: { title: "持续学习", text: "我喜欢学习新概念、探索技术的不同领域，并持续提升自己的技术能力。" }
+        },
+        contact: {
+          title: "联系方式", headline: "让我们<span>交流。</span>", phoneLabel: "电话",
+          availabilityLabel: "合作意向", availability: "欢迎自由职业项目、实习、技术工作及合作机会。"
+        },
+        footer: { focus: "个人专业作品集" }
+      }
     };
 
     const nav = document.getElementById("nav");
@@ -1696,42 +1745,10 @@
         );
     }
 
-    let translationRun = 0;
-
-    async function translatePortfolioToChinese() {
-      const run = ++translationRun;
-      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-      const nodes = [];
-      while (walker.nextNode()) {
-        const node = walker.currentNode;
-        const parent = node.parentElement;
-        if (!node.nodeValue.trim() || !parent || parent.closest("script,style,svg,.brand,[data-lang]")) continue;
-        if (/^\\s*(Otávio Leite|Otávio|Leite|2026)\\s*$/.test(node.nodeValue)) continue;
-        nodes.push(node);
-      }
-      let cursor = 0;
-      async function worker() {
-        while (cursor < nodes.length && run === translationRun) {
-          const node = nodes[cursor++];
-          const original = node.nodeValue;
-          try {
-            const url = new URL("https://translate.googleapis.com/translate_a/single");
-            url.search = new URLSearchParams({client:"gtx",sl:"en",tl:"zh-CN",dt:"t",q:original.trim()}).toString();
-            const response = await fetch(url);
-            if (!response.ok) throw new Error("Translation unavailable");
-            const data = await response.json();
-            const translated = Array.isArray(data?.[0]) ? data[0].map(part => part?.[0] || "").join("") : "";
-            if (translated && run === translationRun) node.nodeValue = original.replace(original.trim(), translated);
-          } catch { /* Keep the English text if translation is unavailable. */ }
-        }
-      }
-      await Promise.all([worker(), worker(), worker()]);
-    }
-
     function render(lang) {
 
       translationRun++;
-      const x = t[lang === "zh" ? "en" : lang] || t.pt;
+      const x = t[lang] || t.pt;
 
       nodes.forEach(n => {
 
@@ -1780,7 +1797,6 @@
         "preferred_lang",
         lang
       );
-      if (lang === "zh") translatePortfolioToChinese();
     }
 
     buttons.forEach(button => {
