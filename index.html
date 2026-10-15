@@ -819,6 +819,7 @@
       <div class="lang" aria-label="Seleção de idioma / Language selector">
         <button type="button" data-lang="en">EN</button>
         <button type="button" data-lang="pt">PT-BR</button>
+        <button type="button" data-lang="zh">中文</button>
       </div>
 
     </div>
@@ -1695,9 +1696,42 @@
         );
     }
 
+    let translationRun = 0;
+
+    async function translatePortfolioToChinese() {
+      const run = ++translationRun;
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        const parent = node.parentElement;
+        if (!node.nodeValue.trim() || !parent || parent.closest("script,style,svg,.brand,[data-lang]")) continue;
+        if (/^\\s*(Otávio Leite|Otávio|Leite|2026)\\s*$/.test(node.nodeValue)) continue;
+        nodes.push(node);
+      }
+      let cursor = 0;
+      async function worker() {
+        while (cursor < nodes.length && run === translationRun) {
+          const node = nodes[cursor++];
+          const original = node.nodeValue;
+          try {
+            const url = new URL("https://translate.googleapis.com/translate_a/single");
+            url.search = new URLSearchParams({client:"gtx",sl:"en",tl:"zh-CN",dt:"t",q:original.trim()}).toString();
+            const response = await fetch(url);
+            if (!response.ok) throw new Error("Translation unavailable");
+            const data = await response.json();
+            const translated = Array.isArray(data?.[0]) ? data[0].map(part => part?.[0] || "").join("") : "";
+            if (translated && run === translationRun) node.nodeValue = original.replace(original.trim(), translated);
+          } catch { /* Keep the English text if translation is unavailable. */ }
+        }
+      }
+      await Promise.all([worker(), worker(), worker()]);
+    }
+
     function render(lang) {
 
-      const x = t[lang] || t.pt;
+      translationRun++;
+      const x = t[lang === "zh" ? "en" : lang] || t.pt;
 
       nodes.forEach(n => {
 
@@ -1738,19 +1772,15 @@
       });
 
       document.documentElement.lang =
-        lang === "pt"
-          ? "pt-BR"
-          : "en";
+        lang === "pt" ? "pt-BR" : lang === "zh" ? "zh-CN" : "en-US";
 
-      document.title =
-        lang === "pt"
-          ? "Otávio Leite — Portfólio"
-          : "Otávio Leite — Portfolio";
+      document.title = lang === "pt" ? "Otávio Leite — Portfólio" : lang === "zh" ? "Otávio Leite — 作品集" : "Otávio Leite — Portfolio";
 
       localStorage.setItem(
         "preferred_lang",
         lang
       );
+      if (lang === "zh") translatePortfolioToChinese();
     }
 
     buttons.forEach(button => {
