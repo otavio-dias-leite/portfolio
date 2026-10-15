@@ -811,7 +811,7 @@
 
       <a class="brand" href="#home">
         <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10" width="15" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.2v2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <span translate="no" class="notranslate">Otávio Leite</span>
+        <span>Otávio Leite</span>
       </a>
 
       <nav id="nav" aria-label="Navegação principal"></nav>
@@ -837,7 +837,7 @@
           data-i18n="hero.eyebrow"
         ></div>
 
-        <h1 class="glitch" data-text="Otávio Leite" translate="no">
+        <h1 class="glitch" data-text="Otávio Leite">
           Otávio <span>Leite</span>
         </h1>
 
@@ -1338,7 +1338,7 @@
     <footer>
 
       <span>
-        <strong translate="no" class="notranslate">Otávio Leite</strong>
+        <strong>Otávio Leite</strong>
       </span>
 
       <span
@@ -1746,63 +1746,34 @@
     }
 
     function render(lang) {
+      const selected = Object.prototype.hasOwnProperty.call(t, lang) ? lang : "pt";
+      const x = t[selected];
 
-      const x = t[lang] || t.pt;
-      document.querySelector(".brand span").textContent = "Otávio Leite";
-      const heroName = document.querySelector("h1.glitch");
-      heroName.dataset.text = "Otávio Leite";
-      heroName.innerHTML = 'Otávio <span>Leite</span>';
-      document.querySelector("footer strong").textContent = "Otávio Leite";
-      const linkedinName = document.querySelector('.contact-row a[href*="linkedin.com"]');
-      if (linkedinName) linkedinName.textContent = "Otávio Dias Leite";
-
-      nodes.forEach(n => {
-
-        const val = get(
-          x,
-          n.dataset.i18n
-        );
-
-        if (val) {
-          n.innerHTML = val;
+      nodes.forEach(node => {
+        const value = get(x, node.dataset.i18n);
+        if (typeof value === "string" && value.length) {
+          node.innerHTML = value;
         }
-
       });
 
-      nav.innerHTML = `
-        <a href="#about">${x.nav.about}</a>
-        <a href="#experience">${x.nav.experience}</a>
-        <a href="#projects">${x.nav.projects}</a>
-        <a href="#education">${x.nav.education}</a>
-        <a href="#personal">${x.nav.personal}</a>
-        <a href="#contact">${x.nav.contact}</a>
-      `;
+      nav.innerHTML = [
+        ["about", x.nav.about, "about"],
+        ["experience", x.nav.experience, "experience"],
+        ["projects", x.nav.projects, "projects"],
+        ["education", x.nav.education, "education"],
+        ["personal", x.nav.personal, "personal"],
+        ["contact", x.nav.contact, "contact"]
+      ].map(([id, label, href]) => '<a href="#' + href + '">' + label + '</a>').join("");
 
-      skills.innerHTML = x.skills
-        .map(
-          skill =>
-            `<span class="skill">${skill}</span>`
-        )
-        .join("");
+      skills.innerHTML = x.skills.map(skill => '<span class="skill">' + skill + '</span>').join("");
 
       buttons.forEach(button => {
-
-        button.classList.toggle(
-          "active",
-          button.dataset.lang === lang
-        );
-
+        button.classList.toggle("active", button.dataset.lang === selected);
       });
 
-      document.documentElement.lang =
-        lang === "pt" ? "pt-BR" : lang === "zh" ? "zh-CN" : "en-US";
-
-      document.title = lang === "pt" ? "Otávio Leite — Portfólio" : lang === "zh" ? "Otávio Leite — 作品集" : "Otávio Leite — Portfolio";
-
-      localStorage.setItem(
-        "preferred_lang",
-        lang
-      );
+      document.documentElement.lang = selected === "pt" ? "pt-BR" : selected === "zh" ? "zh-CN" : "en-US";
+      document.title = selected === "pt" ? "Otávio Leite — Portfólio" : selected === "zh" ? "Otávio Leite — 作品集" : "Otávio Leite — Portfolio";
+      localStorage.setItem("preferred_lang", selected);
     }
 
     buttons.forEach(button => {
