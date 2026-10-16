@@ -6,7 +6,7 @@
   <meta name="description" content="Otávio Leite — Engenharia Elétrica, Ciência da Computação e Segurança da Informação.">
   <title>Otávio Leite — Portfólio</title>
   <meta name="theme-color" content="#1769d2">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Ccircle cx=%2232%22 cy=%2232%22 r=%2232%22 fill=%22%231769d2%22/%3E%3Cpath d=%22M36 7 16 36h13l-2 21 21-31H34z%22 fill=%22white%22/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Ccircle cx=%2232%22 cy=%2232%22 r=%2232%22 fill=%22%231769d2%22/%3E%3Cpath d=%22M36 7 16 36h13l-2 21 21-31H34z%22 fill=%22%23ffd43b%22/%3E%3C/svg%3E">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -726,83 +726,74 @@
       }
     }
   
-    /* Theme aligned with the blog */
-    :root {
-      --bg:#061326;
-      --bg-gradient:radial-gradient(ellipse at 50% -10%,rgba(23,105,210,.30),transparent 70%);
-      --panel:rgba(20,12,13,.82);
-      --panel-border:rgba(77,163,255,.22);
-      --panel-hover:rgba(38,13,15,.88);
-      --line:rgba(77,163,255,.22);
-      --line-hover:rgba(77,163,255,.7);
-      --purple:#398bff;
-      --purple-glow:rgba(57,139,255,.25);
-      --lavender:#91caff;
-      --lavender-glow:rgba(77,163,255,.2);
-      --text:#f2f8ff;
-      --muted:#a8bad0;
+    /* Unified black, electric-blue and yellow lightning identity */
+    :root{
+      --bg:#05080d;
+      --bg-gradient:radial-gradient(ellipse at 50% -10%,rgba(13,65,126,.42),transparent 72%);
+      --panel:rgba(10,18,29,.90);
+      --panel-border:rgba(53,145,255,.28);
+      --panel-hover:rgba(12,28,47,.96);
+      --line:rgba(53,145,255,.24);
+      --line-hover:rgba(72,160,255,.78);
+      --purple:#4da3ff;
+      --purple-glow:rgba(53,145,255,.26);
+      --lavender:#8fc7ff;
+      --lavender-glow:rgba(53,145,255,.20);
+      --text:#f3f7fc;
+      --muted:#9eafc3;
+      --bolt:#ffd43b;
+      --font-heading:'Orbitron',sans-serif;
+      --font-body:'Inter',sans-serif;
+      --font-mono:'Fira Code',monospace;
     }
-    body {
-      background-color:#061326;
+    body{
+      background-color:#05080d;
       background-image:
-        radial-gradient(ellipse at 50% -10%,rgba(23,105,210,.30),transparent 70%),
-        linear-gradient(rgba(77,163,255,.045) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(77,163,255,.045) 1px,transparent 1px),
+        radial-gradient(ellipse at 50% -10%,rgba(13,65,126,.42),transparent 72%),
+        linear-gradient(rgba(77,163,255,.055) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(77,163,255,.055) 1px,transparent 1px),
         linear-gradient(rgba(77,163,255,.018) 1px,transparent 1px),
         linear-gradient(90deg,rgba(77,163,255,.018) 1px,transparent 1px);
+      background-size:100% 100%,40px 40px,40px 40px,10px 10px,10px 10px;
+      background-attachment:fixed;
+      color:var(--text);
     }
-    header{background:rgba(7,7,7,.92)}
-    .brand{text-shadow:0 0 12px rgba(57,139,255,.24)}
-    h1.glitch::before{color:#ffd0d2}
-    h1.glitch::after{color:#398bff}
-    .lang{background:rgba(20,12,13,.75)}
-    .lang button.active{background:#d51d2a;color:#fff}
-    .button.primary{background:linear-gradient(135deg,#91caff,#d51d2a);color:#fff;box-shadow:0 4px 20px rgba(57,139,255,.25);border-color:#398bff}
-    .button.primary:hover{background:linear-gradient(135deg,#ff9ba0,#ed3944);box-shadow:0 6px 26px rgba(57,139,255,.4)}
-    .button.secondary{background:rgba(20,12,13,.75)}
-    .summary,.card,.education-item,.contact{background:rgba(20,12,13,.82)}
-    .card-number,.education-status,.skill{background:rgba(77,163,255,.10);border-color:rgba(57,139,255,.25)}
-    .skill:hover{background:rgba(77,163,255,.13)}
-
-  
-    /* Tema preto e vermelho — alinhado ao blog */
-    :root {
-      --bg:#061326;
-      --bg-gradient:radial-gradient(ellipse at 50% -10%,rgba(23,105,210,.30),transparent 70%);
-      --panel:rgba(20,12,13,.82);
-      --panel-border:rgba(77,163,255,.22);
-      --panel-hover:rgba(38,13,15,.88);
-      --line:rgba(77,163,255,.22);
-      --line-hover:rgba(77,163,255,.7);
-      --purple:#398bff;
-      --purple-glow:rgba(57,139,255,.25);
-      --lavender:#91caff;
-      --lavender-glow:rgba(77,163,255,.2);
-      --text:#f2f8ff;
-      --muted:#a8bad0;
+    header{background:rgba(3,7,12,.94);border-color:var(--panel-border)}
+    .brand{color:var(--text);text-shadow:0 0 16px var(--purple-glow)}
+    .brand .lock-icon{filter:drop-shadow(0 0 7px rgba(255,212,59,.22))}
+    nav a{color:var(--muted)}
+    nav a:hover,.contact-row a:hover{color:var(--bolt);text-shadow:0 0 10px rgba(255,212,59,.22)}
+    .lang{background:rgba(8,15,25,.94);border:1px solid var(--panel-border);border-radius:7px}
+    .lang button{background:transparent;color:var(--muted);border:0}
+    .lang button:hover{color:var(--bolt);background:rgba(255,212,59,.07)}
+    .lang button.active{background:var(--purple);color:#04101e;box-shadow:inset 0 -2px 0 var(--bolt)}
+    h1 span,.section-title,.summary-title,.index,.card-number,.education-status,footer strong{color:var(--purple)}
+    h1.glitch::before{color:var(--bolt)}
+    h1.glitch::after{color:#4da3ff}
+    .eyebrow::before{color:var(--bolt)}
+    .eyebrow,.role,.lead{color:var(--lavender)}
+    .button.primary{background:linear-gradient(135deg,#4da3ff,#1769d2);color:#fff;border:1px solid #4da3ff;box-shadow:0 4px 20px var(--purple-glow)}
+    .button.primary::before{content:"ϟ";color:var(--bolt);font-size:1.1em;margin-right:.55rem}
+    .button.primary:hover{background:linear-gradient(135deg,#70b8ff,#1769d2);box-shadow:0 6px 26px rgba(53,145,255,.4)}
+    .button.secondary{background:rgba(8,15,25,.82);color:var(--text);border:1px solid var(--panel-border)}
+    .button.secondary:hover{border-color:var(--bolt);color:var(--bolt)}
+    .summary,.card,.education-item,.contact{background:var(--panel);border-color:var(--panel-border)}
+    .summary::before{color:var(--bolt);background:#05080d;border-color:var(--panel-border)}
+    .card::before{background:var(--purple)}
+    .card:hover::before{background:var(--bolt);box-shadow:0 0 12px rgba(255,212,59,.3)}
+    .card-number,.education-status{background:rgba(53,145,255,.11);border-color:rgba(53,145,255,.28)}
+    .skill{color:var(--lavender);border-color:var(--panel-border);background:rgba(8,15,25,.78)}
+    .skill:hover{color:var(--bolt);border-color:var(--bolt);background:rgba(255,212,59,.07)}
+    .contact-title span{color:var(--bolt);text-shadow:0 0 18px rgba(255,212,59,.18)}
+    a{transition:color .2s ease,border-color .2s ease}
+    ::selection{background:#1769d2;color:#fff}
+    @media(max-width:768px){
+      .lang{margin-left:auto}
+      header .container.header{gap:.7rem}
     }
-    body {
-      background-color:#061326;
-      background-image:
-        radial-gradient(ellipse at 50% -10%,rgba(23,105,210,.30),transparent 70%),
-        linear-gradient(rgba(77,163,255,.045) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(77,163,255,.045) 1px,transparent 1px),
-        linear-gradient(rgba(77,163,255,.018) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(77,163,255,.018) 1px,transparent 1px);
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
     }
-    header{background:rgba(7,7,7,.92)}
-    .brand{text-shadow:0 0 12px rgba(57,139,255,.24)}
-    h1.glitch::before{color:#ffd0d2}
-    h1.glitch::after{color:#398bff}
-    .lang{background:rgba(20,12,13,.75)}
-    .lang button.active{background:#d51d2a;color:#fff}
-    .button.primary{background:linear-gradient(135deg,#91caff,#d51d2a);color:#fff;box-shadow:0 4px 20px rgba(57,139,255,.25);border-color:#398bff}
-    .button.primary:hover{background:linear-gradient(135deg,#ff9ba0,#ed3944);box-shadow:0 6px 26px rgba(57,139,255,.4)}
-    .button.secondary{background:rgba(20,12,13,.75)}
-    .summary,.card,.education-item,.contact{background:rgba(20,12,13,.82)}
-    .card-number,.education-status,.skill{background:rgba(77,163,255,.10);border-color:rgba(57,139,255,.25)}
-    .skill:hover{background:rgba(77,163,255,.13)}
-
   </style>
 </head>
 
@@ -812,7 +803,7 @@
     <div class="container header">
 
       <a class="brand" href="#home">
-        <svg class="lock-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15" fill="#1769d2"/><path d="M18 4 8 18h7l-1 10 11-16h-8z" fill="#fff"/></svg>
+        <svg class="lock-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15" fill="#1769d2"/><path d="M18 4 8 18h7l-1 10 11-16h-8z" fill="#ffd43b"/></svg>
         <span>Otávio Leite</span>
       </a>
 
