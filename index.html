@@ -958,6 +958,9 @@
     @media(max-width:768px){.profile-photo{width:43px;height:43px}header .container.header{grid-template-columns:minmax(0,1fr) auto 48px;grid-template-areas:"brand lang profile" "nav nav nav"}}
     ::selection{background:#ffd447;color:#101820}
 
+    .profile-photo{position:relative;transform:scale(1);transform-origin:top right;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;z-index:10;cursor:pointer}
+    .profile-photo:hover,.profile-photo:focus-visible{transform:scale(1.28);box-shadow:0 0 0 5px rgba(255,212,71,.17),0 8px 26px rgba(0,0,0,.32);border-color:#54c6a5}
+    @media(prefers-reduced-motion:reduce){.profile-photo{transition:none}}
   </style>
 </head>
 
