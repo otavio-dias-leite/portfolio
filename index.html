@@ -887,12 +887,6 @@
 
       <nav id="nav" aria-label="Navegação principal"></nav>
 
-      <div class="lang" aria-label="Seleção de idioma / Language selector">
-        <button type="button" data-lang="en">EN</button>
-        <button type="button" data-lang="pt">PT-BR</button>
-        <button type="button" data-lang="zh">中文</button>
-      </div>
-
     </div>
   </header>
 
@@ -1808,7 +1802,6 @@
     const nav = document.getElementById("nav");
     const skills = document.getElementById("skills");
     const nodes = document.querySelectorAll("[data-i18n]");
-    const buttons = document.querySelectorAll("[data-lang]");
 
     function get(obj, path) {
       return path
@@ -1844,31 +1837,19 @@
 
       skills.innerHTML = x.skills.map(skill => '<span class="skill">' + skill + '</span>').join("");
 
-      buttons.forEach(button => {
-        button.classList.toggle("active", button.dataset.lang === selected);
-      });
-
       document.documentElement.lang = selected === "pt" ? "pt-BR" : selected === "zh" ? "zh-CN" : "en-US";
       document.title = selected === "pt" ? "Otávio Leite — Portfólio" : selected === "zh" ? "Otávio Leite — 作品集" : "Otávio Leite — Portfolio";
-      localStorage.setItem("preferred_lang", selected);
     }
 
-    buttons.forEach(button => {
+    function detectVisitorLanguage() {
+      const locales = [...(navigator.languages || []), navigator.language || ""]
+        .map(value => String(value).toLowerCase());
+      if (locales.some(value => value.startsWith("pt-br"))) return "pt";
+      if (locales.some(value => value.startsWith("zh"))) return "zh";
+      return "en";
+    }
 
-      button.addEventListener(
-        "click",
-        () => {
-          render(button.dataset.lang);
-        }
-      );
-
-    });
-
-    const savedLang =
-      localStorage.getItem("preferred_lang")
-      || "pt";
-
-    render(savedLang);
+    render(detectVisitorLanguage());
   </script>
 
 </body>
