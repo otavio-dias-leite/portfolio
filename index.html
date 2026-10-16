@@ -902,7 +902,7 @@
           data-i18n="hero.eyebrow"
         ></div>
 
-        <h1 class="glitch" data-text="Otávio Leite">
+        <h1 data-text="Otávio Leite">
           Otávio <span>Leite</span>
         </h1>
 
@@ -1854,3 +1854,8 @@
 
 </body>
 </html>
+
+<style>
+/* Glitch effects disabled: keep the typography static and readable. */
+h1.glitch::before, h1.glitch::after { content: none !important; display: none !important; animation: none !important; }
+</style>
