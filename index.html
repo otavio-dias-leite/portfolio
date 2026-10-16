@@ -18,7 +18,7 @@
   {"@context":"https://schema.org","@type":"Person","name":"Otávio Leite","url":"https://otavio-dias-leite.github.io/portfolio/","sameAs":["https://github.com/otavio-dias-leite","https://otavio-dias-leite.github.io/blog/"],"knowsAbout":["Electrotechnics","Electrical Engineering","Computer Science","Telecommunications","Computer Networks","Linux"]}
   </script>
   <title>Otávio Leite — Portfólio</title>
-  <meta name="theme-color" content="#05080d">
+  <meta name="theme-color" content="#071321">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath d=%22M13.4 1.8 5.8 13h5.1l-.5 9.2L18.3 10h-5.2l.3-8.2Z%22 fill=%22%234da3ff%22/%3E%3C/svg%3E">
 
   <!-- Fonts -->
@@ -940,6 +940,24 @@
       header nav#nav{justify-content:flex-start;gap:.45rem .85rem}
       header nav#nav a{font-size:.72rem}
     }
+
+    /* Shared identity: midnight blue, lightning yellow and restrained teal. */
+    :root{--bg:#071321;--panel:rgba(11,25,42,.92);--panel-border:rgba(72,151,210,.25);--panel-hover:rgba(14,37,59,.97);--line:rgba(76,157,213,.22);--line-hover:rgba(255,212,71,.72);--purple:#ffd447;--purple-glow:rgba(255,212,71,.18);--lavender:#a9c9df;--lavender-glow:rgba(88,177,194,.16);--bolt:#ffd447;--text:#f4f8fc;--muted:#a9bac9}
+    body{background-image:radial-gradient(ellipse at 50% -10%,rgba(21,91,139,.34),transparent 72%),linear-gradient(rgba(82,153,194,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(82,153,194,.045) 1px,transparent 1px),linear-gradient(rgba(82,153,194,.014) 1px,transparent 1px),linear-gradient(90deg,rgba(82,153,194,.014) 1px,transparent 1px)}
+    .brand .lock-icon{filter:drop-shadow(0 0 7px rgba(255,212,71,.38))}
+    .button.primary{background:linear-gradient(135deg,#ffe477,#f2bd25);color:#18202a;border-color:#ffd447}
+    .button.primary::before{color:#26384a}
+    .button.primary:hover{background:linear-gradient(135deg,#fff0a8,#ffd447)}
+    .button.secondary:hover,.skill:hover,.education-item:hover{border-color:#ffd447;color:#ffd447}
+    .summary::before{color:#ffd447}
+    .card::before{background:#4bb7c5}.card:hover::before{background:#ffd447}
+    .skill{border-color:rgba(87,167,190,.28)}.skill:hover{background:rgba(255,212,71,.07)}
+    .contact-title span{color:#ffd447;text-shadow:0 0 18px rgba(255,212,71,.2)}
+    .profile-photo{width:54px;height:54px;object-fit:cover;border-radius:50%;border:2px solid #ffd447;padding:3px;background:#0b2740;box-shadow:0 0 0 4px rgba(255,212,71,.10),0 0 22px rgba(40,145,183,.22);justify-self:end;grid-area:profile}
+    header .container.header{grid-template-columns:minmax(0,1fr) auto 64px;grid-template-areas:"brand lang profile" "nav nav nav"}
+    @media(max-width:768px){.profile-photo{width:43px;height:43px}header .container.header{grid-template-columns:minmax(0,1fr) auto 48px;grid-template-areas:"brand lang profile" "nav nav nav"}}
+    ::selection{background:#ffd447;color:#101820}
+
   </style>
 </head>
 
@@ -954,6 +972,7 @@
       </a>
 
       <nav id="nav" aria-label="Navegação principal"></nav>
+      <img class="profile-photo" src="https://avatars.githubusercontent.com/u/202568632?v=4" alt="Foto de perfil de Otávio Leite" loading="eager" referrerpolicy="no-referrer">
 
     </div>
   </header>
