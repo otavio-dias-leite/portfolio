@@ -40,7 +40,7 @@ jobs:
         run: |
           mkdir -p dist
           cp index.html robots.txt sitemap.xml locale-router.js dist/
-          python scripts/build-static-translations.py dist --languages pt-BR,es,zh-CN,ja
+          python scripts/build-static-translations.py dist
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
