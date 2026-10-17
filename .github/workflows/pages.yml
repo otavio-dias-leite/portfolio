@@ -36,10 +36,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - name: Build English source and localized static pages
         run: |
           mkdir -p dist
-          cp index.html robots.txt sitemap.xml locale-router.js dist/
+          npm install --no-save jsdom@26
+          node scripts/render-static-source.js index.html dist/index.html
+          cp robots.txt sitemap.xml locale-router.js dist/
           python scripts/build-static-translations.py dist
       - uses: actions/upload-pages-artifact@v3
         with:
