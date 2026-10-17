@@ -70,7 +70,7 @@ def main():
     dst=stage/rel
     if not dst.exists(): continue
     page=Page(src.read_text(encoding='utf-8')); vals=tr.run(page.text,lang.split('-')[0]); result=page.render(vals)
-    result=result.replace('<html>','<html lang="'+lang+'" data-static-locale="'+folder+'">',1)
+    result=result.replace('<html lang="en-US">','<html lang="'+lang+'" data-static-locale="'+folder+'">',1)
     dst.write_text(result,encoding='utf-8')
    target=root/folder
    if target.exists(): shutil.rmtree(target)
