@@ -32,9 +32,9 @@ class Translate:
  def batch(self,items,lang):
   q=[('client','gtx'),('sl','en'),('tl',lang),('dt','t')]+[('q',x) for x in items]
   req=Request('https://translate.googleapis.com/translate_a/single?'+urlencode(q),headers={'User-Agent':'Mozilla/5.0','Accept':'application/json'})
-  for n in range(3):
+  for n in range(2):
    try:
-    with urlopen(req,timeout=25) as f: data=json.loads(f.read().decode())
+    with urlopen(req,timeout=12) as f: data=json.loads(f.read().decode())
     groups=data[0]; groups=[groups] if len(items)==1 else groups
     vals=[''.join(x[0] for x in g if isinstance(x,list) and x and x[0]) for g in groups[:len(items)]]
     if len(vals)==len(items) and all(vals): return vals
@@ -48,9 +48,9 @@ class Translate:
    k=lang+'|'+s
    if k in self.c: out[i]=self.c[k]
    else: todo.append(s); pos.append((i,k))
-  for off in range(0,len(todo),10):
-   batch=todo[off:off+10]; vals=self.batch(batch,lang)
-   for j,(i,k) in enumerate(pos[off:off+10]):
+  for off in range(0,len(todo),20):
+   batch=todo[off:off+20]; vals=self.batch(batch,lang)
+   for j,(i,k) in enumerate(pos[off:off+20]):
     out[i]=vals[j]
     if vals[j]!=batch[j]: self.c[k]=vals[j]
   return out
