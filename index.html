@@ -961,6 +961,7 @@
     .profile-photo:hover,.profile-photo:focus-visible{transform:scale(1.28);box-shadow:0 0 0 5px rgba(255,212,71,.17),0 8px 26px rgba(0,0,0,.32);border-color:#54c6a5}
     @media(prefers-reduced-motion:reduce){.profile-photo{transition:none}}
   </style>
+  <script src="./locale-router.js"></script>
 </head>
 
 <body>
@@ -1988,8 +1989,9 @@
       document.title = document.querySelector("h1")?.textContent.trim() + " — Portfolio";
     }
 
-    render("en");
-    detectVisitorLanguage().then(translateForCountry);
+    if (!document.documentElement.dataset.staticLocale) {
+      render("en");
+    }
   </script>
 
 </body>
