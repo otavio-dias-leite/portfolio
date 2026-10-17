@@ -1937,8 +1937,12 @@
       return fallback;
   }
 
+    const translationOriginals = new WeakMap();
+    const translationCacheKey = "portfolio-translation-cache-v2";
+    let translationCache = {};
+    try { translationCache = JSON.parse(localStorage.getItem(translationCacheKey) || "{}"); } catch {}
     async function translateForCountry(language) {
-      const target = language.toLowerCase().split("-")[0];
+      const target = String(language || "en").toLowerCase().split("-")[0];
       if (["pt","en","zh"].includes(target)) { render(target); return; }
       render("en");
       document.documentElement.lang = language;
@@ -1946,22 +1950,40 @@
       const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
       while (walker.nextNode()) {
         const node = walker.currentNode;
-        if (!node.nodeValue.trim() || node.parentElement.closest("script,style,code,pre,svg")) continue;
+        if (!node.nodeValue.trim() || !node.parentElement || node.parentElement.closest("script,style,code,pre,svg,math,[data-no-translate]")) continue;
+        if (!translationOriginals.has(node)) translationOriginals.set(node, node.nodeValue);
         nodes.push(node);
       }
-      for (const node of nodes) {
-        const raw = node.nodeValue, text = raw.trim();
-        if (!text) continue;
+      async function translateNode(node) {
+        const raw = translationOriginals.get(node), value = raw.trim();
+        if (!value || !node.isConnected) return;
+        const key = "en|" + target + "|" + value;
+        if (translationCache[key]) {
+          const leading = raw.match(/^\\s*/)?.[0] || "", trailing = raw.match(/\\s*$/)?.[0] || "";
+          node.nodeValue = leading + translationCache[key] + trailing;
+          return;
+        }
         try {
           const url = new URL("https://translate.googleapis.com/translate_a/single");
-          url.search = new URLSearchParams({client:"gtx",sl:"en",tl:target,dt:"t",q:text});
-          const response = await fetch(url);
-          if (!response.ok) continue;
+          url.search = new URLSearchParams({client:"gtx",sl:"en",tl:target,dt:"t",q:value});
+          const response = await fetch(url,{headers:{Accept:"application/json"},signal:AbortSignal.timeout(9000)});
+          if (!response.ok) return;
           const data = await response.json();
           const translated = Array.isArray(data?.[0]) ? data[0].map(part => part?.[0] || "").join("") : "";
-          if (translated) node.nodeValue = raw.replace(text, translated);
+          if (translated && node.isConnected) {
+            translationCache[key] = translated;
+            const leading = raw.match(/^\\s*/)?.[0] || "", trailing = raw.match(/\\s*$/)?.[0] || "";
+            node.nodeValue = leading + translated + trailing;
+          }
         } catch {}
       }
+      for (let i=0;i<nodes.length;i+=5) await Promise.all(nodes.slice(i,i+5).map(translateNode));
+      try {
+        const keys = Object.keys(translationCache);
+        if (keys.length > 600) for (const key of keys.slice(0,keys.length-600)) delete translationCache[key];
+        localStorage.setItem(translationCacheKey,JSON.stringify(translationCache));
+      } catch {}
+      document.title = document.querySelector("h1")?.textContent.trim() + " — Portfolio";
     }
 
     detectVisitorLanguage().then(translateForCountry);
