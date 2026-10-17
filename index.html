@@ -1922,6 +1922,7 @@
     }
 
     async function detectVisitorLanguage() {
+      try { const cached = JSON.parse(localStorage.getItem(geoCacheKey) || "null"); if (cached && cached.expires > Date.now() && cached.language) return cached.language; } catch {}
       const map = {"BR":"pt-BR","PT":"pt-PT","AO":"pt","MZ":"pt","CV":"pt","GW":"pt","ST":"pt","TL":"pt","US":"en-US","GB":"en-GB","IE":"en-IE","AU":"en-AU","NZ":"en-NZ","CA":"en-CA","IN":"en-IN","ZA":"en-ZA","NG":"en","ES":"es","MX":"es","AR":"es","CO":"es","CL":"es","PE":"es","VE":"es","EC":"es","UY":"es","PY":"es","BO":"es","CR":"es","PA":"es","DO":"es","GT":"es","HN":"es","SV":"es","NI":"es","CU":"es","FR":"fr","BE":"fr","SN":"fr","CI":"fr","CD":"fr","CH":"fr","LU":"fr","DE":"de","AT":"de","LI":"de","NL":"nl","BE_NL":"nl","IT":"it","SM":"it","VA":"it","JP":"ja","CN":"zh-CN","TW":"zh-TW","HK":"zh-TW","MO":"zh-TW","KR":"ko","KP":"ko","RU":"ru","BY":"ru","KZ":"ru","UA":"uk","PL":"pl","CZ":"cs","SK":"sk","HU":"hu","RO":"ro","MD":"ro","BG":"bg","GR":"el","TR":"tr","SA":"ar","AE":"ar","EG":"ar","MA":"ar","DZ":"ar","TN":"ar","QA":"ar","KW":"ar","BH":"ar","OM":"ar","JO":"ar","LB":"ar","IQ":"ar","IL":"he","IR":"fa","AF":"fa","PK":"ur","BD":"bn","TH":"th","VN":"vi","ID":"id","MY":"ms","SG":"en","PH":"fil","SE":"sv","NO":"no","DK":"da","FI":"fi","IS":"is","EE":"et","LV":"lv","LT":"lt","HR":"hr","RS":"sr","BA":"bs","SI":"sl","MK":"mk","AL":"sq","GE":"ka","AM":"hy","AZ":"az","KE":"sw","TZ":"sw","UG":"en","ET":"am","RW":"rw"};
       const fallback = (() => {
         const locales = [...(navigator.languages || []), navigator.language || ""].map(x => String(x).toLowerCase());
@@ -1932,13 +1933,14 @@
         const response = await fetch("https://ipwho.is/", {headers:{Accept:"application/json"},cache:"no-store",signal:AbortSignal.timeout(4500)});
         if (!response.ok) throw new Error("GeoIP unavailable");
         const data = await response.json();
-        if (data.success && data.country_code) return map[data.country_code.toUpperCase()] || fallback;
+        if (data.success && data.country_code) { const language = map[data.country_code.toUpperCase()] || fallback; try { localStorage.setItem(geoCacheKey, JSON.stringify({language, expires:Date.now()+86400000})); } catch {} return language; }
       } catch {}
       return fallback;
   }
 
     const translationOriginals = new WeakMap();
-    const translationCacheKey = "portfolio-translation-cache-v2";
+    const translationCacheKey = "portfolio-translation-cache-v3";
+    const geoCacheKey = "portfolio-geo-language-v1";
     let translationCache = {};
     try { translationCache = JSON.parse(localStorage.getItem(translationCacheKey) || "{}"); } catch {}
     async function translateForCountry(language) {
@@ -1977,10 +1979,10 @@
           }
         } catch {}
       }
-      for (let i=0;i<nodes.length;i+=5) await Promise.all(nodes.slice(i,i+5).map(translateNode));
+      for (let i=0;i<nodes.length;i+=12) await Promise.all(nodes.slice(i,i+12).map(translateNode));
       try {
         const keys = Object.keys(translationCache);
-        if (keys.length > 600) for (const key of keys.slice(0,keys.length-600)) delete translationCache[key];
+        if (keys.length > 4000) for (const key of keys.slice(0,keys.length-4000)) delete translationCache[key];
         localStorage.setItem(translationCacheKey,JSON.stringify(translationCache));
       } catch {}
       document.title = document.querySelector("h1")?.textContent.trim() + " — Portfolio";
