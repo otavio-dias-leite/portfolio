@@ -1,80 +1,204 @@
 #!/usr/bin/env python3
-import argparse, html, json, shutil, tempfile, time
+"""Generate cached static translations while preserving headings and technical terms."""
+from __future__ import annotations
+import argparse
+import html
+import json
+import re
+import shutil
+import tempfile
+import time
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-SKIP={'script','style','code','pre','svg','math','noscript'}
-LOCALES={'pt-BR':'pt-br','es':'es','zh-CN':'zh-cn','ja':'ja'}
-class Page(HTMLParser):
- def __init__(self,s):
-  super().__init__(convert_charrefs=False); self.out=[]; self.text=[]; self.skip=0; self.feed(s); self.close()
- def handle_starttag(self,t,a):
-  self.out.append(self.get_starttag_text()); self.skip+=1 if t.lower() in SKIP else 0
- def handle_startendtag(self,t,a): self.out.append(self.get_starttag_text())
- def handle_endtag(self,t):
-  self.out.append('</'+t+'>'); self.skip=max(0,self.skip-(1 if t.lower() in SKIP else 0))
- def handle_data(self,d):
-  if self.skip or not d.strip() or len(d.strip())<2: self.out.append(d)
-  else:
-   i=len(self.text); self.text.append(d); self.out.append('\x00I18N'+str(i)+'\x00')
- def handle_entityref(self,n): self.out.append('&'+n+';')
- def handle_charref(self,n): self.out.append('&#'+n+';')
- def handle_comment(self,d): self.out.append('<!--'+d+'-->')
- def handle_decl(self,d): self.out.append('<!'+d+'>')
- def render(self,vals):
-  s=''.join(self.out)
-  for i,v in enumerate(vals): s=s.replace('\x00I18N'+str(i)+'\x00',html.escape(v,quote=False))
-  return s
-class Translate:
- def __init__(self,c): self.c=c
- def batch(self,items,lang):
-  q=[('client','gtx'),('sl','en'),('tl',lang),('dt','t')]+[('q',x) for x in items]
-  req=Request('https://translate.googleapis.com/translate_a/single?'+urlencode(q),headers={'User-Agent':'Mozilla/5.0','Accept':'application/json'})
-  for n in range(2):
-   try:
-    with urlopen(req,timeout=12) as f: data=json.loads(f.read().decode())
-    groups=data[0]; groups=[groups] if len(items)==1 else groups
-    vals=[''.join(x[0] for x in g if isinstance(x,list) and x and x[0]) for g in groups[:len(items)]]
-    if len(vals)==len(items) and all(vals): return vals
-   except Exception:
-    if n==2: return items
-    time.sleep(n+1)
-  return items
- def run(self,items,lang):
-  out=[None]*len(items); todo=[]; pos=[]
-  for i,s in enumerate(items):
-   k=lang+'|'+s
-   if k in self.c: out[i]=self.c[k]
-   else: todo.append(s); pos.append((i,k))
-  for off in range(0,len(todo),20):
-   batch=todo[off:off+20]; vals=self.batch(batch,lang)
-   for j,(i,k) in enumerate(pos[off:off+20]):
-    out[i]=vals[j]
-    if vals[j]!=batch[j]: self.c[k]=vals[j]
-  return out
+ENDPOINT = "https://translate.googleapis.com/translate_a/single"
+LOCALES = {"pt-BR": "pt-br", "es": "es", "zh-CN": "zh-cn", "ja": "ja"}
+SKIP_TAGS = {"script", "style", "code", "pre", "kbd", "samp", "svg", "math", "noscript", "textarea", "title", "h1", "h2", "h3", "h4", "h5", "h6"}
+PROTECTED_TERMS = (
+    "Raspberry Pi Zero W", "Cardputer ADV", "M5Stack", "M5Cardputer", "M5Launcher",
+    "Vibe Coding", "Web Flasher", "High Boy", "Johnny", "Chryse", "Cyberspace",
+    "ESP32-S3", "ESP32", "Arduino", "GitHub", "Git", "Linux", "JavaScript",
+    "TypeScript", "Python", "HTML", "CSS", "Hugo", "IFF", "CNPq", "DAAT",
+    "DOOM", "MP3", "Wi-Fi", "USB", "GPIO", "SD", "firmware"
+)
+CACHE_FILE = ".translation-cache.json"
+
+class HTMLTranslationParser(HTMLParser):
+    def __init__(self, source: str):
+        super().__init__(convert_charrefs=False)
+        self.parts: list[str] = []
+        self.texts: list[str] = []
+        self.skip_depth = 0
+        self.feed(source)
+        self.close()
+
+    def handle_starttag(self, tag, attrs):
+        self.parts.append(self.get_starttag_text())
+        attrs_map = dict(attrs)
+        if tag.lower() in SKIP_TAGS or "data-no-translate" in attrs_map or attrs_map.get("translate") == "no" or "notranslate" in attrs_map.get("class", "").split():
+            self.skip_depth += 1
+
+    def handle_startendtag(self, tag, attrs):
+        self.parts.append(self.get_starttag_text())
+
+    def handle_endtag(self, tag):
+        self.parts.append(f"</{tag}>")
+        if tag.lower() in SKIP_TAGS and self.skip_depth:
+            self.skip_depth -= 1
+
+    def handle_data(self, data):
+        if self.skip_depth or not data.strip() or len(data.strip()) < 2:
+            self.parts.append(data)
+            return
+        index = len(self.texts)
+        self.texts.append(data)
+        self.parts.append(f"\x00STATIC_I18N_{index}\x00")
+
+    def handle_entityref(self, name):
+        self.parts.append(f"&{name};")
+
+    def handle_charref(self, name):
+        self.parts.append(f"&#{name};")
+
+    def handle_comment(self, data):
+        self.parts.append(f"<!--{data}-->")
+
+    def handle_decl(self, decl):
+        self.parts.append(f"<!{decl}>")
+
+    def unknown_decl(self, data):
+        self.parts.append(f"<![{data}]>")
+
+    def output(self, translated: list[str]) -> str:
+        result = "".join(self.parts)
+        for index, value in enumerate(translated):
+            result = result.replace(f"\x00STATIC_I18N_{index}\x00", html.escape(value, quote=False))
+        return result
+
+class Translator:
+    def __init__(self, cache: dict):
+        self.cache = cache
+        self.term_pattern = re.compile("|".join(re.escape(x) for x in sorted(PROTECTED_TERMS, key=len, reverse=True)), re.IGNORECASE)
+
+    def protect_terms(self, value: str):
+        terms = []
+        def replace(match):
+            token = f"QZXTERM{len(terms):04d}XZQ"
+            terms.append(match.group(0))
+            return token
+        return self.term_pattern.sub(replace, value), terms
+
+    def one_batch(self, texts: list[str], target: str) -> list[str]:
+        params = [("client", "gtx"), ("sl", "en"), ("tl", target), ("dt", "t")]
+        params.extend(("q", value) for value in texts)
+        request = Request(ENDPOINT + "?" + urlencode(params), headers={"User-Agent": "Mozilla/5.0 static-i18n-builder/2.0", "Accept": "application/json"})
+        last_error = None
+        for attempt in range(3):
+            try:
+                with urlopen(request, timeout=18) as response:
+                    data = json.loads(response.read().decode("utf-8"))
+                groups = data[0]
+                if len(texts) == 1:
+                    groups = [groups]
+                output = []
+                for index in range(len(texts)):
+                    group = groups[index] if index < len(groups) else []
+                    output.append("".join(part[0] for part in group if isinstance(part, list) and part and part[0]))
+                if len(output) != len(texts) or any(not value for value in output):
+                    raise ValueError("Translation response was incomplete")
+                return output
+            except Exception as exc:
+                last_error = exc
+                if attempt < 2:
+                    time.sleep(1.5 * (attempt + 1))
+        raise RuntimeError(f"Free translation endpoint failed for {target}: {last_error}")
+
+    def translate(self, texts: list[str], target: str) -> list[str]:
+        result = [None] * len(texts)
+        missing = []
+        positions = []
+        for index, raw in enumerate(texts):
+            key = target + "|" + raw
+            if key in self.cache:
+                result[index] = self.cache[key]
+            else:
+                protected, terms = self.protect_terms(raw)
+                missing.append((protected, terms, raw))
+                positions.append((index, key))
+        for offset in range(0, len(missing), 12):
+            batch_items = missing[offset:offset + 12]
+            try:
+                translated = self.one_batch([item[0] for item in batch_items], target)
+            except Exception as exc:
+                print(f"WARNING: {exc}; leaving this batch in English.")
+                translated = [item[0] for item in batch_items]
+            for local_index, ((position, key), value) in enumerate(zip(positions[offset:offset + 12], translated)):
+                protected, terms, original = batch_items[local_index]
+                for term_index, term in enumerate(terms):
+                    token = f"QZXTERM{term_index:04d}XZQ"
+                    if token not in value:
+                        value = original
+                        break
+                    value = value.replace(token, term)
+                result[position] = value
+                if value != original:
+                    self.cache[key] = value
+        return result
+
+def should_skip(path: Path) -> bool:
+    return any(part in {".git", ".github", "node_modules", "firmware", "dist", *LOCALES.values()} for part in path.parts)
+
+def set_document_locale(source: str, language: str, folder: str) -> str:
+    def update(match):
+        attrs = match.group(1)
+        attrs = re.sub(r'\s+lang=(["\']).*?\1', "", attrs, flags=re.IGNORECASE)
+        attrs = re.sub(r'\s+data-static-locale=(["\']).*?\1', "", attrs, flags=re.IGNORECASE)
+        return f'<html{attrs} lang="{language}" data-static-locale="{folder}">'
+    return re.sub(r"<html\b([^>]*)>", update, source, count=1, flags=re.IGNORECASE)
 
 def main():
- p=argparse.ArgumentParser(); p.add_argument('site_dir',type=Path); a=p.parse_args(); root=a.site_dir.resolve()
- cachefile=root.parent/'.translation-cache.json'
- try: cache=json.loads(cachefile.read_text())
- except Exception: cache={}
- tr=Translate(cache); files=list(root.rglob('*.html'))
- for lang,folder in LOCALES.items():
-  with tempfile.TemporaryDirectory() as td:
-   stage=Path(td)/folder; shutil.copytree(root,stage,ignore=shutil.ignore_patterns(*LOCALES.values(),'.git','node_modules','dist'))
-   for src in files:
-    rel=src.relative_to(root)
-    if 'admin' in rel.parts: continue
-    dst=stage/rel
-    if not dst.exists(): continue
-    page=Page(src.read_text(encoding='utf-8')); vals=tr.run(page.text,lang.split('-')[0]); result=page.render(vals)
-    result=result.replace('<html lang="en-US">','<html lang="'+lang+'" data-static-locale="'+folder+'">',1)
-    dst.write_text(result,encoding='utf-8')
-   target=root/folder
-   if target.exists(): shutil.rmtree(target)
-   shutil.copytree(stage,target)
-  print('Created',lang,'static pages')
- cachefile.write_text(json.dumps(tr.c,ensure_ascii=False,separators=(',',':')))
-if __name__=='__main__': main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("site_dir", type=Path)
+    parser.add_argument("--languages", default="pt-BR,es,zh-CN,ja")
+    args = parser.parse_args()
+    root = args.site_dir.resolve()
+    if not root.is_dir():
+        raise SystemExit(f"Site directory does not exist: {root}")
+    cache_path = root.parent / CACHE_FILE
+    try:
+        cache = json.loads(cache_path.read_text(encoding="utf-8"))
+    except Exception:
+        cache = {}
+    translator = Translator(cache)
+    html_files = [path for path in root.rglob("*.html") if not should_skip(path.relative_to(root))]
+    languages = [item.strip() for item in args.languages.split(",") if item.strip()]
+    for language in languages:
+        folder = LOCALES.get(language)
+        if not folder:
+            continue
+        with tempfile.TemporaryDirectory(prefix="static-i18n-") as temp:
+            staging = Path(temp) / folder
+            shutil.copytree(root, staging, ignore=shutil.ignore_patterns(*LOCALES.values(), ".git", "node_modules", "dist"))
+            for source_file in html_files:
+                relative = source_file.relative_to(root)
+                if "admin" in relative.parts:
+                    continue
+                destination = staging / relative
+                if not destination.exists():
+                    continue
+                parsed = HTMLTranslationParser(source_file.read_text(encoding="utf-8"))
+                translated = translator.translate(parsed.texts, language.split("-")[0])
+                output = parsed.output(translated)
+                output = set_document_locale(output, language, folder)
+                destination.write_text(output, encoding="utf-8")
+            target = root / folder
+            if target.exists():
+                shutil.rmtree(target)
+            shutil.copytree(staging, target)
+        print(f"Generated static {language} pages: {root / folder}")
+    cache_path.write_text(json.dumps(translator.cache, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+if __name__ == "__main__":
+    main()
