@@ -45,6 +45,7 @@ jobs:
           npm install --no-save jsdom@26
           node scripts/render-static-source.js index.html dist/index.html
           cp robots.txt sitemap.xml locale-router.js dist/
+          cp -R assets dist/assets
           python scripts/build-static-translations.py dist
       - uses: actions/upload-pages-artifact@v3
         with:
