@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build static localized copies while preserving technical vocabulary and markup."""
+"""Build static localized copies, including headings and document titles, while preserving technical vocabulary and markup."""
 from __future__ import annotations
 import argparse, concurrent.futures, html, json, re, shutil, tempfile, time
 from html.parser import HTMLParser
@@ -9,7 +9,7 @@ from urllib.request import Request, urlopen
 
 ENDPOINT = "https://translate.googleapis.com/translate_a/single"
 LOCALES = {"pt-BR": "pt-br", "es": "es", "zh-CN": "zh-cn", "ja": "ja"}
-SKIP_TAGS = {"script", "style", "code", "pre", "kbd", "samp", "svg", "math", "noscript", "textarea", "title", "h1", "h2", "h3", "h4", "h5", "h6"}
+SKIP_TAGS = {"script", "style", "code", "pre", "kbd", "samp", "svg", "math", "noscript", "textarea"}
 PROTECTED_TERMS = (
     "Raspberry Pi Zero W", "Cardputer ADV", "M5Stack", "M5Cardputer", "M5Launcher",
     "Vibe Coding", "Web Flasher", "High Boy", "Johnny", "Chryse", "Cyberspace",
