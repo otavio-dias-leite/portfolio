@@ -1,10 +1,11 @@
 ---
-title: "Complete Cardputer"
+title: "Netrunner"
 date: 2026-10-28
-description: "An experimental feature-rich firmware concept for the M5Stack Cardputer ADV."
-tags: ["embedded", "firmware", "ESP32-S3"]
+description: "An operating system for security, networking and hardware tools."
+tags: ["security", "networking", "hardware", "embedded"]
 weight: 2
 ---
-An independent, AI-assisted firmware prototype for the M5Stack Cardputer ADV. The project began as a paper design and is being developed as a practical learning environment for device interfaces, firmware structure and hardware experimentation.
 
-It is a hobby project rather than a professional product. The longer-term goal is to deepen the implementation and progressively rewrite its core in C++.
+Netrunner is an operating system project focused on information security, network tools and hardware interaction. Development is currently targeting the M5Stack Cardputer ADV.
+
+The goal is to build a complete, expandable system and bring it to other platforms, including Raspberry Pi and M5Stick, with support for additional hardware over time.
