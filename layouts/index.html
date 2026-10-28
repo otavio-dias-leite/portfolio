@@ -56,11 +56,11 @@
 </section>
 
 <section class="section" id="projects">
-  <div class="section-heading"><span>04</span><h2>Selected Project</h2></div>
+  <div class="section-heading"><span>04</span><h2>Projects</h2></div>
   <div class="section-content project-list">
     {{ range (where site.RegularPages "Section" "projects").ByWeight }}
     <article class="project-card">
-      <div class="project-topline"><span>IFF · SABER FAZER SABER FAIR</span><span>ACADEMIC PROJECT</span></div>
+      <div class="project-topline"><span>{{ .Params.project_label | default "TECHNICAL PROJECT" }}</span><span>{{ .Params.project_type | default "PROJECT" }}</span></div>
       <h3><a href="{{ .RelPermalink }}">{{ .Title }} <span>↗</span></a></h3>
       {{ with .Description }}<p>{{ . }}</p>{{ end }}
       <a class="text-link" href="{{ .RelPermalink }}">View project details <span>→</span></a>
