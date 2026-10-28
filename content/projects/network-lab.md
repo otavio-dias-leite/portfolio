@@ -5,6 +5,18 @@ description: "An IFF Saber Fazer Saber project for experimenting with network to
 tags: ["networking", "academic", "IFF"]
 weight: 1
 ---
-A virtual laboratory developed in the context of the IFF Saber Fazer Saber fair. The project focuses on emulating network equipment and router firmware so that network topologies can be assembled, tested and studied in a controlled environment.
 
-The work connects networking fundamentals with practical experimentation, providing a way to explore configuration, communication and the behavior of interconnected devices.
+## Project overview
+
+Developed for the IFF Saber Fazer Saber fair, this project presents a virtual laboratory for studying computer networks. Its central idea is to use router firmware to emulate network equipment and provide a controlled environment for practical experimentation.
+
+## What the laboratory enables
+
+- Emulate network devices through router firmware.
+- Assemble and configure network topologies in a virtual environment.
+- Test network arrangements and observe communication between interconnected devices.
+- Study networking concepts through hands-on configuration and experimentation.
+
+## Academic context
+
+The project connects networking fundamentals and telecommunications with practical work. It was presented at the IFF Saber Fazer Saber fair as an educational environment for exploring network equipment and topology behavior.
