@@ -4,6 +4,8 @@ date: 2026-10-28
 description: "An IFF Saber Fazer Saber project for experimenting with network topologies and router firmware."
 tags: ["networking", "academic", "IFF"]
 weight: 1
+project_label: "IFF · SABER FAZER SABER FAIR"
+project_type: "ACADEMIC PROJECT"
 ---
 
 ## Project overview
