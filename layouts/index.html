@@ -9,68 +9,37 @@
   </div>
   <aside class="hero-aside" aria-label="Professional focus">
     <span class="aside-label">AREAS OF FOUNDATION</span>
-    <p>Electrotechnics</p>
-    <p>Electrical & Electronic Systems</p>
-    <p>Computer Science</p>
-    <p>Networks & Information Security</p>
-    <div class="aside-rule"></div>
-    <span class="aside-label">CURRENT FOCUS</span>
-    <strong>Information Security</strong>
+    <p>Electrotechnics</p><p>Electrical & Electronic Systems</p><p>Computer Science</p><p>Networks & Information Security</p>
+    <div class="aside-rule"></div><span class="aside-label">CURRENT FOCUS</span><strong>Information Security</strong>
   </aside>
   <div class="hero-index">01 <span>—</span> PROFILE</div>
 </section>
-
 <section class="section" id="education">
   <div class="section-heading"><span>02</span><h2>Education</h2></div>
   <div class="section-content education-list">
-    <article class="education-item">
-      <span class="item-marker"></span>
-      <div><h3>Technical Education in Electrotechnics</h3><p>Instituto Federal Fluminense (IFF) · Campos dos Goytacazes</p></div>
-      <span class="item-type">TECHNICAL</span>
-    </article>
-    <article class="education-item">
-      <span class="item-marker"></span>
-      <div><h3>Bachelor's Degree in Computer Science</h3><p>Estácio · In progress</p></div>
-      <span class="item-type">UNDERGRADUATE</span>
-    </article>
-    <article class="education-item">
-      <span class="item-marker"></span>
-      <div><h3>Electrical Engineering</h3><p>Academic studies in electrical and electronic systems.</p></div>
-      <span class="item-type">ACADEMIC STUDIES</span>
-    </article>
+    <article class="education-item"><span class="item-marker"></span><div><h3>Technical Education in Electrotechnics</h3><p>Instituto Federal Fluminense (IFF) · Campos dos Goytacazes</p></div><span class="item-type">TECHNICAL</span></article>
+    <article class="education-item"><span class="item-marker"></span><div><h3>Bachelor's Degree in Computer Science</h3><p>Estácio · In progress</p></div><span class="item-type">UNDERGRADUATE</span></article>
+    <article class="education-item"><span class="item-marker"></span><div><h3>Electrical Engineering</h3><p>Academic studies in electrical and electronic systems.</p></div><span class="item-type">ACADEMIC STUDIES</span></article>
   </div>
 </section>
-
 <section class="section" id="coursework">
   <div class="section-heading"><span>03</span><h2>Relevant Coursework</h2></div>
-  <div class="section-content">
-    <p class="section-intro">Completed coursework — Bachelor's degree in Computer Science, first semester.</p>
-    <div class="course-grid">
-      <div><span>01</span>Introduction to Information Security</div>
-      <div><span>02</span>Computer Networks Fundamentals</div>
-      <div><span>03</span>Computer Architecture</div>
-      <div><span>04</span>Structured Programming in C</div>
-      <div><span>05</span>Information Systems and Society</div>
-    </div>
+  <div class="section-content"><p class="section-intro">Completed coursework — Bachelor's degree in Computer Science, first semester.</p>
+    <div class="course-grid"><div><span>01</span>Introduction to Information Security</div><div><span>02</span>Computer Networks Fundamentals</div><div><span>03</span>Computer Architecture</div><div><span>04</span>Structured Programming in C</div><div><span>05</span>Information Systems and Society</div></div>
   </div>
 </section>
-
 <section class="section" id="projects">
   <div class="section-heading"><span>04</span><h2>Projects</h2></div>
   <div class="section-content project-list">
     {{ range (where site.RegularPages "Section" "projects").ByWeight }}
-    <article class="project-card">
-      <div class="project-topline"><span>{{ .Params.project_label | default "TECHNICAL PROJECT" }}</span><span>{{ .Params.project_type | default "PROJECT" }}</span></div>
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }} <span>↗</span></a></h3>
-      {{ with .Description }}<p>{{ . }}</p>{{ end }}
-      <a class="text-link" href="{{ .RelPermalink }}">View project details <span>→</span></a>
-    </article>
+    <a class="project-card" href="{{ .RelPermalink }}">
+      <span class="project-topline"><span>{{ .Params.project_label | default "TECHNICAL PROJECT" }}</span><span>{{ .Params.project_type | default "PROJECT" }}</span></span>
+      <strong class="project-title">{{ .Title }} <span aria-hidden="true">↗</span></strong>
+      {{ with .Description }}<span class="project-description">{{ . }}</span>{{ end }}
+      <span class="text-link">View project details <span>→</span></span>
+    </a>
     {{ end }}
   </div>
 </section>
-
-<section class="contact-section" id="contact">
-  <div><span class="eyebrow">05 / CONTACT</span><h2>Professional inquiries</h2></div>
-  <a href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com <span>↗</span></a>
-</section>
+<section class="contact-section" id="contact"><div><span class="eyebrow">05 / CONTACT</span><h2>Professional inquiries</h2></div><a href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com <span>↗</span></a></section>
 {{ end }}
