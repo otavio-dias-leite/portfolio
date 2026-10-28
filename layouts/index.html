@@ -1,7 +1,54 @@
 {{ define "main" }}
-<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="status"></span> AVAILABLE FOR OPPORTUNITIES / BRAZIL</p><h1>Engineering<br>the <em>physical</em><br>side of tech.</h1><p class="lead">I am Otávio Dias Leite — an electrical engineering background, a computer science student, and an aspiring information security practitioner.</p><div class="actions"><a class="primary" href="#projects">EXPLORE PROJECTS ↘</a><a class="secondary" href="{{ site.Params.blogURL }}">READ THE BLOG ↗</a></div></div><div class="hero-aside"><span class="aside-index">PROFILE / 001</span><div class="orb"><span>ODL</span></div><p>HARDWARE<br>MEETS SECURITY</p><span class="aside-bottom">BUILD / TEST / UNDERSTAND</span></div></section>
-<section id="about" class="section about"><div class="section-label">01 / ABOUT</div><div class="section-body"><h2>Grounded in electrical systems.<br>Curious about what happens beneath.</h2><p>My main academic foundation is in Electrical Engineering, complemented by a Bachelor's degree in Computer Science in progress. My interests span electrical and electronic systems, physical devices, networks and the foundations of computing.</p><p>I am currently directing my professional development toward information security, especially the intersection between hardware, firmware and the security of connected devices. I am open to CLT and freelance opportunities across the areas covered by my education and practical experience.</p></div></section>
-<section class="section education"><div class="section-label">02 / EDUCATION</div><div class="section-body"><h2>Technical foundations.<br>Continuous study.</h2><div class="education-item"><strong>Technical qualification in Electrotechnics</strong><span>IFF — Campos dos Goytacazes</span></div><div class="education-item"><strong>Electrical Engineering</strong><span>University studies</span></div><div class="education-item"><strong>Bachelor's in Computer Science</strong><span>In progress</span></div></div></section><section id="focus" class="section focus"><div class="section-label">02 / AREAS OF INTEREST</div><div class="focus-grid"><article><span>01</span><h3>Electrical & Electronics</h3><p>Electrical systems, electronics, components, troubleshooting and physical technology.</p></article><article><span>02</span><h3>Hardware Security</h3><p>Device interfaces, firmware, protocols, hardware analysis and responsible testing.</p></article><article><span>03</span><h3>Computing Foundations</h3><p>Networking, databases, programming fundamentals and infrastructure.</p></article></div></section>
-<section id="projects" class="section projects"><div class="section-label">03 / SELECTED PROJECTS</div><div class="project-list">{{ range (where site.RegularPages "Section" "projects").ByWeight }}<article class="project"><div class="project-number">0{{ .Weight }}</div><div class="project-main"><p class="eyebrow">{{ delimit .Params.tags " / " }}</p><h3><a href="{{ .RelPermalink }}">{{ .Title }} ↗</a></h3><p>{{ .Description }}</p></div><span class="project-arrow">↗</span></article>{{ end }}</div></section>
-<section class="contact"><p class="eyebrow">04 / NEXT STEP</p><h2>Let's build something<br><em>that works in the real world.</em></h2><p>Open to employment and freelance opportunities aligned with my training and practical skills.</p><a class="primary" href="mailto:o.otavio.dias.leite@gmail.com">GET IN TOUCH ↗</a></section>
+<section class="hero">
+  <p class="eyebrow">Otávio Dias Leite</p>
+  <h1>Electrical engineering.<br>Hardware. <em>Security.</em></h1>
+  <p class="lead">Electrical engineering background and Computer Science student. Currently focused on information security and hardware security.</p>
+  <div class="actions">
+    <a class="primary" href="#projects">Projects</a>
+    <a class="secondary" href="{{ site.Params.blogURL }}">Blog</a>
+  </div>
+</section>
+<section id="about" class="section">
+  <div class="section-label">About</div>
+  <div class="section-body">
+    <h2>Background</h2>
+    <p>My main academic background is in Electrical Engineering, with technical training in Electrotechnics and a Bachelor's degree in Computer Science in progress.</p>
+    <p>My experience and projects involve electrical and electronic systems, physical devices, embedded systems and computing fundamentals. I am currently studying information security, with a growing focus on hardware hacking.</p>
+    <p>Open to employment and freelance opportunities across the areas covered by my education and practical experience.</p>
+  </div>
+</section>
+<section class="section education">
+  <div class="section-label">Education</div>
+  <div class="section-body">
+    <div class="education-item"><strong>Technical qualification in Electrotechnics</strong><span>IFF — Campos dos Goytacazes</span></div>
+    <div class="education-item"><strong>Electrical Engineering</strong><span>University studies</span></div>
+    <div class="education-item"><strong>Bachelor's in Computer Science</strong><span>In progress</span></div>
+  </div>
+</section>
+<section id="focus" class="section">
+  <div class="section-label">Focus</div>
+  <div class="section-body focus-grid">
+    <article><h3>Electrical systems</h3><p>Electrical installations, electronics, components and troubleshooting.</p></article>
+    <article><h3>Hardware security</h3><p>Device interfaces, firmware, protocols and hardware analysis.</p></article>
+    <article><h3>Computing</h3><p>Networks, databases and programming fundamentals.</p></article>
+  </div>
+</section>
+<section id="projects" class="section projects">
+  <div class="section-label">Projects</div>
+  <div class="project-list">
+    {{ range (where site.RegularPages "Section" "projects").ByWeight }}
+    <article class="project">
+      <div class="project-main">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }} →</a></h3>
+        <p>{{ .Description }}</p>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+<section class="contact">
+  <h2>Contact</h2>
+  <p>Available for employment and freelance work.</p>
+  <a class="primary" href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com</a>
+</section>
 {{ end }}
