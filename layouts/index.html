@@ -1,36 +1,12 @@
 {{ define "main" }}
 <section class="hero">
-  <p class="eyebrow">Otávio Dias Leite</p>
-  <h1>Electrical engineering.<br>Hardware. <em>Security.</em></h1>
-  <p class="lead">Electrical engineering background and Computer Science student. Currently focused on information security and hardware security.</p>
+  <p class="eyebrow">Electrical Engineering · Computer Science</p>
+  <h1>Information<br><em>Security.</em></h1>
+  <p class="lead">I am specializing in information security, with a particular interest in hardware hacking, embedded devices and network security.</p>
+  <p class="intro">Electrical Engineering background. Bachelor's degree in Computer Science in progress.</p>
   <div class="actions">
-    <a class="primary" href="#projects">Projects</a>
-    <a class="secondary" href="{{ site.Params.blogURL }}">Blog</a>
-  </div>
-</section>
-<section id="about" class="section">
-  <div class="section-label">About</div>
-  <div class="section-body">
-    <h2>Background</h2>
-    <p>My main academic background is in Electrical Engineering, with technical training in Electrotechnics and a Bachelor's degree in Computer Science in progress.</p>
-    <p>My experience and projects involve electrical and electronic systems, physical devices, embedded systems and computing fundamentals. I am currently studying information security, with a growing focus on hardware hacking.</p>
-    <p>Open to employment and freelance opportunities across the areas covered by my education and practical experience.</p>
-  </div>
-</section>
-<section class="section education">
-  <div class="section-label">Education</div>
-  <div class="section-body">
-    <div class="education-item"><strong>Technical qualification in Electrotechnics</strong><span>IFF — Campos dos Goytacazes</span></div>
-    <div class="education-item"><strong>Electrical Engineering</strong><span>University studies</span></div>
-    <div class="education-item"><strong>Bachelor's in Computer Science</strong><span>In progress</span></div>
-  </div>
-</section>
-<section id="focus" class="section">
-  <div class="section-label">Focus</div>
-  <div class="section-body focus-grid">
-    <article><h3>Electrical systems</h3><p>Electrical installations, electronics, components and troubleshooting.</p></article>
-    <article><h3>Hardware security</h3><p>Device interfaces, firmware, protocols and hardware analysis.</p></article>
-    <article><h3>Computing</h3><p>Networks, databases and programming fundamentals.</p></article>
+    <a class="primary" href="#projects">Selected projects</a>
+    <a class="secondary" href="mailto:o.otavio.dias.leite@gmail.com">Email</a>
   </div>
 </section>
 <section id="projects" class="section projects">
@@ -38,17 +14,14 @@
   <div class="project-list">
     {{ range (where site.RegularPages "Section" "projects").ByWeight }}
     <article class="project">
-      <div class="project-main">
-        <h3><a href="{{ .RelPermalink }}">{{ .Title }} →</a></h3>
-        <p>{{ .Description }}</p>
-      </div>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">↗</span></a></h2>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
     </article>
     {{ end }}
   </div>
 </section>
-<section class="contact">
+<section id="contact" class="contact">
   <h2>Contact</h2>
-  <p>Available for employment and freelance work.</p>
-  <a class="primary" href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com</a>
+  <a href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com</a>
 </section>
 {{ end }}
