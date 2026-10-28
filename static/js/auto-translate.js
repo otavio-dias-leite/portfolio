@@ -114,6 +114,35 @@
   };
   Object.keys(projectTranslations).forEach(locale => Object.assign(dictionaries[locale], projectTranslations[locale]));
 
+
+  const projectParagraphs = {
+    "pt-BR": {
+      "A technical project focused on the use of a programmable logic controller (PLC) in automation and control. It represents practical work connected to industrial control systems and the application of automation logic.":"Projeto técnico voltado ao uso de um controlador lógico programável (CLP) em automação e controle, relacionado a sistemas de controle industrial e à aplicação de lógica de automação.",
+      "An electrical project centered on a Tesla coil, a resonant transformer associated with high-voltage demonstrations. The project connects electrical principles with the study of electromagnetic fields, resonance, and energy transfer.":"Projeto elétrico centrado em uma bobina de Tesla, um transformador ressonante associado a demonstrações de alta tensão. Relaciona princípios elétricos ao estudo de campos eletromagnéticos, ressonância e transferência de energia.",
+      "A technical project focused on monitoring temperature conditions. Its purpose is to make temperature information available for observation and support the identification of changes in the monitored environment.":"Projeto técnico voltado ao monitoramento de condições de temperatura. Seu objetivo é disponibilizar informações para observação e auxiliar na identificação de mudanças no ambiente monitorado.",
+      "A technical project focused on monitoring fire-related risks in a bakery environment. The goal is to support early awareness of potentially dangerous conditions in a workplace where heat-generating equipment is part of daily operation.":"Projeto técnico voltado ao monitoramento de riscos relacionados a incêndio em uma padaria. O objetivo é auxiliar na identificação antecipada de condições potencialmente perigosas em um ambiente de trabalho com equipamentos geradores de calor."
+    },
+    "es": {
+      "A technical project focused on the use of a programmable logic controller (PLC) in automation and control. It represents practical work connected to industrial control systems and the application of automation logic.":"Proyecto técnico centrado en el uso de un controlador lógico programable (PLC) para automatización y control, relacionado con sistemas de control industrial y lógica de automatización.",
+      "An electrical project centered on a Tesla coil, a resonant transformer associated with high-voltage demonstrations. The project connects electrical principles with the study of electromagnetic fields, resonance, and energy transfer.":"Proyecto eléctrico centrado en una bobina de Tesla, un transformador resonante asociado a demostraciones de alta tensión. Relaciona principios eléctricos con el estudio de campos electromagnéticos, resonancia y transferencia de energía.",
+      "A technical project focused on monitoring temperature conditions. Its purpose is to make temperature information available for observation and support the identification of changes in the monitored environment.":"Proyecto técnico centrado en monitorear condiciones de temperatura y facilitar la observación de cambios en el entorno supervisado.",
+      "A technical project focused on monitoring fire-related risks in a bakery environment. The goal is to support early awareness of potentially dangerous conditions in a workplace where heat-generating equipment is part of daily operation.":"Proyecto técnico centrado en monitorear riesgos relacionados con incendios en una panadería y detectar de forma temprana condiciones potencialmente peligrosas."
+    },
+    "zh-CN": {
+      "A technical project focused on the use of a programmable logic controller (PLC) in automation and control. It represents practical work connected to industrial control systems and the application of automation logic.":"该技术项目侧重于在自动化和控制中使用可编程逻辑控制器（PLC），涉及工业控制系统和自动化逻辑的应用。",
+      "An electrical project centered on a Tesla coil, a resonant transformer associated with high-voltage demonstrations. The project connects electrical principles with the study of electromagnetic fields, resonance, and energy transfer.":"该电气项目以特斯拉线圈为核心，这是一种用于高压演示的谐振变压器，涉及电气原理、电磁场、谐振和能量传输。",
+      "A technical project focused on monitoring temperature conditions. Its purpose is to make temperature information available for observation and support the identification of changes in the monitored environment.":"该技术项目用于监测温度状况，提供温度信息以便观察并识别受监测环境的变化。",
+      "A technical project focused on monitoring fire-related risks in a bakery environment. The goal is to support early awareness of potentially dangerous conditions in a workplace where heat-generating equipment is part of daily operation.":"该技术项目旨在监测面包店环境中的火灾相关风险，以便及早发现可能存在危险的情况。"
+    },
+    "ja": {
+      "A technical project focused on the use of a programmable logic controller (PLC) in automation and control. It represents practical work connected to industrial control systems and the application of automation logic.":"プログラマブルロジックコントローラ（PLC）を自動化と制御に使用する技術プロジェクトです。産業用制御システムと自動化ロジックの実践に関連しています。",
+      "An electrical project centered on a Tesla coil, a resonant transformer associated with high-voltage demonstrations. The project connects electrical principles with the study of electromagnetic fields, resonance, and energy transfer.":"テスラコイルを中心とした電気プロジェクトです。高電圧実験に用いられる共振変圧器であり、電気原理、電磁界、共振、エネルギー伝達を扱います。",
+      "A technical project focused on monitoring temperature conditions. Its purpose is to make temperature information available for observation and support the identification of changes in the monitored environment.":"温度状態を監視し、温度情報の観察と監視環境の変化の把握を目的とする技術プロジェクトです。",
+      "A technical project focused on monitoring fire-related risks in a bakery environment. The goal is to support early awareness of potentially dangerous conditions in a workplace where heat-generating equipment is part of daily operation.":"ベーカリー環境における火災関連リスクを監視し、危険な状態を早期に把握することを目的とした技術プロジェクトです。"
+    }
+  };
+  Object.keys(projectParagraphs).forEach(locale => Object.assign(dictionaries[locale], projectParagraphs[locale]));
+
   const normalize = value => value.replace(/\s+/g, " ").trim();
   const locale = (navigator.languages || [navigator.language || "en"]).map(x => x.toLowerCase()).map(x => x.startsWith("pt") ? "pt-BR" : x.startsWith("es") ? "es" : x.startsWith("zh") ? "zh-CN" : x.startsWith("ja") ? "ja" : "en").find(x => x !== "en") || "en";
   const dict = dictionaries[locale];
