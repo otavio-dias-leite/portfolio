@@ -1,0 +1,84 @@
+(() => {
+  const dictionaries = {
+    "pt-BR": {
+      "PROFESSIONAL PORTFOLIO":"PORTFÓLIO PROFISSIONAL",
+      "Technical background in Electrotechnics, studies in Electrical Engineering, and currently pursuing a Bachelor's degree in Computer Science.":"Formação técnica em Eletrotécnica, estudos em Engenharia Elétrica e graduação em andamento em Ciência da Computação.",
+      "My current professional direction is Information Security. I bring an interdisciplinary foundation in electronics, computer systems and networks, and am open to employment and freelance opportunities aligned with my education and technical skills.":"Meu direcionamento profissional atual é Segurança da Informação. Tenho uma base interdisciplinar em eletrônica, sistemas computacionais e redes, e estou aberto a oportunidades CLT e freelancer compatíveis com minha formação e competências técnicas.",
+      "Get in touch":"Entre em contato",
+      "AREAS OF FOUNDATION":"ÁREAS DE FORMAÇÃO",
+      "Electrotechnics":"Eletrotécnica",
+      "Electrical & Electronic Systems":"Sistemas Elétricos e Eletrônicos",
+      "Computer Science":"Ciência da Computação",
+      "Networks & Information Security":"Redes e Segurança da Informação",
+      "CURRENT FOCUS":"FOCO ATUAL",
+      "Information Security":"Segurança da Informação",
+      "Education":"Formação",
+      "Technical Education in Electrotechnics":"Técnico em Eletrotécnica",
+      "Instituto Federal Fluminense (IFF) · Campos dos Goytacazes":"Instituto Federal Fluminense (IFF) · Campos dos Goytacazes",
+      "TECHNICAL":"TÉCNICO",
+      "Bachelor's Degree in Computer Science":"Bacharelado em Ciência da Computação",
+      "Estácio · In progress":"Estácio · Em andamento",
+      "UNDERGRADUATE":"GRADUAÇÃO",
+      "Electrical Engineering":"Engenharia Elétrica",
+      "Academic studies in electrical and electronic systems.":"Estudos acadêmicos em sistemas elétricos e eletrônicos.",
+      "ACADEMIC STUDIES":"ESTUDOS ACADÊMICOS",
+      "Relevant Coursework":"Disciplinas cursadas",
+      "Completed coursework — Bachelor's degree in Computer Science, first semester.":"Disciplinas concluídas no primeiro período do Bacharelado em Ciência da Computação.",
+      "Introduction to Information Security":"Introdução à Segurança da Informação",
+      "Computer Networks Fundamentals":"Fundamentos de Redes de Computadores",
+      "Computer Architecture":"Arquitetura de Computadores",
+      "Structured Programming in C":"Programação Estruturada em C",
+      "Information Systems and Society":"Sistemas de Informação e Sociedade",
+      "Selected Project":"Projeto em destaque",
+      "IFF · SABER FAZER SABER FAIR":"IFF · FEIRA SABER FAZER SABER",
+      "ACADEMIC PROJECT":"PROJETO ACADÊMICO",
+      "Virtual Networking and Telecommunications Laboratory":"Laboratório Virtual de Redes e Telecomunicações",
+      "An IFF Saber Fazer Saber project for experimenting with network topologies and router firmware.":"Projeto da Feira Saber Fazer Saber do IFF para experimentação com topologias de rede e firmware de roteadores.",
+      "View project details":"Ver detalhes do projeto",
+      "Professional inquiries":"Contato profissional",
+      "Electrical · Computing · Information Security":"Elétrica · Computação · Segurança da Informação",
+      "PROJECT OVERVIEW":"VISÃO GERAL DO PROJETO",
+      "Project overview":"Visão geral do projeto",
+      "What the laboratory enables":"Funcionalidades do laboratório",
+      "Academic context":"Contexto acadêmico",
+      "Developed for the IFF Saber Fazer Saber fair, this project presents a virtual laboratory for studying computer networks. Its central idea is to use router firmware to emulate network equipment and provide a controlled environment for practical experimentation.":"Desenvolvido para a Feira Saber Fazer Saber do IFF, este projeto apresenta um laboratório virtual para estudo de redes de computadores. A ideia central é utilizar firmware de roteadores para emular equipamentos de rede e oferecer um ambiente controlado de experimentação prática.",
+      "Emulate network devices through router firmware.":"Emular dispositivos de rede por meio de firmware de roteadores.",
+      "Assemble and configure network topologies in a virtual environment.":"Montar e configurar topologias de rede em ambiente virtual.",
+      "Test network arrangements and observe communication between interconnected devices.":"Testar configurações de rede e observar a comunicação entre dispositivos interconectados.",
+      "Study networking concepts through hands-on configuration and experimentation.":"Estudar conceitos de redes por meio de configuração e experimentação prática.",
+      "The project connects networking fundamentals and telecommunications with practical work. It was presented at the IFF Saber Fazer Saber fair as an educational environment for exploring network equipment and topology behavior.":"O projeto conecta fundamentos de redes e telecomunicações à prática. Foi apresentado na Feira Saber Fazer Saber do IFF como um ambiente educacional para explorar equipamentos de rede e o comportamento de topologias."
+    },
+    "es": {
+      "PROFESSIONAL PORTFOLIO":"PORTAFOLIO PROFESIONAL",
+      "Technical background in Electrotechnics, studies in Electrical Engineering, and currently pursuing a Bachelor's degree in Computer Science.":"Formación técnica en Electrotecnia, estudios de Ingeniería Eléctrica y una licenciatura en Ciencias de la Computación en curso.",
+      "My current professional direction is Information Security. I bring an interdisciplinary foundation in electronics, computer systems and networks, and am open to employment and freelance opportunities aligned with my education and technical skills.":"Mi orientación profesional actual es la Seguridad de la Información. Tengo una base interdisciplinaria en electrónica, sistemas informáticos y redes, y estoy abierto a oportunidades laborales y freelance relacionadas con mi formación y competencias técnicas.",
+      "Get in touch":"Contacto","AREAS OF FOUNDATION":"ÁREAS DE FORMACIÓN","Electrotechnics":"Electrotecnia","Electrical & Electronic Systems":"Sistemas eléctricos y electrónicos","Computer Science":"Ciencias de la Computación","Networks & Information Security":"Redes y Seguridad de la Información","CURRENT FOCUS":"ENFOQUE ACTUAL","Information Security":"Seguridad de la Información","Education":"Formación","Technical Education in Electrotechnics":"Técnico en Electrotecnia","TECHNICAL":"TÉCNICO","Bachelor's Degree in Computer Science":"Licenciatura en Ciencias de la Computación","Estácio · In progress":"Estácio · En curso","UNDERGRADUATE":"GRADO","Electrical Engineering":"Ingeniería Eléctrica","Academic studies in electrical and electronic systems.":"Estudios académicos en sistemas eléctricos y electrónicos.","ACADEMIC STUDIES":"ESTUDIOS ACADÉMICOS","Relevant Coursework":"Asignaturas cursadas","Completed coursework — Bachelor's degree in Computer Science, first semester.":"Asignaturas aprobadas del primer semestre de Ciencias de la Computación.","Introduction to Information Security":"Introducción a la Seguridad de la Información","Computer Networks Fundamentals":"Fundamentos de Redes Informáticas","Computer Architecture":"Arquitectura de Computadores","Structured Programming in C":"Programación Estructurada en C","Information Systems and Society":"Sistemas de Información y Sociedad","Selected Project":"Proyecto destacado","IFF · SABER FAZER SABER FAIR":"IFF · FERIA SABER FAZER SABER","ACADEMIC PROJECT":"PROYECTO ACADÉMICO","Virtual Networking and Telecommunications Laboratory":"Laboratorio Virtual de Redes y Telecomunicaciones","An IFF Saber Fazer Saber project for experimenting with network topologies and router firmware.":"Proyecto de la feria IFF Saber Fazer Saber para experimentar con topologías de red y firmware de routers.","View project details":"Ver detalles del proyecto","Professional inquiries":"Contacto profesional","Electrical · Computing · Information Security":"Electricidad · Computación · Seguridad de la Información","Project overview":"Descripción del proyecto","What the laboratory enables":"Funciones del laboratorio","Academic context":"Contexto académico"
+    },
+    "zh-CN": {
+      "PROFESSIONAL PORTFOLIO":"专业作品集","Technical background in Electrotechnics, studies in Electrical Engineering, and currently pursuing a Bachelor's degree in Computer Science.":"拥有电气技术专业背景，曾学习电气工程，目前正在攻读计算机科学学士学位。",
+      "My current professional direction is Information Security. I bring an interdisciplinary foundation in electronics, computer systems and networks, and am open to employment and freelance opportunities aligned with my education and technical skills.":"目前的职业发展方向是信息安全。具备电子技术、计算机系统和网络方面的跨学科基础，欢迎与专业背景和技术能力相符的全职及自由职业机会。",
+      "Get in touch":"联系我","AREAS OF FOUNDATION":"专业基础","Electrotechnics":"电气技术","Electrical & Electronic Systems":"电气与电子系统","Computer Science":"计算机科学","Networks & Information Security":"网络与信息安全","CURRENT FOCUS":"当前方向","Information Security":"信息安全","Education":"教育背景","Technical Education in Electrotechnics":"电气技术专业教育","TECHNICAL":"技术教育","Bachelor's Degree in Computer Science":"计算机科学学士","Estácio · In progress":"Estácio · 在读","UNDERGRADUATE":"本科","Electrical Engineering":"电气工程","Academic studies in electrical and electronic systems.":"电气与电子系统方面的学术学习。","ACADEMIC STUDIES":"学术学习","Relevant Coursework":"已修课程","Completed coursework — Bachelor's degree in Computer Science, first semester.":"计算机科学学士第一学期已完成的课程。","Introduction to Information Security":"信息安全导论","Computer Networks Fundamentals":"计算机网络基础","Computer Architecture":"计算机体系结构","Structured Programming in C":"C语言结构化程序设计","Information Systems and Society":"信息系统与社会","Selected Project":"代表项目","IFF · SABER FAZER SABER FAIR":"IFF · SABER FAZER SABER 展会","ACADEMIC PROJECT":"学术项目","Virtual Networking and Telecommunications Laboratory":"虚拟网络与电信实验室","An IFF Saber Fazer Saber project for experimenting with network topologies and router firmware.":"IFF Saber Fazer Saber 展会项目，用于实验网络拓扑和路由器固件。","View project details":"查看项目详情","Professional inquiries":"商务联系","Electrical · Computing · Information Security":"电气 · 计算机 · 信息安全","Project overview":"项目概述","What the laboratory enables":"实验室功能","Academic context":"学术背景"
+    },
+    "ja": {
+      "PROFESSIONAL PORTFOLIO":"ポートフォリオ","Technical background in Electrotechnics, studies in Electrical Engineering, and currently pursuing a Bachelor's degree in Computer Science.":"電気技術の専門教育を受け、電気工学を学び、現在はコンピュータサイエンスの学士課程に在籍しています。",
+      "My current professional direction is Information Security. I bring an interdisciplinary foundation in electronics, computer systems and networks, and am open to employment and freelance opportunities aligned with my education and technical skills.":"現在の専門分野は情報セキュリティです。電子工学、コンピュータシステム、ネットワークの学際的な基礎を持ち、学歴と技術スキルに合った雇用・フリーランスの機会を探しています。",
+      "Get in touch":"お問い合わせ","AREAS OF FOUNDATION":"専門分野の基礎","Electrotechnics":"電気技術","Electrical & Electronic Systems":"電気・電子システム","Computer Science":"コンピュータサイエンス","Networks & Information Security":"ネットワーク・情報セキュリティ","CURRENT FOCUS":"現在の重点分野","Information Security":"情報セキュリティ","Education":"学歴","Technical Education in Electrotechnics":"電気技術専門課程","TECHNICAL":"専門教育","Bachelor's Degree in Computer Science":"コンピュータサイエンス学士課程","Estácio · In progress":"Estácio · 在学中","UNDERGRADUATE":"大学課程","Electrical Engineering":"電気工学","Academic studies in electrical and electronic systems.":"電気・電子システムに関する学術的な学習。","ACADEMIC STUDIES":"学術課程","Relevant Coursework":"履修科目","Completed coursework — Bachelor's degree in Computer Science, first semester.":"コンピュータサイエンス学士課程の第1学期に修了した科目。","Introduction to Information Security":"情報セキュリティ入門","Computer Networks Fundamentals":"コンピュータネットワーク基礎","Computer Architecture":"コンピュータアーキテクチャ","Structured Programming in C":"C言語による構造化プログラミング","Information Systems and Society":"情報システムと社会","Selected Project":"主なプロジェクト","IFF · SABER FAZER SABER FAIR":"IFF・SABER FAZER SABER 展示会","ACADEMIC PROJECT":"学術プロジェクト","Virtual Networking and Telecommunications Laboratory":"仮想ネットワーク・通信ラボ","An IFF Saber Fazer Saber project for experimenting with network topologies and router firmware.":"ネットワークトポロジーとルーターファームウェアを実験するIFF Saber Fazer Saberのプロジェクト。","View project details":"プロジェクト詳細","Professional inquiries":"お問い合わせ","Electrical · Computing · Information Security":"電気 · コンピュータ · 情報セキュリティ","Project overview":"プロジェクト概要","What the laboratory enables":"ラボの機能","Academic context":"学術的背景"
+    }
+  };
+  const normalize = value => value.replace(/\s+/g, " ").trim();
+  const locale = (navigator.languages || [navigator.language || "en"]).map(x => x.toLowerCase()).map(x => x.startsWith("pt") ? "pt-BR" : x.startsWith("es") ? "es" : x.startsWith("zh") ? "zh-CN" : x.startsWith("ja") ? "ja" : "en").find(x => x !== "en") || "en";
+  const dict = dictionaries[locale];
+  document.documentElement.lang = locale === "pt-BR" ? "pt-BR" : locale;
+  if (!dict) return;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    const key = normalize(node.nodeValue);
+    if (dict[key]) node.nodeValue = node.nodeValue.replace(key, dict[key]);
+  });
+  const titleKey = normalize(document.title.replace(/ — Otávio Dias Leite — Portfolio$/, "").replace(/ — Otávio Dias Leite — Portfolio$/, ""));
+  if (dict[titleKey]) document.title = dict[titleKey] + " — Otávio Dias Leite";
+  const description = document.querySelector('meta[name="description"]');
+  if (description && dict[description.content]) description.content = dict[description.content];
+})();
