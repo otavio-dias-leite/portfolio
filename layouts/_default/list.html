@@ -1,0 +1,1 @@
+{{ define "main" }}<section class="detail"><p class="eyebrow">PROJECT ARCHIVE</p><h1>{{ .Title }}</h1><p class="lead">{{ .Description }}</p>{{ range .Pages }}<article class="project"><div class="project-main"><h3><a href="{{ .RelPermalink }}">{{ .Title }} ↗</a></h3><p>{{ .Description }}</p></div></article>{{ end }}</section>{{ end }}

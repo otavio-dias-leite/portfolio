@@ -1,0 +1,7 @@
+baseURL="https://otavio-dias-leite.github.io/portfolio/"
+languageCode="en-us"
+title="Otávio Dias Leite — Portfolio"
+enableRobotsTXT=true
+[params]
+description="Electrical engineering background, computer science studies and a growing focus on information security."
+blogURL="https://otavio-dias-leite.github.io/blog/"
