@@ -71,3 +71,18 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:22px 0 28px;b
 @media(max-width:800px){.page-shell{width:min(100% - 40px,680px)}.hero{grid-template-columns:1fr;gap:35px;padding:76px 0 75px}.hero-aside{max-width:440px;width:100%}.hero-index{bottom:22px}.section{grid-template-columns:1fr;gap:22px;padding:45px 0}.section-heading h2{font-size:19px}}
 @media(max-width:560px){.page-shell{width:calc(100% - 34px)}.header{height:auto;min-height:78px;align-items:flex-start;flex-direction:column;justify-content:center;padding:17px 0;gap:14px}nav{gap:17px;flex-wrap:wrap}nav a{font-size:10px}.hero{padding:59px 0 70px}.hero h1{font-size:clamp(50px,14vw,70px)}.lead{font-size:16px}.intro{font-size:13px}.section{padding:39px 0}.education-item{grid-template-columns:10px minmax(0,1fr);gap:12px}.item-type{grid-column:2;text-align:left;padding:0}.course-grid{grid-template-columns:1fr}.course-grid>div{min-height:55px}.project-card{padding:21px 18px}.project-topline{font-size:8px}.project-card h3{font-size:19px}.contact-section{align-items:flex-start;flex-direction:column;padding:45px 0 55px}.contact-section>a{font-size:10px}footer{flex-direction:column;gap:7px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+/* Shared identity: glowing red lock and button-like highlighted cards */
+.logo{gap:13px;font-size:12px}
+.logo-title{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.lock-icon{width:30px;height:30px;flex:0 0 30px;color:var(--red);filter:drop-shadow(0 0 5px #ff354399) drop-shadow(0 0 13px #ff354355)}
+.logo:hover .lock-icon{filter:drop-shadow(0 0 7px #ff3543) drop-shadow(0 0 18px #ff354388)}
+.project-list{display:grid;gap:12px}
+.project-card{display:block;color:var(--text);text-decoration:none;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease}
+.project-card:hover,.project-card:focus-visible{transform:translateY(-2px);border-color:var(--red);background:linear-gradient(135deg,#251318,#160d11);box-shadow:0 10px 30px #0005,0 0 18px #ff354315;outline:none}
+.project-title{display:block;margin:23px 0 9px;font:600 20px/1.4 var(--mono);letter-spacing:-.025em}
+.project-title span{color:var(--red);font-size:15px}
+.project-description{display:block;max-width:680px;color:var(--muted);font-size:12px;line-height:1.8}
+.project-card .text-link{display:inline-flex;margin-top:20px}
+.primary-link,.contact-section>a{transition:background .2s ease,border-color .2s ease,box-shadow .2s ease}
+.primary-link:hover{box-shadow:0 0 20px #ff354322}
+@media(max-width:560px){.logo{font-size:10px}.lock-icon{width:27px;height:27px;flex-basis:27px}.project-title{font-size:17px}}
