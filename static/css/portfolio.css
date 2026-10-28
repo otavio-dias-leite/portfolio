@@ -206,3 +206,7 @@ nav a:hover{color:#fff;text-shadow:0 0 9px var(--red-glow)}
 .section-heading h2,.contact-section h2{text-shadow:0 0 18px #ff263817}
 @keyframes red-pulse{0%,100%{opacity:1;filter:brightness(1)}50%{opacity:.72;filter:brightness(1.45)}}
 @media(prefers-reduced-motion:reduce){.status-dot{animation:none}}
+
+/* Neon trace follows the clipped upper-left diagonal on every panel. */
+.hero-aside:after,.education-item:after,.project-card:after{content:"";position:absolute;top:0;left:0;width:27px;height:27px;border:0;background:linear-gradient(135deg,transparent 46%,#ff2638 48.5%,#ff5260 51%,#ff2638 53%,transparent 55%);filter:drop-shadow(0 0 3px #ff2638) drop-shadow(0 0 8px #ff263899);pointer-events:none}
+.project-card:hover:after,.project-card:focus-visible:after,.education-item:hover:after{filter:drop-shadow(0 0 4px #ff2638) drop-shadow(0 0 12px #ff2638) drop-shadow(0 0 20px #ff263877)}
