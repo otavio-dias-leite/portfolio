@@ -1,27 +1,14 @@
 {{ define "main" }}
 <section class="hero">
-  <p class="eyebrow">Electrical Engineering · Computer Science</p>
-  <h1>Information<br><em>Security.</em></h1>
-  <p class="lead">I am specializing in information security, with a particular interest in hardware hacking, embedded devices and network security.</p>
-  <p class="intro">Electrical Engineering background. Bachelor's degree in Computer Science in progress.</p>
-  <div class="actions">
-    <a class="primary" href="#projects">Selected projects</a>
-    <a class="secondary" href="mailto:o.otavio.dias.leite@gmail.com">Email</a>
-  </div>
+  <h1>Information Security</h1>
+  <p>I am specializing in information security, with an interest in hardware hacking, device security and networks.</p>
+  <p class="education">Electrical Engineering · Bachelor's degree in Computer Science (in progress)</p>
+  <a class="email" href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com</a>
 </section>
-<section id="projects" class="section projects">
-  <div class="section-label">Projects</div>
-  <div class="project-list">
-    {{ range (where site.RegularPages "Section" "projects").ByWeight }}
-    <article class="project">
-      <h2><a href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">↗</span></a></h2>
-      {{ with .Description }}<p>{{ . }}</p>{{ end }}
-    </article>
-    {{ end }}
-  </div>
-</section>
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <a href="mailto:o.otavio.dias.leite@gmail.com">o.otavio.dias.leite@gmail.com</a>
+<section class="projects">
+  <h2>Projects</h2>
+  {{ range (where site.RegularPages "Section" "projects").ByWeight }}
+  <article class="project"><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3></article>
+  {{ end }}
 </section>
 {{ end }}
