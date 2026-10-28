@@ -2,11 +2,18 @@
 <html lang="en">
 <head>{{ partial "head.html" . }}</head>
 <body>
-<header class="header">
-  <a class="logo" href="{{ "/" | relURL }}">OTÁVIO DIAS LEITE</a>
-  <nav><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
-</header>
-<main>{{ block "main" . }}{{ end }}</main>
-<footer>© {{ now.Year }} Otávio Dias Leite</footer>
+<div class="page-shell">
+  <header class="header">
+    <a class="logo" href="{{ "/" | relURL }}"><span class="logo-mark">ODL</span><span>OTÁVIO DIAS LEITE</span></a>
+    <nav aria-label="Main navigation">
+      <a href="{{ "/" | relURL }}#education">Education</a>
+      <a href="{{ "/" | relURL }}#coursework">Coursework</a>
+      <a href="{{ "/" | relURL }}#projects">Projects</a>
+      <a href="{{ "/" | relURL }}#contact">Contact</a>
+    </nav>
+  </header>
+  <main>{{ block "main" . }}{{ end }}</main>
+  <footer><span>OTÁVIO DIAS LEITE</span><span>Electrical · Computing · Information Security</span><span>© {{ now.Year }}</span></footer>
+</div>
 </body>
 </html>
