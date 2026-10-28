@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
-:root{color-scheme:dark;--bg:#0d090b;--panel:#171013;--panel-soft:#120c0f;--line:#382127;--line-soft:#28191e;--text:#f4eeee;--muted:#a9959a;--red:#ff3543;--red-dim:#a92330;--mono:"DM Mono","JetBrains Mono",monospace;--sans:Manrope,Inter,system-ui,sans-serif}
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap");
+:root{color-scheme:dark;--bg:#0d090b;--panel:#171013;--panel-soft:#120c0f;--line:#382127;--line-soft:#28191e;--text:#f4eeee;--muted:#a9959a;--red:#ff3543;--red-dim:#a92330;--mono:"Orbitron",sans-serif;--sans:"Orbitron",sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{margin:0;background-color:var(--bg);background-image:linear-gradient(#ff35430a 1px,transparent 1px),linear-gradient(90deg,#ff35430a 1px,transparent 1px),radial-gradient(ellipse at 75% 0%,#64192322,transparent 48%);background-size:42px 42px,42px 42px,auto;color:var(--text);font:15px/1.75 var(--sans);-webkit-font-smoothing:antialiased}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(#ff35430a 1px,transparent 1px),linear-gradient(90deg,#ff35430a 1px,transparent 1px),radial-gradient(ellipse at 75% 0%,#64192322,transparent 48%);background-size:42px 42px,42px 42px,auto;color:var(--text);font:12px/1.9 var(--sans);-webkit-font-smoothing:antialiased}
 a{transition:color .2s ease,border-color .2s ease,background .2s ease}
 .page-shell{width:min(1120px,calc(100% - 64px));margin:0 auto}
 .header{height:84px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);gap:24px}
