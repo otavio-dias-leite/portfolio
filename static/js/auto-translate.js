@@ -163,8 +163,8 @@
     if (dict[key]) node.nodeValue = node.nodeValue.replace(key, dict[key]);
   });
   const titleKey = normalize(document.title
-    .replace(/\\s+—\\s+Otávio Dias Leite\\s+—\\s+Portfolio$/, "")
-    .replace(/\\s+—\\s+Portfolio$/, ""));
+    .replace(/\s+—\\s+Otávio Dias Leite\\s+—\\s+Portfolio$/, "")
+    .replace(/\s+—\\s+Portfolio$/, ""));
   const portfolioLabels = {"pt-BR":"Portfólio","es":"Portafolio","zh-CN":"作品集","ja":"ポートフォリオ"};
   if (titleKey === "Otávio Dias Leite") {
     document.title = "Otávio Dias Leite — " + (portfolioLabels[locale] || "Portfolio");
