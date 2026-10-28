@@ -80,5 +80,11 @@
   const titleKey = normalize(document.title.replace(/ — Otávio Dias Leite — Portfolio$/, "").replace(/ — Otávio Dias Leite — Portfolio$/, ""));
   if (dict[titleKey]) document.title = dict[titleKey] + " — Otávio Dias Leite";
   const description = document.querySelector('meta[name="description"]');
-  if (description && dict[description.content]) description.content = dict[description.content];
+  const metaTranslations = {
+    "pt-BR": "Formação em eletrotécnica, estudos em engenharia elétrica e computação, com foco em segurança da informação.",
+    "es": "Formación en electrotecnia, estudios de ingeniería eléctrica e informática, con enfoque en seguridad de la información.",
+    "zh-CN": "电气技术、电气工程和计算机科学背景，专注于信息安全。",
+    "ja": "電気技術、電気工学、コンピュータサイエンスの知識を基盤とし、情報セキュリティに注力しています。"
+  };
+  if (description && metaTranslations[locale]) description.content = metaTranslations[locale];
 })();
