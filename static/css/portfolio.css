@@ -210,3 +210,10 @@ nav a:hover{color:#fff;text-shadow:0 0 9px var(--red-glow)}
 /* Neon trace follows the clipped upper-left diagonal on every panel. */
 .hero-aside:after,.education-item:after,.project-card:after{content:"";position:absolute;top:0;left:0;width:27px;height:27px;border:0;background:linear-gradient(135deg,transparent 46%,#ff2638 48.5%,#ff5260 51%,#ff2638 53%,transparent 55%);filter:drop-shadow(0 0 3px #ff2638) drop-shadow(0 0 8px #ff263899);pointer-events:none}
 .project-card:hover:after,.project-card:focus-visible:after,.education-item:hover:after{filter:drop-shadow(0 0 4px #ff2638) drop-shadow(0 0 12px #ff2638) drop-shadow(0 0 20px #ff263877)}
+
+
+/* Opposing diagonal cuts: upper-right and lower-left, with matching neon traces. */
+:root{--edge:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px))}
+.hero-aside,.education-item,.project-card{position:relative;clip-path:var(--edge)}
+.hero-aside:after,.education-item:after,.project-card:after{top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,transparent 46%,#ff2638 48.5%,#ff5260 51%,#ff2638 53%,transparent 55%) top right/27px 27px no-repeat,linear-gradient(135deg,transparent 46%,#ff2638 48.5%,#ff5260 51%,#ff2638 53%,transparent 55%) bottom left/27px 27px no-repeat;filter:drop-shadow(0 0 3px #ff2638) drop-shadow(0 0 8px #ff263899)}
+.project-card:hover:after,.project-card:focus-visible:after,.education-item:hover:after,.hero-aside:hover:after{filter:drop-shadow(0 0 4px #ff2638) drop-shadow(0 0 12px #ff2638) drop-shadow(0 0 20px #ff263877)}
