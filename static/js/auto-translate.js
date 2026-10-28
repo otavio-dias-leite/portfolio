@@ -146,6 +146,13 @@
   const normalize = value => value.replace(/\s+/g, " ").trim();
   const locale = (navigator.languages || [navigator.language || "en"]).map(x => x.toLowerCase()).map(x => x.startsWith("pt") ? "pt-BR" : x.startsWith("es") ? "es" : x.startsWith("zh") ? "zh-CN" : x.startsWith("ja") ? "ja" : "en").find(x => x !== "en") || "en";
   const dict = dictionaries[locale];
+  const supplemental = {
+    "pt-BR": {"Contact":"Contato","Bachelor's Degree in Electrical Engineering":"Bacharelado em Engenharia Elétrica","UNDERGRADUATE · IN PROGRESS":"GRADUAÇÃO · EM ANDAMENTO"},
+    "es": {"Contact":"Contacto","Bachelor's Degree in Electrical Engineering":"Grado en Ingeniería Eléctrica","UNDERGRADUATE · IN PROGRESS":"GRADO · EN CURSO"},
+    "zh-CN": {"Contact":"联系","Bachelor's Degree in Electrical Engineering":"电气工程学士学位","UNDERGRADUATE · IN PROGRESS":"本科 · 在读"},
+    "ja": {"Contact":"お問い合わせ","Bachelor's Degree in Electrical Engineering":"電気工学学士","UNDERGRADUATE · IN PROGRESS":"学士課程 · 在学中"}
+  };
+  if (dict) Object.assign(dict, supplemental[locale] || {});
   document.documentElement.lang = locale === "pt-BR" ? "pt-BR" : locale;
   if (!dict) return;
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -155,8 +162,15 @@
     const key = normalize(node.nodeValue);
     if (dict[key]) node.nodeValue = node.nodeValue.replace(key, dict[key]);
   });
-  const titleKey = normalize(document.title.replace(/ — Otávio Dias Leite — Portfolio$/, "").replace(/ — Otávio Dias Leite — Portfolio$/, ""));
-  if (dict[titleKey]) document.title = dict[titleKey] + " — Otávio Dias Leite";
+  const titleKey = normalize(document.title
+    .replace(/\\s+—\\s+Otávio Dias Leite\\s+—\\s+Portfolio$/, "")
+    .replace(/\\s+—\\s+Portfolio$/, ""));
+  const portfolioLabels = {"pt-BR":"Portfólio","es":"Portafolio","zh-CN":"作品集","ja":"ポートフォリオ"};
+  if (titleKey === "Otávio Dias Leite") {
+    document.title = "Otávio Dias Leite — " + (portfolioLabels[locale] || "Portfolio");
+  } else {
+    document.title = (dict[titleKey] || titleKey) + " — Otávio Dias Leite";
+  }
   const description = document.querySelector('meta[name="description"]');
   const metaTranslations = {
     "pt-BR": "Formação em eletrotécnica, estudos em engenharia elétrica e computação, com foco em segurança da informação.",
