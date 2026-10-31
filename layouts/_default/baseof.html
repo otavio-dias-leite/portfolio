@@ -13,6 +13,7 @@
     </nav>
   </header>
   <main>{{ block "main" . }}{{ end }}</main>
+  <script defer src="{{ "js/contact.js" | relURL }}"></script>
   <footer><span>OTÁVIO DIAS LEITE</span><span>Academic · Technical · Professional</span><span>© {{ now.Year }}</span><a href="{{ site.Params.blogURL }}">BLOG ↗</a><a href="{{ .Site.Home.RelPermalink }}">BACK TO TOP ↑</a></footer>
 </div>
 </body>
