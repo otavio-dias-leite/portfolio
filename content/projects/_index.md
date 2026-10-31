@@ -1,4 +1,4 @@
 ---
 title: "Selected work"
-description: "A selection of academic, independent and experimental projects."
+description: "Projects developed and presented at the IFF Saber Fazer Saber fair."
 ---
