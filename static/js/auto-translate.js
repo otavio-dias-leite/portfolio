@@ -68,7 +68,7 @@
 
   const projectTranslations = {
     "pt-BR": {
-      "Projects":"Projetos","TECHNICAL PROJECT":"PROJETO TÉCNICO","CONTROL & AUTOMATION":"CONTROLE E AUTOMAÇÃO","ELECTRICAL PROJECT":"PROJETO ELÉTRICO","ELECTROMAGNETISM":"ELETROMAGNETISMO","MONITORING SYSTEM":"SISTEMA DE MONITORAMENTO","SAFETY MONITORING":"MONITORAMENTO DE SEGURANÇA",
+      "Projects":"Projetos","IFF · SABER FAZER SABER FAIR":"IFF · FEIRA SABER FAZER SABER","CONTROL & AUTOMATION":"CONTROLE E AUTOMAÇÃO","PROJECT DETAILS":"DETALHES DO PROJETO","ELECTROMAGNETISM":"ELETROMAGNETISMO","MONITORING SYSTEM":"SISTEMA DE MONITORAMENTO","SAFETY MONITORING":"MONITORAMENTO DE SEGURANÇA",
       "PLC-Based Automation Project":"Projeto de Automação com CLP","A project involving programmable logic controllers and industrial automation.":"Projeto envolvendo controladores lógicos programáveis e automação industrial.",
       "Tesla Coil":"Bobina de Tesla","An electrical project exploring resonant transformers and high-voltage phenomena.":"Projeto elétrico que explora transformadores ressonantes e fenômenos de alta tensão.",
       "Temperature Monitoring System":"Sistema de Monitoramento de Temperatura","A system project focused on monitoring temperature conditions.":"Projeto voltado ao monitoramento de condições de temperatura.",
@@ -79,7 +79,7 @@
       "Monitoring of fire-related risk conditions.":"Monitoramento de condições de risco relacionadas a incêndio.","Electronic monitoring and alert-system concepts.":"Conceitos de monitoramento eletrônico e sistemas de alerta.","Application of technical solutions to a real work environment.":"Aplicação de soluções técnicas a um ambiente real de trabalho."
     },
     "es": {
-      "Projects":"Proyectos","TECHNICAL PROJECT":"PROYECTO TÉCNICO","CONTROL & AUTOMATION":"CONTROL Y AUTOMATIZACIÓN","ELECTRICAL PROJECT":"PROYECTO ELÉCTRICO","ELECTROMAGNETISM":"ELECTROMAGNETISMO","MONITORING SYSTEM":"SISTEMA DE MONITOREO","SAFETY MONITORING":"MONITOREO DE SEGURIDAD",
+      "Projects":"Proyectos","IFF · SABER FAZER SABER FAIR":"FERIA IFF · SABER FAZER SABER","CONTROL & AUTOMATION":"CONTROL Y AUTOMATIZACIÓN","PROJECT DETAILS":"DETALLES DEL PROYECTO","ELECTROMAGNETISM":"ELECTROMAGNETISMO","MONITORING SYSTEM":"SISTEMA DE MONITOREO","SAFETY MONITORING":"MONITOREO DE SEGURIDAD",
       "PLC-Based Automation Project":"Proyecto de Automatización con PLC","A project involving programmable logic controllers and industrial automation.":"Proyecto que involucra controladores lógicos programables y automatización industrial.",
       "Tesla Coil":"Bobina de Tesla","An electrical project exploring resonant transformers and high-voltage phenomena.":"Proyecto eléctrico sobre transformadores resonantes y fenómenos de alta tensión.",
       "Temperature Monitoring System":"Sistema de Monitoreo de Temperatura","A system project focused on monitoring temperature conditions.":"Proyecto enfocado en el monitoreo de condiciones de temperatura.",
@@ -90,7 +90,7 @@
       "Monitoring of fire-related risk conditions.":"Monitoreo de condiciones de riesgo de incendio.","Electronic monitoring and alert-system concepts.":"Conceptos de monitoreo electrónico y sistemas de alerta.","Application of technical solutions to a real work environment.":"Aplicación de soluciones técnicas a un entorno laboral real."
     },
     "zh-CN": {
-      "Projects":"项目","TECHNICAL PROJECT":"技术项目","CONTROL & AUTOMATION":"控制与自动化","ELECTRICAL PROJECT":"电气项目","ELECTROMAGNETISM":"电磁学","MONITORING SYSTEM":"监测系统","SAFETY MONITORING":"安全监测",
+      "Projects":"项目","IFF · SABER FAZER SABER FAIR":"IFF · SABER FAZER SABER 展会","CONTROL & AUTOMATION":"控制与自动化","PROJECT DETAILS":"项目详情","ELECTROMAGNETISM":"电磁学","MONITORING SYSTEM":"监测系统","SAFETY MONITORING":"安全监测",
       "PLC-Based Automation Project":"PLC自动化项目","A project involving programmable logic controllers and industrial automation.":"涉及可编程逻辑控制器和工业自动化的项目。",
       "Tesla Coil":"特斯拉线圈","An electrical project exploring resonant transformers and high-voltage phenomena.":"探索谐振变压器和高压现象的电气项目。",
       "Temperature Monitoring System":"温度监测系统","A system project focused on monitoring temperature conditions.":"专注于温度条件监测的系统项目。",
@@ -101,7 +101,7 @@
       "Monitoring of fire-related risk conditions.":"火灾风险状况监测。","Electronic monitoring and alert-system concepts.":"电子监测与警报系统概念。","Application of technical solutions to a real work environment.":"将技术方案应用于实际工作环境。"
     },
     "ja": {
-      "Projects":"プロジェクト","TECHNICAL PROJECT":"技術プロジェクト","CONTROL & AUTOMATION":"制御・自動化","ELECTRICAL PROJECT":"電気プロジェクト","ELECTROMAGNETISM":"電磁気学","MONITORING SYSTEM":"監視システム","SAFETY MONITORING":"安全監視",
+      "Projects":"プロジェクト","IFF · SABER FAZER SABER FAIR":"IFF・SABER FAZER SABER 展示会","CONTROL & AUTOMATION":"制御・自動化","PROJECT DETAILS":"プロジェクトの詳細","ELECTROMAGNETISM":"電磁気学","MONITORING SYSTEM":"監視システム","SAFETY MONITORING":"安全監視",
       "PLC-Based Automation Project":"PLC自動化プロジェクト","A project involving programmable logic controllers and industrial automation.":"プログラマブルロジックコントローラと産業オートメーションに関するプロジェクト。",
       "Tesla Coil":"テスラコイル","An electrical project exploring resonant transformers and high-voltage phenomena.":"共振変圧器と高電圧現象を扱う電気プロジェクト。",
       "Temperature Monitoring System":"温度監視システム","A system project focused on monitoring temperature conditions.":"温度状態の監視に焦点を当てたシステムプロジェクト。",
