@@ -147,10 +147,10 @@
   const locale = (navigator.languages || [navigator.language || "en"]).map(x => x.toLowerCase()).map(x => x.startsWith("pt") ? "pt-BR" : x.startsWith("es") ? "es" : x.startsWith("zh") ? "zh-CN" : x.startsWith("ja") ? "ja" : "en").find(x => x !== "en") || "en";
   const dict = dictionaries[locale];
   const supplemental = {
-    "pt-BR": {"Contact":"Contato","Bachelor's Degree in Electrical Engineering":"Bacharelado em Engenharia Elétrica","UNDERGRADUATE · IN PROGRESS":"GRADUAÇÃO · EM ANDAMENTO"},
-    "es": {"Contact":"Contacto","Bachelor's Degree in Electrical Engineering":"Grado en Ingeniería Eléctrica","UNDERGRADUATE · IN PROGRESS":"GRADO · EN CURSO"},
-    "zh-CN": {"Contact":"联系","Bachelor's Degree in Electrical Engineering":"电气工程学士学位","UNDERGRADUATE · IN PROGRESS":"本科 · 在读"},
-    "ja": {"Contact":"お問い合わせ","Bachelor's Degree in Electrical Engineering":"電気工学学士","UNDERGRADUATE · IN PROGRESS":"学士課程 · 在学中"}
+    "pt-BR": {"Contact":"Contato","Bachelor's Degree in Electrical Engineering":"Bacharelado em Engenharia Elétrica","UNDERGRADUATE · IN PROGRESS":"GRADUAÇÃO · EM ANDAMENTO","Professional inquiries":"Contato profissional","Choose how you would like to get in touch.":"Escolha como deseja entrar em contato.","Copy email":"Copiar e-mail","Open LinkedIn":"Abrir LinkedIn","Professional profile":"Perfil profissional"},
+    "es": {"Contact":"Contacto","Bachelor's Degree in Electrical Engineering":"Grado en Ingeniería Eléctrica","UNDERGRADUATE · IN PROGRESS":"GRADO · EN CURSO","Professional inquiries":"Contacto profesional","Choose how you would like to get in touch.":"Elige cómo quieres ponerte en contacto.","Copy email":"Copiar correo","Open LinkedIn":"Abrir LinkedIn","Professional profile":"Perfil profesional"},
+    "zh-CN": {"Contact":"联系","Bachelor's Degree in Electrical Engineering":"电气工程学士学位","UNDERGRADUATE · IN PROGRESS":"本科 · 在读","Professional inquiries":"商务联系","Choose how you would like to get in touch.":"请选择联系方式。","Copy email":"复制电子邮件","Open LinkedIn":"打开 LinkedIn","Professional profile":"职业档案"},
+    "ja": {"Contact":"お問い合わせ","Bachelor's Degree in Electrical Engineering":"電気工学学士","UNDERGRADUATE · IN PROGRESS":"学士課程 · 在学中","Professional inquiries":"お問い合わせ","Choose how you would like to get in touch.":"連絡方法を選択してください。","Copy email":"メールをコピー","Open LinkedIn":"LinkedInを開く","Professional profile":"プロフィール"}
   };
   if (dict) Object.assign(dict, supplemental[locale] || {});
   document.documentElement.lang = locale === "pt-BR" ? "pt-BR" : locale;
