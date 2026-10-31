@@ -3,7 +3,7 @@
     "pt-BR": {
       "PROFESSIONAL PORTFOLIO":"PORTFÓLIO PROFISSIONAL",
       "Technical background in Electrotechnics, studies in Electrical Engineering, and currently pursuing a Bachelor's degree in Computer Science.":"Formação técnica em Eletrotécnica, estudos em Engenharia Elétrica e graduação em andamento em Ciência da Computação.",
-      "My current professional direction is Information Security. I bring an interdisciplinary foundation in electronics, computer systems and networks, and am open to employment and freelance opportunities aligned with my education and technical skills.":"Meu direcionamento profissional atual é Segurança da Informação. Tenho uma base interdisciplinar em eletrônica, sistemas computacionais e redes, e estou aberto a oportunidades CLT e freelancer compatíveis com minha formação e competências técnicas.",
+      "I have an interdisciplinary academic and technical background spanning electrical systems, electronics and computing. I am open to different professional opportunities where I can apply my education, practical experience and technical skills.":"Tenho uma formação acadêmica e técnica interdisciplinar, que abrange sistemas elétricos, eletrônica e computação. Estou aberto a diferentes oportunidades profissionais nas quais possa aplicar minha formação, experiência prática e conhecimentos técnicos.",
       "Get in touch":"Entre em contato",
       "AREAS OF FOUNDATION":"ÁREAS DE FORMAÇÃO",
       "Electrotechnics":"Eletrotécnica",
@@ -36,7 +36,7 @@
       "An IFF Saber Fazer Saber project for experimenting with network topologies and router firmware.":"Projeto da Feira Saber Fazer Saber do IFF para experimentação com topologias de rede e firmware de roteadores.",
       "View project details":"Ver detalhes do projeto",
       "Professional inquiries":"Contato profissional",
-      "Electrical · Computing · Information Security":"Elétrica · Computação · Segurança da Informação",
+      "Academic · Technical · Professional":"Acadêmico · Técnico · Profissional",
       "PROJECT OVERVIEW":"VISÃO GERAL DO PROJETO",
       "Project overview":"Visão geral do projeto",
       "What the laboratory enables":"Funcionalidades do laboratório",
