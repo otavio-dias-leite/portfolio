@@ -65,3 +65,8 @@ footer{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;paddin
 .copy-feedback{position:absolute;right:0;bottom:35px;color:#f5df8c;font:8px var(--display);letter-spacing:.08em}
 @media(max-width:900px){.contact-section{flex-direction:column}.contact-heading{min-width:0}.contact-links{justify-content:flex-start;width:100%}.copy-feedback{position:static;min-height:12px}}
 @media(max-width:560px){.contact-links{display:grid;grid-template-columns:1fr}.contact-action{min-width:0;width:100%}}
+
+
+/* Keep the atmospheric background continuous after automatic translation */
+html{min-height:100%;background:#080d18!important}
+body{min-height:100vh;background-attachment:fixed!important;background-repeat:no-repeat!important;background-size:cover!important;background-color:#080d18!important;top:0!important}
