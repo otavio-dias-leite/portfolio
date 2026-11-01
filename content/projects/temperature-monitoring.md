@@ -1,19 +1,19 @@
 ---
-title: "Temperature Monitoring System"
+title: "Sistema de Monitoramento de Temperatura"
 date: 2026-10-28
-description: "A temperature monitoring project developed for the IFF Saber Fazer Saber fair."
-tags: ["monitoring", "sensors", "electronics", "IFF"]
+description: "Projeto de monitoramento de temperatura desenvolvido para a Feira Saber Fazer Saber do IFF."
+tags: ["monitoramento", "sensores", "eletrônica", "IFF"]
 weight: 4
-project_label: "IFF · SABER FAZER SABER FAIR"
-project_type: "MONITORING SYSTEM"
+project_label: "IFF · FEIRA SABER FAZER SABER"
+project_type: "SISTEMA DE MONITORAMENTO"
 ---
 
-## Project overview
+## Visão geral do projeto
 
-Developed for the IFF Saber Fazer Saber fair, this project explores monitoring temperature conditions. Its purpose is to make temperature information available for observation and support the identification of changes in the monitored environment.
+Desenvolvido para a Feira Saber Fazer Saber do IFF, este projeto explora o monitoramento de condições de temperatura. Seu objetivo é disponibilizar informações para observação e auxiliar na identificação de mudanças no ambiente monitorado.
 
-## Project details
+## Detalhes do projeto
 
-- Temperature measurement and monitoring.
-- Electronic instrumentation concepts.
-- Observation of environmental conditions.
+- Medição e monitoramento de temperatura.
+- Conceitos de instrumentação eletrônica.
+- Observação de condições ambientais.
