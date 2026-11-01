@@ -1,4 +1,4 @@
 ---
-title: "Selected work"
-description: "Projects developed and presented at the IFF Saber Fazer Saber fair."
+title: "Trabalhos selecionados"
+description: "Projetos desenvolvidos e apresentados na Feira Saber Fazer Saber do IFF."
 ---
