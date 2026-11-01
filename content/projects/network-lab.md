@@ -1,24 +1,24 @@
 ---
-title: "Virtual Networking and Telecommunications Laboratory"
+title: "Laboratório Virtual de Redes e Telecomunicações"
 date: 2026-10-28
-description: "An IFF Saber Fazer Saber project for experimenting with network topologies and router firmware."
-tags: ["networking", "academic", "IFF"]
+description: "Projeto da Feira Saber Fazer Saber do IFF para experimentação com topologias de rede e firmware de roteadores."
+tags: ["redes", "acadêmico", "IFF"]
 weight: 1
-project_label: "IFF · SABER FAZER SABER FAIR"
-project_type: "ACADEMIC PROJECT"
+project_label: "IFF · FEIRA SABER FAZER SABER"
+project_type: "PROJETO ACADÊMICO"
 ---
 
-## Project overview
+## Visão geral do projeto
 
-Developed for the IFF Saber Fazer Saber fair, this project presents a virtual laboratory for studying computer networks. Its central idea is to use router firmware to emulate network equipment and provide a controlled environment for practical experimentation.
+Desenvolvido para a Feira Saber Fazer Saber do IFF, este projeto apresenta um laboratório virtual para o estudo de redes de computadores. A ideia central é utilizar firmware de roteadores para emular equipamentos de rede e oferecer um ambiente controlado para experimentação prática.
 
-## What the laboratory enables
+## O que o laboratório permite
 
-- Emulate network devices through router firmware.
-- Assemble and configure network topologies in a virtual environment.
-- Test network arrangements and observe communication between interconnected devices.
-- Study networking concepts through hands-on configuration and experimentation.
+- Emular dispositivos de rede por meio de firmware de roteadores.
+- Montar e configurar topologias de rede em um ambiente virtual.
+- Testar configurações de rede e observar a comunicação entre dispositivos interconectados.
+- Estudar conceitos de redes por meio de configuração e experimentação prática.
 
-## Academic context
+## Contexto acadêmico
 
-The project connects networking fundamentals and telecommunications with practical work. It was presented at the IFF Saber Fazer Saber fair as an educational environment for exploring network equipment and topology behavior.
+O projeto conecta fundamentos de redes e telecomunicações à prática. Foi apresentado na Feira Saber Fazer Saber do IFF como um ambiente educacional para explorar equipamentos de rede e o comportamento de topologias.
