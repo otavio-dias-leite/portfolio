@@ -1,19 +1,19 @@
 ---
-title: "Tesla Coil"
+title: "Bobina de Tesla"
 date: 2026-10-28
-description: "A Tesla coil project developed for the IFF Saber Fazer Saber fair."
-tags: ["electrical engineering", "high voltage", "resonance", "IFF"]
+description: "Projeto com bobina de Tesla desenvolvido para a Feira Saber Fazer Saber do IFF."
+tags: ["engenharia elétrica", "alta tensão", "ressonância", "IFF"]
 weight: 3
-project_label: "IFF · SABER FAZER SABER FAIR"
-project_type: "ELECTROMAGNETISM"
+project_label: "IFF · FEIRA SABER FAZER SABER"
+project_type: "ELETROMAGNETISMO"
 ---
 
-## Project overview
+## Visão geral do projeto
 
-Developed for the IFF Saber Fazer Saber fair, this project centers on a Tesla coil, a resonant transformer associated with high-voltage demonstrations. It connects electrical principles with the study of electromagnetic fields, resonance, and energy transfer.
+Desenvolvido para a Feira Saber Fazer Saber do IFF, este projeto tem como foco uma bobina de Tesla, um transformador ressonante associado a demonstrações de alta tensão. Relaciona princípios elétricos ao estudo de campos eletromagnéticos, ressonância e transferência de energia.
 
-## Project details
+## Detalhes do projeto
 
-- Resonant transformer principles.
-- Electromagnetic induction and resonance.
-- High-voltage electrical phenomena.
+- Princípios de transformadores ressonantes.
+- Indução eletromagnética e ressonância.
+- Fenômenos elétricos de alta tensão.
