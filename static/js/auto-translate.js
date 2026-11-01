@@ -39,7 +39,7 @@
       }
     };
     const style = document.createElement("style");
-    style.textContent = ".goog-te-banner-frame.skiptranslate{display:none!important}body{top:0!important}#google_translate_element{position:fixed;left:-10000px;top:-10000px;width:1px;height:1px;overflow:hidden}.goog-logo-link,.goog-te-gadget{font-size:0!important}";
+    style.textContent = "iframe.goog-te-banner-frame,.goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt,.goog-te-menu-frame,body>.skiptranslate{display:none!important;visibility:hidden!important}html,body{top:0!important;position:static!important}#google_translate_element{position:fixed;left:-10000px;top:-10000px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}.goog-logo-link,.goog-te-gadget{font-size:0!important}";
     document.head.appendChild(style);
     const script = document.createElement("script");
     script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
