@@ -1,4 +1,4 @@
 ---
-title: "Engineering the physical side of technology."
-description: "Portfolio of Otávio Dias Leite — electrical systems, hardware projects and information security."
+title: "Engenharia e o lado físico da tecnologia."
+description: "Portfólio de Otávio Dias Leite — sistemas elétricos, projetos de hardware e segurança da informação."
 ---
