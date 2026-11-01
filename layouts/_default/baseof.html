@@ -1,20 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 <head>{{ partial "head.html" . }}</head>
 <body>
 <div class="page-shell">
   <header class="header">
-    <a class="logo" href="{{ .Site.Home.RelPermalink }}" aria-label="Otávio Dias Leite — Portfolio home"><svg class="lock-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M18.5 2 7 18h7l-1 12L25 13h-7z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg><span class="logo-title">OTÁVIO DIAS LEITE <small>PORTFOLIO</small></span></a>
-    <nav aria-label="Main navigation">
-      <a href="{{ .Site.Home.RelPermalink }}#education">Education</a>
-      <a href="{{ .Site.Home.RelPermalink }}#projects">Projects</a>
-      <a href="{{ .Site.Home.RelPermalink }}#contact">Contact</a>
+    <a class="logo" href="{{ .Site.Home.RelPermalink }}" aria-label="Otávio Dias Leite — Página inicial do portfólio"><svg class="lock-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M18.5 2 7 18h7l-1 12L25 13h-7z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg><span class="logo-title">OTÁVIO DIAS LEITE <small>PORTFÓLIO</small></span></a>
+    <nav aria-label="Navegação principal">
+      <a href="{{ .Site.Home.RelPermalink }}#education">Formação</a>
+      <a href="{{ .Site.Home.RelPermalink }}#projects">Projetos</a>
+      <a href="{{ .Site.Home.RelPermalink }}#contact">Contato</a>
       <a href="{{ site.Params.blogURL }}">Blog <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
   <main>{{ block "main" . }}{{ end }}</main>
   <script defer src="{{ "js/contact.js" | relURL }}"></script>
-  <footer><span>OTÁVIO DIAS LEITE</span><span>Academic · Technical · Professional</span><span>© {{ now.Year }}</span><a href="{{ site.Params.blogURL }}">BLOG ↗</a><a href="{{ .Site.Home.RelPermalink }}">BACK TO TOP ↑</a></footer>
+  <footer><span>OTÁVIO DIAS LEITE</span><span>Acadêmico · Técnico · Profissional</span><span>© {{ now.Year }}</span><a href="{{ site.Params.blogURL }}">BLOG ↗</a><a href="{{ .Site.Home.RelPermalink }}">VOLTAR AO TOPO ↑</a></footer>
+  <div id="google_translate_element" aria-hidden="true"></div>
 </div>
 </body>
 </html>
