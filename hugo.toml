@@ -1,7 +1,7 @@
 baseURL="https://otavio-dias-leite.github.io/portfolio/"
-languageCode="en-us"
-title="Otávio Dias Leite — Portfolio"
+languageCode="pt-br"
+title="Otávio Dias Leite — Portfólio"
 enableRobotsTXT=true
 [params]
-description="Academic and technical background in electrotechnics, electrical engineering and computer science."
+description="Formação técnica e acadêmica em eletrotécnica, engenharia elétrica, computação e segurança da informação."
 blogURL="https://otavio-dias-leite.github.io/blog/"
