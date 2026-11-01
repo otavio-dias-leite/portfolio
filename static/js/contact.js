@@ -4,7 +4,7 @@
 
   const feedback = document.querySelector(".copy-feedback");
   const label = button.querySelector("[data-copy-label]");
-  const originalLabel = label ? label.textContent : "Copy email";
+  const originalLabel = label ? label.textContent : "Copiar e-mail";
 
   async function copyText(value) {
     if (navigator.clipboard && window.isSecureContext) {
@@ -21,18 +21,18 @@
     field.select();
     const copied = document.execCommand("copy");
     field.remove();
-    if (!copied) throw new Error("Clipboard copy failed");
+    if (!copied) throw new Error("Falha ao copiar para a área de transferência");
   }
 
   button.addEventListener("click", async () => {
     const email = button.dataset.copyEmail;
     try {
       await copyText(email);
-      if (label) label.textContent = "Email copied";
-      if (feedback) feedback.textContent = "EMAIL COPIED TO CLIPBOARD";
+      if (label) label.textContent = "E-mail copiado";
+      if (feedback) feedback.textContent = "E-MAIL COPIADO";
     } catch (error) {
-      if (label) label.textContent = "Copy unavailable";
-      if (feedback) feedback.textContent = "SELECT THE EMAIL ADDRESS TO COPY IT";
+      if (label) label.textContent = "Cópia indisponível";
+      if (feedback) feedback.textContent = "SELECIONE O ENDEREÇO DE E-MAIL PARA COPIÁ-LO";
     }
     window.setTimeout(() => {
       if (label) label.textContent = originalLabel;
