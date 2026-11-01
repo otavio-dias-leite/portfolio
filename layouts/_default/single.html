@@ -1,9 +1,9 @@
 {{ define "main" }}
 <article class="detail">
-  <a class="secondary back-link" href="{{ .Site.Home.RelPermalink }}#projects">← Projects</a>
+  <a class="secondary back-link" href="{{ .Site.Home.RelPermalink }}#projects">← Projetos</a>
   <h1>{{ .Title }}</h1>
   {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
   <div class="detail-content">{{ .Content }}</div>
-  <a class="secondary back-link" href="{{ .Site.Home.RelPermalink }}#projects">← Back to all projects</a>
+  <a class="secondary back-link" href="{{ .Site.Home.RelPermalink }}#projects">← Voltar a todos os projetos</a>
 </article>
 {{ end }}
