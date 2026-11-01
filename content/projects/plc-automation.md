@@ -1,19 +1,19 @@
 ---
-title: "PLC-Based Automation Project"
+title: "Projeto de Automação com CLP"
 date: 2026-10-28
-description: "A programmable logic controller project developed for the IFF Saber Fazer Saber fair."
-tags: ["PLC", "automation", "electrotechnics", "IFF"]
+description: "Projeto com controlador lógico programável desenvolvido para a Feira Saber Fazer Saber do IFF."
+tags: ["CLP", "automação", "eletrotécnica", "IFF"]
 weight: 2
-project_label: "IFF · SABER FAZER SABER FAIR"
-project_type: "CONTROL & AUTOMATION"
+project_label: "IFF · FEIRA SABER FAZER SABER"
+project_type: "CONTROLE E AUTOMAÇÃO"
 ---
 
-## Project overview
+## Visão geral do projeto
 
-Developed for the IFF Saber Fazer Saber fair, this project explores the use of a programmable logic controller (PLC) in automation and control. It represents practical work connected to industrial control systems and the application of automation logic.
+Desenvolvido para a Feira Saber Fazer Saber do IFF, este projeto explora o uso de um controlador lógico programável (CLP) em automação e controle. Representa um trabalho prático relacionado a sistemas de controle industrial e à aplicação de lógica de automação.
 
-## Project details
+## Detalhes do projeto
 
-- Programmable logic controller (PLC) technology.
-- Control logic and industrial automation concepts.
-- Practical application of electrotechnics and control systems.
+- Tecnologia de controladores lógicos programáveis (CLP).
+- Lógica de controle e conceitos de automação industrial.
+- Aplicação prática de eletrotécnica e sistemas de controle.
