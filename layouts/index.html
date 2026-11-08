@@ -3,8 +3,8 @@
   <div class="hero-copy">
     <p class="eyebrow"><span class="status-dot"></span> PORTFÓLIO PROFISSIONAL</p>
     <h1>Otávio Dias<br><span>Leite</span></h1>
-    <p class="lead">Formação técnica em Eletrotécnica, estudos em Engenharia Elétrica e graduação em andamento em Ciência da Computação.</p>
-    <p class="intro">Tenho uma formação acadêmica e técnica interdisciplinar, que abrange sistemas elétricos, eletrônica e computação. Estou aberto a diferentes oportunidades profissionais nas quais possa aplicar minha formação, experiência prática e conhecimentos técnicos.</p>
+    <p class="lead">Técnico em Eletrotécnica, estudante de Engenharia Elétrica e Ciência da Computação, com foco de desenvolvimento em sistemas embarcados e IoT.</p>
+    <p class="intro">Uno estudos em elétrica, eletrônica e computação com experiências práticas e projetos acadêmicos. Busco uma oportunidade para contribuir, aprender e desenvolver soluções que integrem hardware e software.</p>
     <a class="primary-link" href="#contact">Contato <span>↘</span></a>
   </div>
   <div class="hero-index">01 <span>—</span> PERFIL</div>
@@ -26,12 +26,18 @@
     <article class="education-item"><span class="item-marker"></span><div><h3>Bolsa de Apoio Tecnológico — DAAT</h3><p>Instituto Federal Fluminense (IFF) · Abril de 2026</p><p>Atividades de apoio tecnológico no âmbito da instituição.</p></div><span class="item-type">APOIO TECNOLÓGICO</span></article>
   </div>
 </section>
+<section class="section" id="development">
+  <div class="section-heading"><span>04</span><h2>Desenvolvimento deste portfólio</h2></div>
+  <div class="section-content">
+    <article class="education-item"><span class="item-marker"></span><div><h3>Experimento de vibe coding com múltiplas IAs</h3><p>Projeto pessoal · Em desenvolvimento</p><p>A estrutura inicial do site foi criada com apoio de diferentes ferramentas de inteligência artificial, usadas para explorar alternativas, organizar componentes e acelerar a implementação. O processo inclui ajustes manuais, revisão e decisões feitas por mim, com base nos conhecimentos que venho adquirindo em Engenharia Elétrica e Ciência da Computação. O objetivo é experimentar o desenvolvimento assistido por IA e aprender com o processo, mantendo participação direta na construção e avaliação do resultado.</p></div><span class="item-type">EXPERIMENTO</span></article>
+  </div>
+</section>
 <section class="section" id="projects">
-  <div class="section-heading"><span>04</span><h2>Projetos</h2></div>
+  <div class="section-heading"><span>05</span><h2>Projetos</h2></div>
   <div class="section-content project-list">
     {{ range (where site.RegularPages "Section" "projects").ByWeight }}
     <a class="project-card" href="{{ .RelPermalink }}">
-      <span class="project-topline"><span>{{ .Params.project_label | default "PROJETO TÉCNICO" }}</span><span>{{ .Params.project_type | default "PROJETO" }}</span></span>
+      <span class="project-topline"><span>{{ .Params.project_label | default "FEIRA SABER FAZER SABER" }}</span><span>{{ .Params.project_type | default "PROJETO" }}</span></span>
       <strong class="project-title">{{ .Title }} <span aria-hidden="true">↗</span></strong>
       {{ with .Description }}<span class="project-description">{{ . }}</span>{{ end }}
       <span class="text-link">Ver detalhes do projeto <span>→</span></span>
@@ -39,5 +45,5 @@
     {{ end }}
   </div>
 </section>
-<section class="contact-section" id="contact"><div class="contact-heading"><span class="eyebrow">05 / CONTATO</span><h2>Contato profissional</h2><p>Escolha como deseja entrar em contato.</p></div><div class="contact-links"><button class="contact-action" type="button" data-copy-email="o.otavio.dias.leite@gmail.com"><span class="contact-action-icon" aria-hidden="true">✉</span><span class="contact-action-copy"><strong data-copy-label>Copiar e-mail</strong><small>o.otavio.dias.leite@gmail.com</small></span><span class="contact-action-arrow" aria-hidden="true">⧉</span></button><a class="contact-action" href="https://www.linkedin.com/in/ot%C3%A1vio-dias-leite-976027366/" target="_blank" rel="noopener noreferrer"><span class="contact-action-icon" aria-hidden="true">in</span><span class="contact-action-copy"><strong>Abrir LinkedIn</strong><small>Perfil profissional</small></span><span class="contact-action-arrow" aria-hidden="true">↗</span></a></div><span class="copy-feedback" role="status" aria-live="polite"></span></section>
+<section class="contact-section" id="contact"><div class="contact-heading"><span class="eyebrow">06 / CONTATO</span><h2>Contato profissional</h2><p>Escolha como deseja entrar em contato.</p></div><div class="contact-links"><button class="contact-action" type="button" data-copy-email="o.otavio.dias.leite@gmail.com"><span class="contact-action-icon" aria-hidden="true">✉</span><span class="contact-action-copy"><strong data-copy-label>Copiar e-mail</strong><small>o.otavio.dias.leite@gmail.com</small></span><span class="contact-action-arrow" aria-hidden="true">⧉</span></button><a class="contact-action" href="https://www.linkedin.com/in/ot%C3%A1vio-dias-leite-976027366/" target="_blank" rel="noopener noreferrer"><span class="contact-action-icon" aria-hidden="true">in</span><span class="contact-action-copy"><strong>Abrir LinkedIn</strong><small>Perfil profissional</small></span><span class="contact-action-arrow" aria-hidden="true">↗</span></a></div><span class="copy-feedback" role="status" aria-live="polite"></span></section>
 {{ end }}
