@@ -26,14 +26,8 @@
     <article class="education-item"><span class="item-marker"></span><div><h3>Bolsa de Apoio Tecnológico — DAAT</h3><p>Instituto Federal Fluminense (IFF) · Abril de 2026</p><p>Atividades de apoio tecnológico no âmbito da instituição.</p></div><span class="item-type">APOIO TECNOLÓGICO</span></article>
   </div>
 </section>
-<section class="section" id="disclaimer">
-  <div class="section-heading"><span>04</span><h2>Disclaimer</h2></div>
-  <div class="section-content">
-    <p>Este portfólio e seus projetos são iniciativas de hobby desenvolvidas com auxílio de inteligência artificial e alguns ajustes técnicos manuais. Não têm o objetivo de representar um trabalho ou serviço profissional.</p>
-  </div>
-</section>
 <section class="section" id="projects">
-  <div class="section-heading"><span>05</span><h2>Projetos</h2></div>
+  <div class="section-heading"><span>04</span><h2>Projetos</h2></div>
   <div class="section-content project-list">
     {{ range (where site.RegularPages "Section" "projects").ByWeight }}
     <a class="project-card" href="{{ .RelPermalink }}">
@@ -45,5 +39,5 @@
     {{ end }}
   </div>
 </section>
-<section class="contact-section" id="contact"><div class="contact-heading"><span class="eyebrow">06 / CONTATO</span><h2>Contato profissional</h2><p>Escolha como deseja entrar em contato.</p></div><div class="contact-links"><button class="contact-action" type="button" data-copy-email="o.otavio.dias.leite@gmail.com"><span class="contact-action-icon" aria-hidden="true">✉</span><span class="contact-action-copy"><strong data-copy-label>Copiar e-mail</strong><small>o.otavio.dias.leite@gmail.com</small></span><span class="contact-action-arrow" aria-hidden="true">⧉</span></button><a class="contact-action" href="https://www.linkedin.com/in/ot%C3%A1vio-dias-leite-976027366/" target="_blank" rel="noopener noreferrer"><span class="contact-action-icon" aria-hidden="true">in</span><span class="contact-action-copy"><strong>Abrir LinkedIn</strong><small>Perfil profissional</small></span><span class="contact-action-arrow" aria-hidden="true">↗</span></a></div><span class="copy-feedback" role="status" aria-live="polite"></span></section>
+<section class="contact-section" id="contact"><div class="contact-heading"><span class="eyebrow">05 / CONTATO</span><h2>Contato profissional</h2><p>Escolha como deseja entrar em contato.</p></div><div class="contact-links"><button class="contact-action" type="button" data-copy-email="o.otavio.dias.leite@gmail.com"><span class="contact-action-icon" aria-hidden="true">✉</span><span class="contact-action-copy"><strong data-copy-label>Copiar e-mail</strong><small>o.otavio.dias.leite@gmail.com</small></span><span class="contact-action-arrow" aria-hidden="true">⧉</span></button><a class="contact-action" href="https://www.linkedin.com/in/ot%C3%A1vio-dias-leite-976027366/" target="_blank" rel="noopener noreferrer"><span class="contact-action-icon" aria-hidden="true">in</span><span class="contact-action-copy"><strong>Abrir LinkedIn</strong><small>Perfil profissional</small></span><span class="contact-action-arrow" aria-hidden="true">↗</span></a></div><span class="copy-feedback" role="status" aria-live="polite"></span></section>
 {{ end }}
