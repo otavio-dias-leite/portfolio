@@ -4,7 +4,7 @@
 <body>
 <div class="page-shell">
   <header class="header">
-    <a class="logo" href="{{ .Site.Home.RelPermalink }}" aria-label="Otávio Dias Leite — Página inicial do portfólio"><svg class="lock-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M18.5 2 7 18h7l-1 12L25 13h-7z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg><span class="logo-title">OTÁVIO DIAS LEITE <small>PORTFÓLIO</small></span></a>
+    <a class="logo" href="{{ .Site.Home.RelPermalink }}" aria-label="Otávio Dias Leite — Página inicial do portfólio"><svg class="lock-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="12" height="12" rx="2"/><path d="M13 4v6m6-6v6M13 22v6m6-6v6M4 13h6m-6 6h6m12-6h6m-6 6h6"/><path d="M14 14h4v4h-4z" fill="#f2c94c" stroke="#f2c94c"/></g></svg><span class="logo-title">OTÁVIO DIAS LEITE <small>PORTFÓLIO</small></span></a>
     <nav aria-label="Navegação principal">
       <a href="{{ .Site.Home.RelPermalink }}#education">Formação</a>
       <a href="{{ .Site.Home.RelPermalink }}#projects">Projetos</a>
@@ -14,7 +14,7 @@
   </header>
   <main>{{ block "main" . }}{{ end }}</main>
   <script defer src="{{ "js/contact.js" | relURL }}"></script>
-  <footer><span>OTÁVIO DIAS LEITE</span><span>Acadêmico · Técnico · Profissional</span><span>© {{ now.Year }}</span><span class="footer-disclaimer">Teste simples com uso de IAs generativas, desenvolvido para fins de estudo.</span><nav class="footer-links" aria-label="Links institucionais"><a href="{{ "disclaimer/" | relURL }}">DISCLAIMER</a><a href="https://github.com/otavio-dias-leite/blog" target="_blank" rel="noopener noreferrer">REPO BLOG ↗</a><a href="https://github.com/otavio-dias-leite/portfolio" target="_blank" rel="noopener noreferrer">REPO PORTFOLIO ↗</a></nav><a href="{{ .Site.Home.RelPermalink }}">VOLTAR AO TOPO ↑</a></footer>
+  <footer><span>OTÁVIO DIAS LEITE</span><span class="footer-disclaimer">Este site é um teste simples que utiliza IAs generativas, desenvolvido para fins de estudo.</span><span>Acadêmico · Técnico · Profissional</span><span>© {{ now.Year }}</span><nav class="footer-links" aria-label="Links institucionais"><a href="{{ "disclaimer/" | relURL }}">DISCLAIMER</a><a href="https://github.com/otavio-dias-leite/blog" target="_blank" rel="noopener noreferrer">REPO BLOG ↗</a><a href="https://github.com/otavio-dias-leite/portfolio" target="_blank" rel="noopener noreferrer">REPO PORTFOLIO ↗</a></nav><a href="{{ .Site.Home.RelPermalink }}">VOLTAR AO TOPO ↑</a></footer>
   <div id="google_translate_element" aria-hidden="true"></div>
 </div>
 </body>
